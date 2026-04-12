@@ -25,7 +25,7 @@
 *   **철회 권한**: 익스텐션을 삭제하면 브라우저에 저장된 모든 데이터가 자동으로 제거됩니다.
 
 ### 5. 정책 준수 및 문의
-본 익스텐션은 'Google 개발자 프로그램 정책'을 철저히 준수합니다. 문의사항은 [이메일 주소 입력]으로 연락 주시기 바랍니다.
+본 익스텐션은 'Google 개발자 프로그램 정책'을 철저히 준수합니다. 문의사항은 [leejhn@gmail.com]으로 연락 주시기 바랍니다.
 
 ---
 
@@ -49,7 +49,7 @@ The Extension does not collect personally identifiable information (PII) such as
 *   **Opt-out**: Uninstalling the Extension will automatically remove all associated data from the browser's local storage.
 
 ### 5. Compliance and Contact
-We strictly comply with the **Google Developer Program Policy**. For any inquiries, please contact us at [Your Email Address].
+We strictly comply with the **Google Developer Program Policy**. For any inquiries, please contact us at [leejhn@gmail.com].
 
 ---
 
