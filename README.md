@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Atlas AI Widget Hero](assets/hero.png)
+![Atlas AI Widget Hero]
 
 ### **웹 서핑의 패러다임을 바꾸는 가장 똑똑한 브라우저 AI 비서**
 
