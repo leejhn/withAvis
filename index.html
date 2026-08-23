@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WithAvis - 웹 서핑의 패러다임을 바꾸는 브라우저 AI 비서</title>
+    <meta name="description"
+        content="웹페이지, PDF, YouTube 자막을 실시간 분석하고 Mermaid 다이어그램 시각화 및 음성 대화를 제공하는 Chrome Manifest V3 기반 프리미엄 AI 대화 확장 프로그램">
+    <meta name="keywords"
+        content="WithAvis, Chrome Extension, AI Assistant, Gemini 3.5, Claude 3.7, Cerebras, Chrome 확장프로그램, AI 요약, 유튜브 자막 요약, Mermaid 시각화, 광고 제거, Chrome Web Store">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="WithAvis - 웹 서핑의 패러다임을 바꾸는 브라우저 AI 비서">
+    <meta property="og:description" content="단 하나의 단축키(Alt+Q)로 웹페이지 요약, 유튜브 자막 분석, 다이어그램 시각화, 광고 제거를 경험하세요.">
+    <meta property="og:image" content="assets/hero.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Pretendard:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/icon48.png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Background Glow & Interactive Mouse Cursor Orb Elements -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+    <div class="bg-glow bg-glow-3"></div>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon"><img src="assets/icon48.png" alt="WithAvis Logo" class="brand-logo-img"></span>
+                <span class="logo-text">WithAvis</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#features">주요 기능</a>
+                <a href="#demo">인터랙티브 데모</a>
+                <a href="#why">왜 WithAvis인가</a>
+                <a href="#security">보안 & 프라이버시</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="https://chromewebstore.google.com/detail/withavis/nloideoniafncdiplnodlghojenpfbjg" target="_blank" class="btn btn-primary">
+                    <i class="fa-brands fa-chrome"></i> 웹스토어 설치
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-pill">
+                    <span class="pill-sparkle">✨</span> 100% Serverless Direct Streaming Architecture
+                </div>
+                <h1 class="hero-title">
+                    웹 서핑의 패러다임을 바꾸는 <br>
+                    <span class="gradient-text">가장 똑똑한 브라우저 AI 비서</span>
+                </h1>
+                <p class="hero-description">
+                    보고 있는 웹페이지, 길고 긴 보고서(PDF), YouTube 동영상 자막까지!<br>
+                    단 하나의 단축키 <kbd>Alt + Q</kbd> 로 실시간 요약 · 분석 · 시각화 · 음성 대화를 경험해 보세요.
+                </p>
+
+                <div class="hero-btns">
+                    <a href="https://chromewebstore.google.com/detail/withavis/nloideoniafncdiplnodlghojenpfbjg" target="_blank" class="btn btn-lg btn-primary shadow-glow">
+                        <i class="fa-brands fa-chrome"></i> Chrome 웹스토어에서 무료 설치
+                    </a>
+                    <a href="#demo" class="btn btn-lg btn-glass">
+                        <i class="fa-solid fa-play"></i> 데모 체험하기
+                    </a>
+                </div>
+
+                <div class="tech-badges">
+                    <span class="tech-badge"><i class="fa-brands fa-google"></i> Gemini 3.5</span>
+                    <span class="tech-badge"><i class="fa-solid fa-brain"></i> Claude 3.7</span>
+                    <span class="tech-badge"><i class="fa-solid fa-bolt"></i> Cerebras Llama</span>
+                    <span class="tech-badge"><i class="fa-solid fa-sliders"></i> 커스텀 모델 관리</span>
+                    <span class="tech-badge"><i class="fa-solid fa-shield-halved"></i> Zero-Trust Privacy</span>
+                </div>
+            </div>
+
+            <!-- Hero Image Preview Mockup -->
+            <div class="hero-image-wrapper">
+                <div class="glass-card mockup-card">
+                    <div class="mockup-header">
+                        <div class="dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="mockup-url">
+                            <i class="fa-solid fa-lock"></i> withavis.ai/extension-preview
+                        </div>
+                    </div>
+                    <div class="mockup-body">
+                        <img src="assets/hero.png" alt="WithAvis AI Widget Preview" class="hero-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container stats-container">
+            <div class="stat-card glass-card">
+                <div class="stat-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+                <div class="stat-num">0ms</div>
+                <div class="stat-label">중계 서버 레이턴시 (Direct)</div>
+            </div>
+            <div class="stat-card glass-card">
+                <div class="stat-icon"><i class="fa-brands fa-youtube"></i></div>
+                <div class="stat-num">3초</div>
+                <div class="stat-label">YouTube 자막 요약 소요 시간</div>
+            </div>
+            <div class="stat-card glass-card">
+                <div class="stat-icon"><i class="fa-solid fa-diagram-project"></i></div>
+                <div class="stat-num">100%</div>
+                <div class="stat-label">Mermaid 차트 자동 시각화</div>
+            </div>
+            <div class="stat-card glass-card">
+                <div class="stat-icon"><i class="fa-solid fa-lock"></i></div>
+                <div class="stat-num">Local</div>
+                <div class="stat-label">개인정보 암호화 보관</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">왜 <span class="gradient-text">WithAvis</span>일까요?</h2>
+                <p class="section-subtitle">생산성을 극대화하는 8가지 혁신적인 AI 파워 기능</p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card glass-card">
+                    <div class="feature-icon gradient-icon-1">
+                        <i class="fa-solid fa-server"></i>
+                    </div>
+                    <h3>100% 서버리스 멀티 LLM & 모델 관리</h3>
+                    <p>Google Gemini, Anthropic Claude, Cerebras Llama 등 다양한 AI 모델을 Direct Streaming으로 지원하며, 팝업에서 원하는 모델을 자유롭게 등록·관리합니다.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card glass-card">
+                    <div class="feature-icon gradient-icon-2">
+                        <i class="fa-brands fa-youtube"></i>
+                    </div>
+                    <h3>YouTube 자막 & 스마트 웹 크롤링</h3>
+                    <p>유튜브 접속 시 자막(Transcript)을 자동 추출하여 동영상 핵심을 3초 만에 요약하고, 웹페이지 노이즈를 정제하여 핵심 본문을 수집합니다.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card glass-card">
+                    <div class="feature-icon gradient-icon-3">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <h3>Mermaid 차트 자동 시각화 & PNG 저장</h3>
+                    <p>AI 복잡한 답변을 순서도(Flowchart), 시퀀스 다이어그램으로 자동 시각화합니다. 대형 줌/팬 모달 및 고해상도 PNG 복사/저장 기능 제공.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card glass-card">
+                    <div class="feature-icon gradient-icon-4">
+                        <i class="fa-solid fa-microphone-lines"></i>
+                    </div>
+                    <h3>STT 음성 질문 & Web Speech TTS 낭독</h3>
+                    <p>Alt+V 단축키 한 번으로 키보드 없이 마이크로 말하고, AI 답변을 고품질 한국어/영어 음성으로 자연스럽게 청취하세요.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card glass-card">
+                    <div class="feature-icon gradient-icon-5">
+                        <i class="fa-solid fa-thumbtack"></i>
+                    </div>
+                    <h3>핀(Pin) 카드 상단 고정 & 자유 리사이징</h3>
+                    <p>중요 답변 코드나 요약 카드를 상단에 고정해 둔 채 작업이 가능하며, 마우스 드래그로 위젯 높이와 넓이를 자유롭게 조절합니다.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card glass-card">
+                    <div class="feature-icon gradient-icon-6">
+                        <i class="fa-solid fa-unlock-keyhole"></i>
+                    </div>
+                    <h3>우클릭 & 복사 제한 무력화</h3>
+                    <p>텍스트 복사 금지, 드래그 방지, 우클릭 제한이 적용된 블로그나 웹사이트의 제약을 클릭 한 번으로 손쉽게 해제합니다.</p>
+                </div>
+
+                <!-- Feature 7 -->
+                <div class="feature-card glass-card">
+                    <div class="feature-icon gradient-icon-1">
+                        <i class="fa-solid fa-broom"></i>
+                    </div>
+                    <h3>내장 Ad Cleaner (광고 제거)</h3>
+                    <p>웹페이지 내 불필요한 배너 광고 및 스폰서 요소를 자동 필터링하여 눈의 피로를 줄이고 쾌적한 가독성을 제공합니다.</p>
+                </div>
+
+                <!-- Feature 8 -->
+                <div class="feature-card glass-card">
+                    <div class="feature-icon gradient-icon-2">
+                        <i class="fa-solid fa-highlighter"></i>
+                    </div>
+                    <h3>출처 근거 하이라이팅 (Source Grounding)</h3>
+                    <p>AI가 요약 및 답변을 생성할 때 참조한 웹페이지 원문 텍스트 위치를 시각적으로 강조 표시하여 정보 신뢰도를 극대화합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Simulator Demo Section -->
+    <section id="demo" class="demo-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">인터랙티브 <span class="gradient-text">체험 데모</span></h2>
+                <p class="section-subtitle">웹 브라우저에서 WithAvis가 작동하는 방식을 직접 클릭해 보세요</p>
+            </div>
+
+            <div class="demo-wrapper glass-card">
+                <div class="demo-sidebar">
+                    <h4>예시 시나리오 선택</h4>
+                    <button class="demo-tab-btn active" data-scenario="summary">
+                        <i class="fa-solid fa-file-contract"></i> 웹페이지 3초 요약
+                    </button>
+                    <button class="demo-tab-btn" data-scenario="youtube">
+                        <i class="fa-brands fa-youtube"></i> YouTube 자막 Q&A
+                    </button>
+                    <button class="demo-tab-btn" data-scenario="diagram">
+                        <i class="fa-solid fa-diagram-project"></i> 다이어그램 자동 시각화
+                    </button>
+                    <button class="demo-tab-btn" data-scenario="voice">
+                        <i class="fa-solid fa-microphone"></i> 음성 제어 (STT/TTS)
+                    </button>
+                    <button class="demo-tab-btn" data-scenario="adcleaner">
+                        <i class="fa-solid fa-broom"></i> 스마트 광고 제거
+                    </button>
+                </div>
+
+                <div class="demo-display">
+                    <div class="acw-mockup-panel" id="acwMockupPanel">
+                        <!-- 1. 위젯 헤더 -->
+                        <div class="acw-mockup-header">
+                            <div class="acw-mockup-avatar">
+                                <img id="demoHeaderIcon" src="assets/gemini.png" alt="AI">
+                            </div>
+                            <div class="acw-mockup-title-area">
+                                <div class="acw-mockup-dropdown">
+                                    <span id="currentModel">Gemini 3.5 Flash Lite</span>
+                                    <svg class="acw-mockup-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </div>
+                                <div class="acw-mockup-status-dot online"></div>
+                            </div>
+                            <div class="acw-mockup-controls">
+                                <div class="acw-mockup-slider-box" title="투명도 조절">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.7;"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a10 10 0 0 1 0 20V2z" fill="currentColor"></path></svg>
+                                    <input type="range" class="acw-mockup-slider" min="15" max="95" value="45" id="demoOpacitySlider">
+                                </div>
+                                <button class="acw-mockup-ctrl-btn" id="demoResetBtn" title="대화 지우기">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                                </button>
+                                <button class="acw-mockup-ctrl-btn" title="최대화">
+                                    <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1.5" y="1.5" width="9" height="9"/></svg>
+                                </button>
+                                <button class="acw-mockup-ctrl-btn" title="닫기">
+                                    <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2,2 L10,10 M10,2 L2,10"/></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- 2. 슬림 컨텍스트 게이지 바 -->
+                        <div class="acw-mockup-gauge-track" title="컨텍스트 토큰 상태: Safe">
+                            <div class="acw-mockup-gauge-bar"></div>
+                        </div>
+
+                        <!-- 3. 메시지 목록 영역 -->
+                        <div class="acw-mockup-messages" id="chatContainer">
+                            <div class="acw-mockup-msg ai">
+                                <div class="acw-mockup-bubble">
+                                    안녕~ 뭘 도와드릴까요?
+                                </div>
+                                <div class="acw-mockup-ts" id="demoInitialTs">2026-08-20 22:30</div>
+                            </div>
+                        </div>
+
+                        <!-- 4. 하단 입력 영역 -->
+                        <div class="acw-mockup-input-area">
+                            <div class="acw-mockup-input-wrapper">
+                                <input type="text" class="acw-mockup-input" id="demoInput" placeholder="입력하시와요…" readonly>
+                            </div>
+                            <div class="acw-mockup-aux-group">
+                                <button class="acw-mockup-aux-btn active" title="웹 컨텍스트 참조">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M4 4h16v11H4z"></path>
+                                        <path d="M2 19h20"></path>
+                                    </svg>
+                                </button>
+                                <div class="acw-mockup-aux-divider"></div>
+                                <button class="acw-mockup-aux-btn" id="demoMicBtn" title="음성 입력 (STT)">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+                                </button>
+                            </div>
+                            <button class="acw-mockup-send-btn" id="demoSendBtn" title="전송">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before & After Comparison -->
+    <section id="why" class="comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">비교해 보세요: <span class="gradient-text">전과 후</span></h2>
+                <p class="section-subtitle">WithAvis 도입으로 바뀌는 일상의 작업 속도</p>
+            </div>
+
+            <div class="comparison-grid">
+                <div class="comp-card before-card glass-card">
+                    <div class="comp-badge bad"><i class="fa-solid fa-xmark"></i> 기존 방식 (Before)</div>
+                    <ul>
+                        <li><i class="fa-solid fa-minus"></i> 웹 텍스트 긁어서 ChatGPT/Gemini 탭에 매번 복사/붙여넣기</li>
+                        <li><i class="fa-solid fa-minus"></i> 30분짜리 YouTube 영상을 일일이 넘겨가며 내용 파악</li>
+                        <li><i class="fa-solid fa-minus"></i> 복잡한 AI 텍스트 답변을 읽느라 한눈에 구조 파악 불가</li>
+                        <li><i class="fa-solid fa-minus"></i> 복사 금지/드래그 막힌 웹사이트에서 텍스트 수집 불가능</li>
+                        <li><i class="fa-solid fa-minus"></i> 덕지덕지 붙은 배너 광고로 산만한 웹 서핑 환경</li>
+                    </ul>
+                </div>
+
+                <div class="comp-card after-card glass-card glow-border">
+                    <div class="comp-badge good"><i class="fa-solid fa-check"></i> WithAvis (After)</div>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> 웹페이지에서 단축키 <kbd>Alt+Q</kbd> 누르고 즉시 요약 & 질의응답</li>
+                        <li><i class="fa-solid fa-check"></i> 유튜브 자막 자동 수집하여 3초 만에 텍스트 요약 및 타임라인 분석</li>
+                        <li><i class="fa-solid fa-check"></i> 순서도 & 시퀀스 Mermaid 차트 자동 시각화로 한눈에 흐름 파악</li>
+                        <li><i class="fa-solid fa-check"></i> 원클릭 우클릭 해제로 막힌 사이트도 자유롭게 분석 및 복사</li>
+                        <li><i class="fa-solid fa-check"></i> 내장 Ad Cleaner로 광고 없이 쾌적하고 깔끔한 본문 집중</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security & Privacy -->
+    <section id="security" class="security-section">
+        <div class="container security-container glass-card">
+            <div class="security-content">
+                <div class="security-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h2>철저한 개인정보 보호 & <span class="gradient-text">Zero-Trust 보안</span></h2>
+                <p>
+                    WithAvis는 사용자의 프라이버시를 최우선으로 생각합니다.<br>
+                    입력하신 API 인증 키와 대화 내역은 외부 서버가 아닌 사용자의 브라우저 로컬 암호화 저장소(<code>chrome.storage.local</code>)에만 보관됩니다.
+                </p>
+                <div class="security-tags">
+                    <span><i class="fa-solid fa-check"></i> 100% 로컬 저장소 보관</span>
+                    <span><i class="fa-solid fa-check"></i> 0% 중계 서버 로그 데이터 저장</span>
+                    <span><i class="fa-solid fa-check"></i> 메모리 즉시 소멸 분석 방식</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Install CTA Section -->
+    <section class="cta-section">
+        <div class="container cta-container">
+            <h2 class="cta-title">지금 바로 <span class="gradient-text">WithAvis</span>를 경험해 보세요</h2>
+            <p class="cta-subtitle">Chrome 웹스토어에서 단 한 번의 클릭으로 브라우저에 바로 추가할 수 있습니다.</p>
+
+            <div class="cta-actions">
+                <a href="https://chromewebstore.google.com/detail/withavis/nloideoniafncdiplnodlghojenpfbjg" target="_blank"
+                    class="btn btn-lg btn-primary shadow-glow">
+                    <i class="fa-brands fa-chrome"></i> Chrome 웹스토어에서 무료 설치
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <div class="logo">
+                    <span class="logo-icon"><img src="assets/icon48.png" alt="WithAvis Logo" class="brand-logo-img"></span>
+                    <span class="logo-text">WithAvis</span>
+                </div>
+                <p>© 2026 WithAvis Project. All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <a href="#features">주요 기능</a>
+                <a href="#security">보안 방침</a>
+                <a href="https://chromewebstore.google.com/detail/withavis/nloideoniafncdiplnodlghojenpfbjg" target="_blank"><i class="fa-brands fa-chrome"></i> Chrome 웹스토어</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
