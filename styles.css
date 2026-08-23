@@ -232,6 +232,23 @@ kbd {
     border-radius: 10px;
 }
 
+.logo-text {
+    font-size: 1.35rem;
+}
+
+.version-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(236, 72, 153, 0.12));
+    border: 1px solid rgba(99, 102, 241, 0.25);
+    color: #4f46e5;
+    letter-spacing: 0.2px;
+    margin-left: 2px;
+    vertical-align: middle;
+}
+
 .nav-links {
     display: flex;
     gap: 28px;
@@ -332,6 +349,17 @@ kbd {
     font-weight: 600;
     color: #4338ca;
     margin-bottom: 22px;
+}
+
+.pill-version {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 1px 7px;
+    border-radius: 10px;
+    background: #4338ca;
+    color: #ffffff;
+    margin-left: 4px;
+    letter-spacing: 0.2px;
 }
 
 .hero-title {
@@ -1164,6 +1192,19 @@ kbd {
     font-size: 0.85rem;
     color: var(--text-dim);
     margin-top: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.footer-version {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #6366f1;
+    padding: 1px 6px;
+    background: rgba(99, 102, 241, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 6px;
 }
 
 .footer-right {
