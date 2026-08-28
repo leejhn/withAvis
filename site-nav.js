@@ -14,10 +14,8 @@
 
     const navLinks = [
         { href: anchor('features'), text: '주요 기능' },
-        { href: anchor('demo'), text: '인터랙티브 데모' },
         { href: anchor('why'), text: '브라우징 편의성' },
-        { href: anchor('security'), text: '보안 & 프라이버시' },
-        { href: 'api-guide.html', text: 'API 발급 가이드' },
+        { href: anchor('api-guide'), text: 'API 발급 가이드' },
         { href: 'changelog.html', text: '업데이트 노트' },
         { href: 'privacy.html', text: '개인정보처리방침' },
     ];
@@ -31,7 +29,7 @@
         if (!target) return;
 
         const linksHtml = navLinks.map(link => {
-            const isActive = link.href === currentPage ? ' class="active"' : '';
+            const isActive = (!isIndex && link.href === currentPage) ? ' class="active"' : '';
             return `<a href="${link.href}"${isActive}>${link.text}</a>`;
         }).join('\n                ');
 

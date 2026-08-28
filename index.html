@@ -8,7 +8,7 @@
     <meta name="description"
         content="웹페이지, PDF, YouTube 자막을 실시간 분석하고 Mermaid 다이어그램 시각화 및 음성 대화를 제공하는 Chrome Manifest V3 기반 프리미엄 AI 대화 확장 프로그램">
     <meta name="keywords"
-        content="WithAvis, Chrome Extension, AI Assistant, Gemini 3.5, Claude 3.7, Cerebras, Chrome 확장프로그램, AI 요약, 유튜브 자막 요약, Mermaid 시각화, 광고 제거, Chrome Web Store">
+        content="WithAvis, Chrome Extension, AI Assistant, Gemini, Claude, Cerebras, OpenCode, Chrome 확장프로그램, AI 요약, 유튜브 자막 요약, Mermaid 시각화, 광고 제거, Chrome Web Store">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -56,24 +56,24 @@
                 </h1>
                 <p class="hero-description">
                     보고 있는 웹페이지, PDF, 이미지, YouTube 동영상 자막까지!<br>
-                    간편한 단축키 <kbd>Alt + J</kbd> 로 실시간 요약 · 분석 · 시각화 · 음성 대화를 경험해 보세요.
+                    간편한 단축키 <kbd>Alt + J</kbd> 로 실시간 요약, 다이어그램 시각화, 음성 대화를 경험하세요.
                 </p>
 
-                <div class="hero-btns">
+                <div class="hero-actions">
                     <a href="https://chromewebstore.google.com/detail/withavis/nloideoniafncdiplnodlghojenpfbjg"
                         target="_blank" class="btn btn-lg btn-primary shadow-glow">
-                        <i class="fa-brands fa-chrome"></i> Chrome 웹스토어에서 설치하기
+                        <i class="fa-brands fa-chrome"></i> Chrome 웹스토어 설치
                     </a>
-                    <a href="#demo" class="btn btn-lg btn-glass">
-                        <i class="fa-solid fa-play"></i> 인터랙티브 데모
+                    <a href="#api-guide" class="btn btn-lg btn-glass">
+                        <i class="fa-solid fa-key"></i> API 발급 가이드
                     </a>
                 </div>
 
                 <div class="tech-badges">
-                    <span class="tech-badge"><i class="fa-brands fa-google"></i> Gemini 3.5</span>
+                    <span class="tech-badge"><i class="fa-brands fa-google"></i> Gemini 2.5</span>
                     <span class="tech-badge"><i class="fa-solid fa-brain"></i> Claude 3.7</span>
-                    <span class="tech-badge"><i class="fa-solid fa-bolt"></i> Cerebras</span>
-                    <span class="tech-badge"><i class="fa-solid fa-sliders"></i> 커스텀 모델 관리</span>
+                    <span class="tech-badge"><i class="fa-solid fa-bolt"></i> Cerebras Llama</span>
+                    <span class="tech-badge"><i class="fa-solid fa-code"></i> OpenCode Zen</span>
                     <span class="tech-badge"><i class="fa-solid fa-shield-halved"></i> Zero-Trust Privacy</span>
                 </div>
             </div>
@@ -99,32 +99,6 @@
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container stats-container">
-            <div class="stat-card glass-card">
-                <div class="stat-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
-                <div class="stat-num">0ms</div>
-                <div class="stat-label">중계 서버 레이턴시 (Direct)</div>
-            </div>
-            <div class="stat-card glass-card">
-                <div class="stat-icon"><i class="fa-brands fa-youtube"></i></div>
-                <div class="stat-num">3초</div>
-                <div class="stat-label">YouTube 자막 요약 소요 시간</div>
-            </div>
-            <div class="stat-card glass-card">
-                <div class="stat-icon"><i class="fa-solid fa-diagram-project"></i></div>
-                <div class="stat-num">100%</div>
-                <div class="stat-label">Mermaid 차트 자동 시각화</div>
-            </div>
-            <div class="stat-card glass-card">
-                <div class="stat-icon"><i class="fa-solid fa-lock"></i></div>
-                <div class="stat-num">Local</div>
-                <div class="stat-label">개인정보 암호화 보관</div>
-            </div>
-        </div>
-    </section>
-
     <!-- Features Section -->
     <section id="features" class="features-section">
         <div class="container">
@@ -140,7 +114,7 @@
                         <i class="fa-solid fa-server"></i>
                     </div>
                     <h3>100% 서버리스 멀티 LLM & 모델 관리</h3>
-                    <p>Google Gemini, Anthropic Claude, Cerebras Llama 등 다양한 AI 모델을 Direct Streaming으로 지원하며, 팝업에서 원하는
+                    <p>Google Gemini, Anthropic Claude, Cerebras Llama, OpenCode Zen 등 다양한 AI 모델을 Direct Streaming으로 지원하며, 팝업에서 원하는
                         모델을 자유롭게 등록·관리합니다.</p>
                 </div>
 
@@ -210,141 +184,6 @@
         </div>
     </section>
 
-    <!-- Interactive Simulator Demo Section -->
-    <section id="demo" class="demo-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">인터랙티브 <span class="gradient-text">데모</span></h2>
-                <p class="section-subtitle">웹 브라우저에서 WithAvis가 작동하는 방식을 직접 클릭해 보세요</p>
-            </div>
-
-            <div class="demo-wrapper glass-card">
-                <div class="demo-sidebar">
-                    <h4>예시 시나리오 선택</h4>
-                    <button class="demo-tab-btn active" data-scenario="summary">
-                        <i class="fa-solid fa-file-contract"></i> 웹페이지 3초 요약
-                    </button>
-                    <button class="demo-tab-btn" data-scenario="youtube">
-                        <i class="fa-brands fa-youtube"></i> YouTube 자막 Q&A
-                    </button>
-                    <button class="demo-tab-btn" data-scenario="diagram">
-                        <i class="fa-solid fa-diagram-project"></i> 다이어그램 자동 시각화
-                    </button>
-                    <button class="demo-tab-btn" data-scenario="voice">
-                        <i class="fa-solid fa-microphone"></i> 음성 제어 (STT/TTS)
-                    </button>
-                    <button class="demo-tab-btn" data-scenario="adcleaner">
-                        <i class="fa-solid fa-broom"></i> 스마트 광고 제거
-                    </button>
-                </div>
-
-                <div class="demo-display">
-                    <div class="acw-mockup-panel" id="acwMockupPanel">
-                        <!-- 1. 위젯 헤더 -->
-                        <div class="acw-mockup-header">
-                            <div class="acw-mockup-avatar">
-                                <img id="demoHeaderIcon" src="assets/gemini.png" alt="AI">
-                            </div>
-                            <div class="acw-mockup-title-area">
-                                <div class="acw-mockup-dropdown">
-                                    <span id="currentModel">Gemini 3.5 Flash Lite</span>
-                                    <svg class="acw-mockup-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <polyline points="6 9 12 15 18 9"></polyline>
-                                    </svg>
-                                </div>
-                                <div class="acw-mockup-status-dot online"></div>
-                            </div>
-                            <div class="acw-mockup-controls">
-                                <div class="acw-mockup-slider-box" title="투명도 조절">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-                                        style="opacity: 0.7;">
-                                        <circle cx="12" cy="12" r="10"></circle>
-                                        <path d="M12 2a10 10 0 0 1 0 20V2z" fill="currentColor"></path>
-                                    </svg>
-                                    <input type="range" class="acw-mockup-slider" min="15" max="95" value="45"
-                                        id="demoOpacitySlider">
-                                </div>
-                                <button class="acw-mockup-ctrl-btn" id="demoResetBtn" title="대화 지우기">
-                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <polyline points="3 6 5 6 21 6"></polyline>
-                                        <path
-                                            d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
-                                        </path>
-                                    </svg>
-                                </button>
-                                <button class="acw-mockup-ctrl-btn" title="최대화">
-                                    <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor"
-                                        stroke-width="1.5">
-                                        <rect x="1.5" y="1.5" width="9" height="9" />
-                                    </svg>
-                                </button>
-                                <button class="acw-mockup-ctrl-btn" title="닫기">
-                                    <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor"
-                                        stroke-width="1.5">
-                                        <path d="M2,2 L10,10 M10,2 L2,10" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- 2. 슬림 컨텍스트 게이지 바 -->
-                        <div class="acw-mockup-gauge-track" title="컨텍스트 토큰 상태: Safe">
-                            <div class="acw-mockup-gauge-bar"></div>
-                        </div>
-
-                        <!-- 3. 메시지 목록 영역 -->
-                        <div class="acw-mockup-messages" id="chatContainer">
-                            <div class="acw-mockup-msg ai">
-                                <div class="acw-mockup-bubble">
-                                    안녕~ 뭘 도와드릴까요?
-                                </div>
-                                <div class="acw-mockup-ts" id="demoInitialTs">2026-08-20 22:30</div>
-                            </div>
-                        </div>
-
-                        <!-- 4. 하단 입력 영역 -->
-                        <div class="acw-mockup-input-area">
-                            <div class="acw-mockup-input-wrapper">
-                                <input type="text" class="acw-mockup-input" id="demoInput" placeholder="입력하시와요…"
-                                    readonly>
-                            </div>
-                            <div class="acw-mockup-aux-group">
-                                <button class="acw-mockup-aux-btn active" title="웹 컨텍스트 참조">
-                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M4 4h16v11H4z"></path>
-                                        <path d="M2 19h20"></path>
-                                    </svg>
-                                </button>
-                                <div class="acw-mockup-aux-divider"></div>
-                                <button class="acw-mockup-aux-btn" id="demoMicBtn" title="음성 입력 (STT)">
-                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
-                                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-                                        <line x1="12" y1="19" x2="12" y2="23"></line>
-                                        <line x1="8" y1="23" x2="16" y2="23"></line>
-                                    </svg>
-                                </button>
-                            </div>
-                            <button class="acw-mockup-send-btn" id="demoSendBtn" title="전송">
-                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M22 2L11 13" />
-                                    <path d="M22 2L15 22L11 13L2 9L22 2Z" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Browsing Convenience Comparison -->
     <section id="why" class="comparison-section">
         <div class="container">
@@ -379,21 +218,360 @@
         </div>
     </section>
 
-    <!-- Security & Privacy -->
-    <section id="security" class="security-section">
-        <div class="container security-container glass-card">
-            <div class="security-content">
-                <div class="security-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                <h2>철저한 개인정보 보호 & <span class="gradient-text">Zero-Trust 보안</span></h2>
-                <p>
-                    WithAvis는 사용자의 프라이버시를 최우선으로 생각합니다.<br>
-                    입력하신 API 인증 키와 대화 내역은 외부 서버가 아닌 사용자의 브라우저 로컬 암호화 저장소(<code>chrome.storage.local</code>)에만 보관됩니다.
-                </p>
-                <div class="security-tags">
-                    <span><i class="fa-solid fa-check"></i> 100% 로컬 저장소 보관</span>
-                    <span><i class="fa-solid fa-check"></i> 0% 중계 서버 로그 데이터 저장</span>
-                    <span><i class="fa-solid fa-check"></i> 메모리 즉시 소멸 분석 방식</span>
+    <!-- API Key Guide Section -->
+    <section id="api-guide" class="guide-section">
+        <div class="container">
+            <div class="guide-card">
+                <!-- Header -->
+                <div class="section-header" style="text-align: left; margin-bottom: 0;">
+                    <h2 class="section-title">AI 메이커별 <span class="gradient-text">API 키 발급 가이드</span></h2>
+                    <p class="section-subtitle">WithAvis는 개인 API Key를 사용하여 중계 서버 없이 최신 AI 모델과 1:1로 직접 스트리밍 통신합니다. 원하시는 AI 메이커를 선택하여 1분 만에 키를 발급받으세요.</p>
                 </div>
+
+                <div class="privacy-alert-banner">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <div>
+                        <strong>100% Zero-Trust 안전 보장</strong><br>
+                        발급받은 API 키는 개발자나 중간 서버로 절대 전송되지 않으며, 오직 귀하의 크롬 브라우저 암호화 로컬 스토리지(<code>chrome.storage.local</code>)에만 안전하게 보관됩니다.
+                    </div>
+                </div>
+
+                <!-- Maker Selector Tabs -->
+                <div class="maker-tabs">
+                    <button type="button" class="maker-tab-btn active" data-maker="gemini">
+                        <img src="assets/gemini.png" alt="Gemini" class="tab-logo">
+                        <span class="tab-name">Google Gemini</span>
+                        <span class="tab-badge free">무료 이용 가능</span>
+                    </button>
+                    <button type="button" class="maker-tab-btn" data-maker="cerebras">
+                        <img src="assets/cerebras.png" alt="Cerebras" class="tab-logo">
+                        <span class="tab-name">Cerebras</span>
+                        <span class="tab-badge speed">초고속 Llama</span>
+                    </button>
+                    <button type="button" class="maker-tab-btn" data-maker="claude">
+                        <img src="assets/claude.png" alt="Claude" class="tab-logo">
+                        <span class="tab-name">Anthropic Claude</span>
+                        <span class="tab-badge power">최고 지능 분석</span>
+                    </button>
+                    <button type="button" class="maker-tab-btn" data-maker="opencode">
+                        <img src="assets/opencode.png" alt="OpenCode Zen" class="tab-logo">
+                        <span class="tab-name">OpenCode Zen</span>
+                        <span class="tab-badge custom">맞춤형 모델</span>
+                    </button>
+                </div>
+
+                <!-- 1. Google Gemini Guide Panel -->
+                <div class="maker-panel active" id="panel-gemini">
+                    <div class="maker-overview">
+                        <div class="overview-info">
+                            <h3><img src="assets/gemini.png" alt="Gemini" style="width:24px; vertical-align:middle;"> Google Gemini (추천)</h3>
+                            <p>Google 계정만 있으면 <strong>완전 무료</strong>로 분당 15회(RPM)까지 강력한 Gemini 2.5 모델을 사용할 수 있습니다.</p>
+                        </div>
+                        <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer" class="btn-portal">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Google AI Studio 바로가기
+                        </a>
+                    </div>
+
+                    <div class="step-list">
+                        <div class="step-card">
+                            <div class="step-num">1</div>
+                            <div class="step-body">
+                                <div class="step-title">Google AI Studio 접속 및 로그인</div>
+                                <div class="step-desc">
+                                    <a href="https://aistudio.google.com/" target="_blank" rel="noopener noreferrer" style="color:#4f46e5; font-weight:600;">Google AI Studio</a>에 접속한 후 개인 Google 계정으로 로그인합니다.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-num">2</div>
+                            <div class="step-body">
+                                <div class="step-title">[Get API key] 메뉴 선택</div>
+                                <div class="step-desc">
+                                    좌측 상단 네비게이션 메뉴에서 <strong>[Get API key]</strong> 버튼을 클릭합니다.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-num">3</div>
+                            <div class="step-body">
+                                <div class="step-title">API 키 생성 ([Create API key])</div>
+                                <div class="step-desc">
+                                    <strong>[Create API key]</strong> 버튼을 클릭하고, 프로젝트 선택 창에서 <strong>"Create API key in new project"</strong> (새 프로젝트에서 키 생성)를 선택합니다.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-num">4</div>
+                            <div class="step-body">
+                                <div class="step-title">API 키 복사 및 WithAvis에 등록</div>
+                                <div class="step-desc">
+                                    화면에 표시된 <code>AIzaSy...</code> 형태의 키를 복사한 뒤, WithAvis 확장 프로그램 팝업의 <strong>[API Key]</strong> 입력창에 붙여넣습니다.
+                                </div>
+                                <div class="step-code-box"><i class="fa-solid fa-key"></i> 형식: AIzaSy***********************************</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="spec-box">
+                        <h4><i class="fa-solid fa-microchip"></i> WithAvis 권장 Gemini 모델</h4>
+                        <table class="spec-table">
+                            <thead>
+                                <tr>
+                                    <th>모델명</th>
+                                    <th>API 식별자</th>
+                                    <th>특징 및 용도</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Gemini 2.5 Flash</strong> (기본 권장)</td>
+                                    <td><span class="model-tag">gemini-2.5-flash</span></td>
+                                    <td>압도적인 속도와 뛰어난 문맥 이해도 (웹 요약, 번역, 일반 질문 최적)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Gemini 2.5 Pro</strong></td>
+                                    <td><span class="model-tag">gemini-2.5-pro</span></td>
+                                    <td>복잡한 다이어그램 생성, 긴 논문/PDF 심층 분석용</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 2. Cerebras Guide Panel -->
+                <div class="maker-panel" id="panel-cerebras">
+                    <div class="maker-overview">
+                        <div class="overview-info">
+                            <h3><img src="assets/cerebras.png" alt="Cerebras" style="width:24px; vertical-align:middle;"> Cerebras Cloud Inference</h3>
+                            <p>전 세계에서 가장 빠른 추론 엔진! <strong>초당 1,000토큰 이상의 광속 응답</strong>과 무료 일일 할당량을 제공합니다.</p>
+                        </div>
+                        <a href="https://cloud.cerebras.ai/" target="_blank" rel="noopener noreferrer" class="btn-portal">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Cerebras Cloud 바로가기
+                        </a>
+                    </div>
+
+                    <div class="step-list">
+                        <div class="step-card">
+                            <div class="step-num">1</div>
+                            <div class="step-body">
+                                <div class="step-title">Cerebras Cloud 가입 및 로그인</div>
+                                <div class="step-desc">
+                                    <a href="https://cloud.cerebras.ai/" target="_blank" rel="noopener noreferrer" style="color:#4f46e5; font-weight:600;">cloud.cerebras.ai</a>에 접속하여 이메일 또는 GitHub 계정으로 가입 및 로그인합니다.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-num">2</div>
+                            <div class="step-body">
+                                <div class="step-title">[API Keys] 메뉴 이동</div>
+                                <div class="step-desc">
+                                    대시보드 좌측 사이드바 메뉴에서 <strong>[API Keys]</strong> 탭을 클릭합니다.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-num">3</div>
+                            <div class="step-body">
+                                <div class="step-title">새 API 키 발급 ([Create Key])</div>
+                                <div class="step-desc">
+                                    <strong>[+ Create New Key]</strong> 버튼을 누르고 키 이름(예: <code>WithAvis</code>)을 입력한 뒤 생성합니다.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-num">4</div>
+                            <div class="step-body">
+                                <div class="step-title">키 복사 및 등록</div>
+                                <div class="step-desc">
+                                    생성된 <code>csk-...</code> 형태의 키를 복사하여 WithAvis 확장 프로그램 팝업에 등록합니다.
+                                </div>
+                                <div class="step-code-box"><i class="fa-solid fa-key"></i> 형식: csk-***********************************</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="spec-box">
+                        <h4><i class="fa-solid fa-microchip"></i> WithAvis 권장 Cerebras 모델</h4>
+                        <table class="spec-table">
+                            <thead>
+                                <tr>
+                                    <th>모델명</th>
+                                    <th>API 식별자</th>
+                                    <th>특징 및 용도</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Llama 3.3 70B</strong></td>
+                                    <td><span class="model-tag">llama-3.3-70b</span></td>
+                                    <td>초고속 70B 파라미터 모델 (탁월한 한국어 문맥 분석 및 실시간 답변)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Llama 3.1 8B</strong></td>
+                                    <td><span class="model-tag">llama3.1-8b</span></td>
+                                    <td>빛의 속도로 동작하는 가벼운 경량 모델</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 3. Anthropic Claude Guide Panel -->
+                <div class="maker-panel" id="panel-claude">
+                    <div class="maker-overview">
+                        <div class="overview-info">
+                            <h3><img src="assets/claude.png" alt="Claude" style="width:24px; vertical-align:middle;"> Anthropic Claude</h3>
+                            <p>정교한 문맥 분석과 고난도 코딩/글쓰기 추론 능력을 자랑하는 최고 성능의 AI 모델입니다.</p>
+                        </div>
+                        <a href="https://console.anthropic.com/" target="_blank" rel="noopener noreferrer" class="btn-portal">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Anthropic Console 바로가기
+                        </a>
+                    </div>
+
+                    <div class="step-list">
+                        <div class="step-card">
+                            <div class="step-num">1</div>
+                            <div class="step-body">
+                                <div class="step-title">Anthropic Console 가입</div>
+                                <div class="step-desc">
+                                    <a href="https://console.anthropic.com/" target="_blank" rel="noopener noreferrer" style="color:#4f46e5; font-weight:600;">Anthropic Console</a>에 접속하여 계정을 생성하고 로그인합니다.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-num">2</div>
+                            <div class="step-body">
+                                <div class="step-title">크레딧 충전 (Billing)</div>
+                                <div class="step-desc">
+                                    [Settings] ➔ [Billing] 메뉴에서 결제 카드를 등록하고 원하는 금액(최소 )의 선불 크레딧을 충전합니다.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-num">3</div>
+                            <div class="step-body">
+                                <div class="step-title">API 키 생성</div>
+                                <div class="step-desc">
+                                    [API Keys] 메뉴로 이동하여 <strong>[+ Create Key]</strong>를 클릭하고 키를 생성합니다.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-num">4</div>
+                            <div class="step-body">
+                                <div class="step-title">WithAvis에 등록</div>
+                                <div class="step-desc">
+                                    <code>sk-ant-...</code> 형태의 키를 복사하여 WithAvis 확장 팝업의 [Claude API Key]에 붙여넣습니다.
+                                </div>
+                                <div class="step-code-box"><i class="fa-solid fa-key"></i> 형식: sk-ant-api03-*****************************</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="spec-box">
+                        <h4><i class="fa-solid fa-microchip"></i> WithAvis 권장 Claude 모델</h4>
+                        <table class="spec-table">
+                            <thead>
+                                <tr>
+                                    <th>모델명</th>
+                                    <th>API 식별자</th>
+                                    <th>특징 및 용도</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Claude 3.7 Sonnet</strong></td>
+                                    <td><span class="model-tag">claude-3-7-sonnet-20250219</span></td>
+                                    <td>하이브리드 추론 엔진 탑재 최신 플래그십 (코드 분석, 정밀 요약)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Claude 3.5 Haiku</strong></td>
+                                    <td><span class="model-tag">claude-3-5-haiku-20241022</span></td>
+                                    <td>경제적인 비용과 빠른 응답 속도</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 4. OpenCode Zen Guide Panel -->
+                <div class="maker-panel" id="panel-opencode">
+                    <div class="maker-overview">
+                        <div class="overview-info">
+                            <h3><img src="assets/opencode.png" alt="OpenCode" style="width:24px; vertical-align:middle; border-radius:4px;"> OpenCode Zen</h3>
+                            <p>OpenCode Zen 플랫폼 및 OpenAI API 스펙과 호환되는 엔드포인트를 연결하여 다양한 맞춤형 AI 모델을 사용할 수 있습니다.</p>
+                        </div>
+                        <a href="https://opencode.ai/" target="_blank" rel="noopener noreferrer" class="btn-portal">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> OpenCode 바로가기
+                        </a>
+                    </div>
+
+                    <div class="step-list">
+                        <div class="step-card">
+                            <div class="step-num">1</div>
+                            <div class="step-body">
+                                <div class="step-title">OpenCode 포털 접속 및 로그인</div>
+                                <div class="step-desc">
+                                    <a href="https://opencode.ai/" target="_blank" rel="noopener noreferrer" style="color:#4f46e5; font-weight:600;">opencode.ai</a> 또는 호환 포털에 접속하여 로그인합니다.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-num">2</div>
+                            <div class="step-body">
+                                <div class="step-title">API Keys 메뉴에서 키 발급</div>
+                                <div class="step-desc">
+                                    대시보드의 [API Keys] 섹션에서 새 Secret Key를 발급받습니다.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-num">3</div>
+                            <div class="step-body">
+                                <div class="step-title">WithAvis에 등록 및 모델 설정</div>
+                                <div class="step-desc">
+                                    발급된 API Key를 WithAvis 팝업의 <strong>[OpenCode Zen]</strong> 엔진 항목에 입력합니다.
+                                </div>
+                                <div class="step-code-box"><i class="fa-solid fa-key"></i> 형식: zen-*** 또는 sk-***</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WithAvis 3-Step Setup Banner -->
+                <div class="register-guide-card">
+                    <h3><i class="fa-solid fa-circle-play"></i> WithAvis에 키를 등록하는 초간단 3단계</h3>
+                    <p>API 키를 복사하셨다면, 브라우저에서 단 10초 만에 설정을 완료할 수 있습니다.</p>
+                    <div class="register-steps-grid">
+                        <div class="reg-step-item">
+                            <span class="reg-num">STEP 01</span>
+                            <h5>확장 프로그램 아이콘 클릭</h5>
+                            <p>브라우저 우측 상단의 퍼즐/WithAvis 아이콘을 클릭하여 설정 팝업을 엽니다.</p>
+                        </div>
+                        <div class="reg-step-item">
+                            <span class="reg-num">STEP 02</span>
+                            <h5>AI 엔진 선택 및 키 붙여넣기</h5>
+                            <p>원하는 AI 엔진(Gemini, Cerebras 등)을 고르고 복사한 키를 붙여넣습니다.</p>
+                        </div>
+                        <div class="reg-step-item">
+                            <span class="reg-num">STEP 03</span>
+                            <h5>Alt + J 로 즉시 사용</h5>
+                            <p>어느 웹페이지에서든 <kbd style="background:#334155; color:#fff; border:none; padding:2px 6px; border-radius:4px;">Alt + J</kbd> 를 누르면 AI 비서가 즉시 작동합니다!</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -420,6 +598,27 @@
     <script src="site-nav.js"></script>
     <!-- Script -->
     <script src="script.js"></script>
+    <!-- Maker Tab Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.maker-tab-btn');
+            const panels = document.querySelectorAll('.maker-panel');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const maker = tab.getAttribute('data-maker');
+                    tabs.forEach(t => t.classList.remove('active'));
+                    panels.forEach(p => p.classList.remove('active'));
+
+                    tab.classList.add('active');
+                    const targetPanel = document.getElementById('panel-' + maker);
+                    if (targetPanel) {
+                        targetPanel.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
