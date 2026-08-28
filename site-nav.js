@@ -17,6 +17,7 @@
         { href: anchor('demo'), text: '인터랙티브 데모' },
         { href: anchor('why'), text: '브라우징 편의성' },
         { href: anchor('security'), text: '보안 & 프라이버시' },
+        { href: 'api-guide.html', text: 'API 발급 가이드' },
         { href: 'changelog.html', text: '업데이트 노트' },
         { href: 'privacy.html', text: '개인정보처리방침' },
     ];
