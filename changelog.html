@@ -27,9 +27,88 @@
     <link rel="icon" type="image/png" href="assets/icon48.png">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=8.15.52">
 
     <style>
+        /* ── 푸터 명시적 정렬 Fallback (캐시 불일치 방지) ── */
+        .footer {
+            padding: 36px 0;
+            border-top: 1px solid #e2e8f0;
+            background: #ffffff;
+            width: 100%;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .footer-left .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .footer-left .brand-logo-img {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+        }
+
+        .footer-left .logo-text {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #0f172a;
+        }
+
+        .footer-left p {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin: 0;
+        }
+
+        .footer-right {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .footer-right a {
+            text-decoration: none;
+            color: #64748b;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .footer-right a:hover {
+            color: #d97706;
+        }
+
+        .footer-version-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #d97706;
+            padding: 2px 8px;
+            background: #fef3c7;
+            border: 1px solid #fde68a;
+            border-radius: 12px;
+        }
+
         /* ── 정갈하고 클래식한 릴리즈 페이지 전용 스타일 ── */
         .changelog-section {
             padding: 130px 0 90px;
