@@ -27,7 +27,7 @@
     <link rel="icon" type="image/png" href="assets/icon48.png">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=8.15.55">
+    <link rel="stylesheet" href="styles.css?v=8.15.56">
 
     <style>
         /* ── WithAvis 프라이버시/글래스모피즘 테마 완벽 통일 ── */
@@ -430,7 +430,7 @@
                         <h1>업데이트 노트</h1>
                         <p>WithAvis 확장 프로그램의 지속적인 엔지니어링 개선 및 기능 업데이트 기록입니다.</p>
                         <div class="changelog-meta">
-                            <i class="fa-solid fa-clock-rotate-left"></i> 최신 릴리즈 v8.15.55 기준
+                            <i class="fa-solid fa-clock-rotate-left"></i> 최신 릴리즈 v8.15.56 기준
                         </div>
                     </div>
                     <div>
@@ -443,8 +443,57 @@
                 <!-- Accordion List -->
                 <div class="accordion-list" id="changelogList">
 
-                    <!-- Version v8.15.54 (Latest) -->
+                    <!-- Version v8.15.55 (Latest) -->
                     <article class="accordion-card open">
+                        <div class="accordion-header">
+                            <div class="accordion-header-left">
+                                <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                                <div class="version-title">
+                                    <span class="version-tag">v8.15.55</span>
+                                    <span class="version-summary">AI Provider & 모델 관리 전용 환경설정 센터 도입 & 팝업 퀵 제어 최적화</span>
+                                </div>
+                            </div>
+                            <div class="accordion-header-right">
+                                <span class="date-badge">2026.08.31</span>
+                                <span class="status-pill latest">Latest</span>
+                            </div>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body-inner">
+                                <div class="release-intro">
+                                    브라우저 전체 탭에서 동작하는 풀스크린 환경설정 센터(WithAvis Settings)를 새롭게 구축하여, 다양한 AI Provider와 커스텀 모델(Ollama, LM Studio 등)의 추가·삭제·순서 관리, 실시간 연결 테스트 및 모델 자동 동기화를 손쉽게 제어할 수 있도록 개편했습니다. 아울러 팝업을 초슬림 퀵 제어 센터로 정돈하고 웹페이지 챗봇과의 실시간 스토리지 동기화 파이프라인을 완성했습니다.
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-sparkles"></i> 전용 환경설정 센터(WithAvis Settings) 신설</div>
+                                    <ul class="change-list">
+                                        <li><strong>다양한 AI Provider 통합 관리</strong>: Google Gemini, OpenCode Zen, Anthropic Claude, Cerebras는 물론 사용자 정의 커스텀 Provider(Ollama, LM Studio, 사내 게이트웨이 등)를 손쉽게 추가·삭제하고 드래그 앤 드롭으로 순서를 정렬하는 전용 관리 화면 제공</li>
+                                        <li><strong>실시간 연결 테스트 & 모델 목록 자동 로드</strong>: 엔드포인트 헬스체크 및 API 키 유효성을 즉시 검증하는 핑(Ping) 테스트와, 서버에서 지원하는 최신 모델 목록을 원클릭으로 조회하여 동기화하는 자동화 기능 구현</li>
+                                        <li><strong>세부 모델 커스텀 관리</strong>: 각 Provider별 모델 추가, 수정, 삭제 및 기본 모델 지정 지원</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-sliders"></i> 팝업(Quick Menu) 초슬림 개편 & 무중단 실시간 동기화</div>
+                                    <ul class="change-list">
+                                        <li><strong>핵심 기능 중심의 미니멀 팝업</strong>: 번잡했던 중복 폼을 전면 정리하고, 주요 기능 토글 4종(WithAvis 기능 활성화, 대화 내용 유지, 광고 제거, 우클릭 제한 해제)과 환경설정 바로가기 버튼으로 깔끔하게 경량화</li>
+                                        <li><strong>웹페이지 새로고침 없는 실시간 반영</strong>: 환경설정에서 변경한 Provider 및 모델 구성이 웹페이지 내 활성화된 챗봇 위젯의 드롭다운 목록에 즉각 반영되는 무중단 스토리지 감지 파이프라인 구축</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label perf"><i class="fa-solid fa-shield-check"></i> 인증 및 네트워크 보안 파이프라인 강화</div>
+                                    <ul class="change-list">
+                                        <li><strong>안전한 복원 및 키 보존</strong>: 기본 설정 복원 시 등록된 API Key는 안전하게 유지하면서 초기 권장 구성으로 깔끔하게 복구</li>
+                                        <li><strong>다중 프로토콜 스트리밍 통신 최적화</strong>: Anthropic Claude, OpenCode Zen 등 다중 프로토콜에 대한 브라우저 직접 스트리밍 호출 최적화 및 안정성 강화</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Version v8.15.54 -->
+                    <article class="accordion-card">
                         <div class="accordion-header">
                             <div class="accordion-header-left">
                                 <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
@@ -455,7 +504,7 @@
                             </div>
                             <div class="accordion-header-right">
                                 <span class="date-badge">2026.08.29</span>
-                                <span class="status-pill latest">Latest</span>
+                                <span class="status-pill stable">Stable</span>
                             </div>
                         </div>
                         <div class="accordion-content">

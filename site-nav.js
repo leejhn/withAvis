@@ -15,7 +15,7 @@
     const navLinks = [
         { href: anchor('features'), text: '주요 기능' },
         { href: anchor('why'), text: '브라우징 편의성' },
-        { href: anchor('api-guide'), text: 'API 발급 가이드' },
+        { href: anchor('api-guide'), text: 'API Key 발급 가이드' },
         { href: 'changelog.html', text: '업데이트 노트' },
         { href: 'privacy.html', text: '개인정보처리방침' },
     ];
@@ -68,7 +68,7 @@
                 <div class="logo">
                     <span class="logo-icon"><img src="assets/icon48.png" alt="WithAvis Logo" class="brand-logo-img"></span>
                     <span class="logo-text">WithAvis</span>
-                    <span class="version-badge footer-version-badge" id="appVersionBadge">v8.15.55</span>
+                    <span class="version-badge footer-version-badge" id="appVersionBadge">v8.15.56</span>
                 </div>
                 <p>© 2026 WithAvis Project. All rights reserved.</p>
             </div>

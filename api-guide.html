@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WithAvis - API 키 발급 가이드</title>
-    <meta name="description" content="Google Gemini, Cerebras, Anthropic Claude 등 주요 AI 메이커의 무료/유료 API 키를 1분 만에 발급받아 WithAvis에 연동하는 상세 가이드">
+    <title>WithAvis - API Key 발급 가이드</title>
+    <meta name="description" content="Google Gemini, Cerebras, Anthropic Claude 등 주요 AI Provider의 무료/유료 API 키를 1분 만에 발급받아 WithAvis에 연동하는 상세 가이드">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="WithAvis - API 키 발급 가이드">
+    <meta property="og:title" content="WithAvis - API Key 발급 가이드">
     <meta property="og:description" content="1분 만에 무료 API 키를 발급받아 WithAvis 브라우저 AI 비서를 사용해 보세요.">
     <meta property="og:image" content="assets/hero.png">
 
@@ -27,7 +27,7 @@
     <link rel="icon" type="image/png" href="assets/icon48.png">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=8.15.55">
+    <link rel="stylesheet" href="styles.css?v=8.15.56">
 
     <style>
         /* ── API 가이드 전용 스타일 ── */
@@ -96,7 +96,7 @@
             color: #1e1b4b;
         }
 
-        /* ── 메이커 전환 탭 ── */
+        /* ── Provider 전환 탭 ── */
         .maker-tabs {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -177,7 +177,7 @@
             border: 1px solid #e2e8f0;
         }
 
-        /* ── 메이커 상세 가이드 패널 ── */
+        /* ── Provider 상세 가이드 패널 ── */
         .maker-panel {
             display: none;
         }
@@ -488,8 +488,8 @@
 
                 <!-- Header -->
                 <div class="guide-header">
-                    <h1>AI 메이커별 <span class="gradient-text">API 키 발급 가이드</span></h1>
-                    <p>WithAvis는 개인 API Key를 사용하여 중계 서버 없이 최신 AI 모델과 1:1로 직접 스트리밍 통신합니다. 원하시는 AI 메이커에서 지원하는 모델들을 직접 지정하여 사용이 가능합니다.</p>
+                    <h1><span class="gradient-text">API Key 발급 가이드</span></h1>
+                    <p>WithAvis는 개인 API Key를 사용하여 중계 서버 없이 최신 AI 모델과 1:1로 직접 스트리밍 통신합니다.</p>
 
                     <div class="privacy-alert-banner">
                         <i class="fa-solid fa-shield-check"></i>
@@ -849,18 +849,36 @@
             const tabs = document.querySelectorAll('.maker-tab-btn');
             const panels = document.querySelectorAll('.maker-panel');
 
-            tabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    const maker = tab.getAttribute('data-maker');
+            function activateTabByMaker(maker) {
+                if (!maker) return;
+                const cleanMaker = maker.replace(/^#/, '').toLowerCase();
+                const matchedTab = document.querySelector(`.maker-tab-btn[data-maker="${cleanMaker}"]`);
+                if (matchedTab) {
                     tabs.forEach(t => t.classList.remove('active'));
                     panels.forEach(p => p.classList.remove('active'));
-
-                    tab.classList.add('active');
-                    const targetPanel = document.getElementById(`panel-${maker}`);
+                    matchedTab.classList.add('active');
+                    const targetPanel = document.getElementById(`panel-${cleanMaker}`);
                     if (targetPanel) {
                         targetPanel.classList.add('active');
                     }
+                }
+            }
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const maker = tab.getAttribute('data-maker');
+                    activateTabByMaker(maker);
+                    if (history.replaceState) {
+                        history.replaceState(null, null, `#${maker}`);
+                    }
                 });
+            });
+
+            if (window.location.hash) {
+                activateTabByMaker(window.location.hash);
+            }
+            window.addEventListener('hashchange', () => {
+                activateTabByMaker(window.location.hash);
             });
         });
     </script>
