@@ -68,7 +68,7 @@
                 <div class="logo">
                     <span class="logo-icon"><img src="assets/icon48.png" alt="WithAvis Logo" class="brand-logo-img"></span>
                     <span class="logo-text">WithAvis</span>
-                    <span class="version-badge footer-version-badge" id="appVersionBadge">v8.15.56</span>
+                    <span class="version-badge footer-version-badge" id="appVersionBadge">v9.1.2</span>
                 </div>
                 <p>© 2026 WithAvis Project. All rights reserved.</p>
             </div>
