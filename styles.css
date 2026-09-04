@@ -192,19 +192,23 @@ kbd {
     top: 0;
     width: 100%;
     z-index: 100;
-    background: rgba(255, 255, 255, 0.52);
-    -webkit-backdrop-filter: blur(10px) saturate(180%);
-    backdrop-filter: blur(10px) saturate(180%);
+    background: rgba(255, 255, 255, 0.45);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    backdrop-filter: blur(12px) saturate(180%);
     border-bottom: 1px solid rgba(226, 232, 240, 0.65);
     box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03);
     transition: background 0.3s ease;
 }
 
+.navbar .nav-container,
 .nav-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 68px;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 36px;
 }
 
 .logo {
