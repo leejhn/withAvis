@@ -1959,6 +1959,8 @@ kbd {
     display: flex;
     align-items: center;
     gap: 16px;
+    flex: 1;
+    min-width: 0;
 }
 
 .toggle-icon {
@@ -1993,6 +1995,8 @@ kbd {
     align-items: center;
     gap: 12px;
     flex-wrap: wrap;
+    flex: 1;
+    min-width: 0;
 }
 
 .version-tag {
@@ -2001,18 +2005,24 @@ kbd {
     font-weight: 800;
     color: #f1f5f9;
     letter-spacing: -0.01em;
+    flex-shrink: 0;
 }
 
 .version-summary {
     font-size: 0.98rem;
     font-weight: 500;
     color: #94a3b8;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    line-height: 1.4;
 }
 
 .accordion-header-right {
     display: flex;
     align-items: center;
     gap: 12px;
+    flex-shrink: 0;
+    margin-left: 12px;
 }
 
 .date-badge {
