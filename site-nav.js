@@ -6,6 +6,12 @@
 (function () {
     'use strict';
 
+    // ── 테마 즉시 복원 (FOUC 방지) ──
+    const savedTheme = localStorage.getItem('withavis-theme');
+    if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+
     const currentPage = location.pathname.split('/').pop() || 'index.html';
     const isIndex = currentPage === 'index.html' || currentPage === '' || currentPage === 'withAvis';
 
@@ -44,8 +50,12 @@
                 ${linksHtml}
             </nav>
             <div class="nav-actions">
-                <a href="${WEBSTORE_URL}" target="_blank" class="btn btn-primary">
-                    <i class="fa-brands fa-chrome"></i> 웹스토어 설치
+                <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="테마 전환">
+                    <i class="fa-solid fa-moon theme-icon-dark"></i>
+                    <i class="fa-solid fa-sun theme-icon-light"></i>
+                </button>
+                <a href="${WEBSTORE_URL}" target="_blank" class="nav-store-link">
+                    <i class="fa-brands fa-chrome"></i> Chrome 웹스토어
                 </a>
             </div>
         </div>
@@ -60,6 +70,7 @@
         const footerLinksHtml = navLinks.map(link =>
             `<a href="${link.href}">${link.text}</a>`
         ).join('\n                ');
+
 
         target.outerHTML = `
     <footer class="footer">
@@ -78,6 +89,21 @@
             </div>
         </div>
     </footer>`;
+    }
+
+    // ── Theme Toggle ──
+    function bindThemeToggle() {
+        const btn = document.getElementById('themeToggleBtn');
+        if (!btn) return;
+
+        btn.addEventListener('click', () => {
+            const html = document.documentElement;
+            const isCurrentlyLight = html.getAttribute('data-theme') === 'light';
+            const newTheme = isCurrentlyLight ? 'dark' : 'light';
+
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('withavis-theme', newTheme);
+        });
     }
 
     // ── Smooth Scroll for Index Anchors ──
@@ -99,6 +125,7 @@
     function init() {
         renderNavbar();
         renderFooter();
+        bindThemeToggle();
         bindSmoothScroll();
     }
 
@@ -109,3 +136,4 @@
         init();
     }
 })();
+
