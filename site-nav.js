@@ -122,9 +122,25 @@
         });
     }
 
+    // ── 런타임 최신 버전 동적 일치 ──
+    function syncDynamicVersion() {
+        const latestTag = document.querySelector('.accordion-card .version-tag')?.textContent?.trim();
+        if (latestTag) {
+            const footerBadge = document.getElementById('appVersionBadge');
+            if (footerBadge && footerBadge.textContent !== latestTag) {
+                footerBadge.textContent = latestTag;
+            }
+            const changelogMeta = document.querySelector('.changelog-meta');
+            if (changelogMeta) {
+                changelogMeta.innerHTML = `<i class="fa-solid fa-clock-rotate-left"></i> 최신 릴리즈 ${latestTag} 기준`;
+            }
+        }
+    }
+
     function init() {
         renderNavbar();
         renderFooter();
+        syncDynamicVersion();
         bindThemeToggle();
         bindSmoothScroll();
     }
