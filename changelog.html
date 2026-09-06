@@ -27,7 +27,7 @@
     <link rel="icon" type="image/png" href="assets/icon48.png">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=9.1.3_1">
+    <link rel="stylesheet" href="styles.css?v=9.1.5_1">
 </head>
 
 <body>
@@ -50,7 +50,7 @@
                         <h1>업데이트 노트</h1>
                         <p>WithAvis 확장 프로그램의 지속적인 엔지니어링 개선 및 기능 업데이트 기록입니다.</p>
                         <div class="changelog-meta">
-                            <i class="fa-solid fa-clock-rotate-left"></i> 최신 릴리즈 v9.1.3 기준
+                            <i class="fa-solid fa-clock-rotate-left"></i> 최신 릴리즈 v9.1.5 기준
                         </div>
                     </div>
                     <div>
@@ -63,8 +63,56 @@
                 <!-- Accordion List -->
                 <div class="accordion-list" id="changelogList">
 
-                    <!-- Version v9.1.2 (Latest) -->
+                    <!-- Version v9.1.4 (Latest) -->
                     <article class="accordion-card open">
+                        <div class="accordion-header">
+                            <div class="accordion-header-left">
+                                <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                                <div class="version-title">
+                                    <span class="version-tag">v9.1.4</span>
+                                    <span class="version-summary">YouTube 영상 집중 요약 엔진 고도화 & 자막·챕터 다중 분석 파이프라인 탑재</span>
+                                </div>
+                            </div>
+                            <div class="accordion-header-right">
+                                <span class="date-badge">2026.09.06</span>
+                                <span class="status-pill latest">Latest</span>
+                            </div>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body-inner">
+                                <div class="release-intro">
+                                    YouTube 영상 시청 중 요약 요청 시 주변 추천 동영상 목록 등 부수적 노이즈를 완전히 배제하고 현재 재생 중인 단일 영상의 핵심 콘텐츠에만 집중하도록 분석 파이프라인을 전면 개편했습니다. 브라우저 메인 컨텍스트 연동과 스크립트 패널 다중 감지를 통해 실제 발화 자막 수집력을 대폭 끌어올렸으며, 설명란의 개인 홍보·스폰서 문구에 매몰되지 않고 영상 본연의 주제를 정확히 분석하도록 요약 지능을 강화했습니다.
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-video"></i> YouTube 영상 집중 분석 & 추천 목록 노이즈 원천 차단</div>
+                                    <ul class="change-list">
+                                        <li><strong>현재 재생 단일 영상 타깃팅</strong>: 동영상 페이지 내 수십~수백 개의 사이드바 추천 동영상 목록을 사전 필터링하여, 현재 시청 중인 단일 영상의 정보만 정밀하게 추출</li>
+                                        <li><strong>타임라인 및 챕터 구조화</strong>: 영상의 실제 전개 흐름을 보여주는 타임스탬프와 챕터 구성을 체계적으로 수집하여 요약의 구조적 완성도 향상</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-closed-captioning"></i> 다중 계층 자막(Transcript) 추출 파이프라인 구축</div>
+                                    <ul class="change-list">
+                                        <li><strong>실시간 플레이어 자막 브릿지</strong>: 동적 페이지 전환(SPA) 환경에서도 최신 영상의 공식/자동 생성 자막 트랙을 안정적으로 획득하는 브라우저 연동 파이프라인 탑재</li>
+                                        <li><strong>스크립트 패널 및 트랙 다중 감지</strong>: 웹페이지 내 스크립트 패널 자동 탐색과 HTML5 미디어 트랙 다중 파싱을 결합하여 실제 음성 발화 텍스트 수집 성공률 극대화</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label fix"><i class="fa-solid fa-filter-circle-xmark"></i> 설명란 홍보 문구 필터링 및 요약 왜곡 방지</div>
+                                    <ul class="change-list">
+                                        <li><strong>스폰서 및 개인 홍보 노이즈 격리</strong>: 유튜버의 개인 사업, 강의, 외부 커뮤니티 가입 유도 등 영상 본문과 무관한 설명란 상단 홍보 문구에 AI가 현혹되는 현상 전면 차단</li>
+                                        <li><strong>영상 본래 주제 중심 심층 분석</strong>: 영상 제목과 실제 화면 콘텐츠, 챕터를 최우선 기준으로 분석하며, 자막이 없는 경우에도 지능형 웹 검색을 병행하여 다루는 기술/도구의 실체를 정확히 요약</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Version v9.1.2 -->
+                    <article class="accordion-card">
                         <div class="accordion-header">
                             <div class="accordion-header-left">
                                 <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
@@ -75,7 +123,7 @@
                             </div>
                             <div class="accordion-header-right">
                                 <span class="date-badge">2026.09.05</span>
-                                <span class="status-pill latest">Latest</span>
+                                <span class="status-pill stable">Stable</span>
                             </div>
                         </div>
                         <div class="accordion-content">
