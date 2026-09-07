@@ -130,10 +130,6 @@
             if (footerBadge && footerBadge.textContent !== latestTag) {
                 footerBadge.textContent = latestTag;
             }
-            const changelogMeta = document.querySelector('.changelog-meta');
-            if (changelogMeta) {
-                changelogMeta.innerHTML = `<i class="fa-solid fa-clock-rotate-left"></i> 최신 릴리즈 ${latestTag} 기준`;
-            }
         }
     }
 
