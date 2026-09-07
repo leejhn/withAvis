@@ -27,7 +27,7 @@
     <link rel="icon" type="image/png" href="assets/icon48.png">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=9.1.7">
+    <link rel="stylesheet" href="styles.css?v=9.1.8">
 </head>
 
 <body>
@@ -50,7 +50,7 @@
                         <h1>업데이트 노트</h1>
                         <p>WithAvis 확장 프로그램의 지속적인 엔지니어링 개선 및 기능 업데이트 기록입니다.</p>
                         <div class="changelog-meta">
-                            <i class="fa-solid fa-clock-rotate-left"></i> 최신 릴리즈 v9.1.7 기준
+                            <i class="fa-solid fa-clock-rotate-left"></i> 최신 릴리즈 v9.1.8 기준
                         </div>
                     </div>
                     <div>
@@ -63,8 +63,49 @@
                 <!-- Accordion List -->
                 <div class="accordion-list" id="changelogList">
 
-                    <!-- Version v9.1.7 (Latest) -->
+                    <!-- Version v9.1.8 (Latest) -->
                     <article class="accordion-card open">
+                        <div class="accordion-header">
+                            <div class="accordion-header-left">
+                                <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                                <div class="version-title">
+                                    <span class="version-tag">v9.1.8</span>
+                                    <span class="version-summary">AI 사고(Thinking) 시각화 전면 개편 & 부드러운 페이드아웃 전환 탑재</span>
+                                </div>
+                            </div>
+                            <div class="accordion-header-right">
+                                <span class="date-badge">2026.09.07</span>
+                                <span class="status-pill latest">Latest</span>
+                            </div>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body-inner">
+                                <div class="release-intro">
+                                    질문 후 AI가 답변을 생성하기까지의 대기 시간을 직관적이면서도 시각적으로 편안하게 인지할 수 있도록 인터랙션 디자인을 대폭 개편했습니다. 상단 헤더의 실시간 스트림 빔과 반응형 타이핑 인디케이터를 도입하였으며, 답변 청크 도착 시 급격한 끊김 없이 부드럽게 감쇄(Fade-Out)되는 모션 트랜지션을 적용하여 한층 고급스러운 사용자 경험을 제공합니다.
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-sparkles"></i> AI 사고(Thinking) 인터랙션 & 상태 시각화 고도화</div>
+                                    <ul class="change-list">
+                                        <li><strong>상단 헤더 스트림 빔 탑재</strong>: 질문 전송 즉시 패널 상단에 은은하고 유려하게 흐르는 라이트 빔을 표시하여 AI의 실시간 추론 상태를 한눈에 직관적으로 인지 가능</li>
+                                        <li><strong>다이내믹 타이핑 인디케이터</strong>: 쫀득한 점프 바운스 모션과 텍스트 쉬머(Shimmer) 효과를 결합하여 답변 대기 중 시각적 피드백 명확화</li>
+                                        <li><strong>모던 인디고 톤 밸런스</strong>: 눈의 피로를 유발하는 과도한 다색 채도를 절제하고 차분한 소프트 인디고 & 스카이블루 계열로 톤온톤 정돈</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label perf"><i class="fa-solid fa-wand-magic-sparkles"></i> 자연스러운 페이드아웃(Fade-Out) 감쇄 전환</div>
+                                    <ul class="change-list">
+                                        <li><strong>응답 도착 시 부드러운 전환</strong>: 첫 응답 텍스트가 도착하거나 처리가 끝날 때 대기 요소가 갑작스럽게 사라지지 않고 0.35초~0.8초 동안 우아하게 페이드아웃</li>
+                                        <li><strong>패널 오로라 및 외곽 글로우 호흡</strong>: 패널 전체의 은은한 배경 오로라 및 앰비언트 글로우가 자연스럽게 연결 및 사그라지도록 트랜지션 최적화</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Version v9.1.7 -->
+                    <article class="accordion-card">
                         <div class="accordion-header">
                             <div class="accordion-header-left">
                                 <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
@@ -75,7 +116,7 @@
                             </div>
                             <div class="accordion-header-right">
                                 <span class="date-badge">2026.09.06</span>
-                                <span class="status-pill latest">Latest</span>
+                                <span class="status-pill stable">Stable</span>
                             </div>
                         </div>
                         <div class="accordion-content">
@@ -692,7 +733,7 @@
         });
     </script>
     <!-- Shared Navigation -->
-    <script src="site-nav.js?v=9.1.7"></script>
+    <script src="site-nav.js?v=9.1.8"></script>
 </body>
 
 </html>
