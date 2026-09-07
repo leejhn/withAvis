@@ -63,8 +63,47 @@
                 <!-- Accordion List -->
                 <div class="accordion-list" id="changelogList">
 
-                    <!-- Version v9.1.8 (Latest) -->
+                    <!-- Version v9.1.9 (Latest) -->
                     <article class="accordion-card open">
+                        <div class="accordion-header">
+                            <div class="accordion-header-left">
+                                <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                                <div class="version-title">
+                                    <span class="version-tag">v9.1.9</span>
+                                    <span class="version-summary">팝업 스토어 링크 개선 & 사이트 버전 통일</span>
+                                </div>
+                            </div>
+                            <div class="accordion-header-right">
+                                <span class="date-badge">2026.09.08</span>
+                                <span class="status-pill latest">Latest</span>
+                            </div>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body-inner">
+                                <div class="release-intro">
+                                    확장 팝업 상단의 스토어 링크를 공식 WithAvis 홈페이지로 연결하도록 변경하고, parkingSite 전체 페이지(index, changelog, privacy, api-guide)에서 표시되는 버전 번호를 v9.1.9로 일관되게 통일했습니다.
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-sparkles"></i> 팝업 UI 개선</div>
+                                    <ul class="change-list">
+                                        <li><strong>스토어 링크 변경</strong>: 팝업 상단 링크가 Chrome 웹스토어 대신 WithAvis 공식 홈페이지(leejhn.github.io/withAvis)로 연결되도록 변경</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label fix"><i class="fa-solid fa-bug-slash"></i> 사이트 버전 정보 통일</div>
+                                    <ul class="change-list">
+                                        <li><strong>버전 불일치 해소</strong>: index.html, changelog.html, privacy.html, api-guide.html 간 표시 버전이 각각 달랐던 문제를 v9.1.9로 완전 통일</li>
+                                        <li><strong>런타임 버전 동기화</strong>: site-nav.js의 syncDynamicVersion()이 changelog 최신 항목으로부터 정확한 버전을 전파하도록 정합성 확보</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Version v9.1.8 -->
+                    <article class="accordion-card">
                         <div class="accordion-header">
                             <div class="accordion-header-left">
                                 <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
@@ -75,7 +114,6 @@
                             </div>
                             <div class="accordion-header-right">
                                 <span class="date-badge">2026.09.07</span>
-                                <span class="status-pill latest">Latest</span>
                             </div>
                         </div>
                         <div class="accordion-content">
