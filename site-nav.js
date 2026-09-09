@@ -6,6 +6,9 @@
 (function () {
     'use strict';
 
+    // ── 단일 버전 정의 (Single Source of Truth) ──
+    const APP_VERSION = 'v9.1.10';
+
     // ── 테마 즉시 복원 (FOUC 방지) ──
     const savedTheme = localStorage.getItem('withavis-theme');
     if (savedTheme) {
@@ -78,8 +81,7 @@
             <div class="footer-left">
                 <div class="logo">
                     <span class="logo-icon"><img src="assets/icon48.png" alt="WithAvis Logo" class="brand-logo-img"></span>
-                    <span class="logo-text">WithAvis</span>
-                    <span class="version-badge footer-version-badge" id="appVersionBadge">v9.1.10</span>
+                    <span class="version-badge footer-version-badge" id="appVersionBadge">${APP_VERSION}</span>
                 </div>
                 <p>© 2026 WithAvis Project. All rights reserved.</p>
             </div>
@@ -122,18 +124,15 @@
         });
     }
 
-    // ── 런타임 최신 버전 동적 일치 ──
+    // ── 런타임 최신 버전 일치 (site-nav.js의 APP_VERSION을 페이지 요소에 단방향 전파) ──
     function syncDynamicVersion() {
-        const latestTag = document.querySelector('.accordion-card .version-tag')?.textContent?.trim();
-        if (latestTag) {
-            const footerBadge = document.getElementById('appVersionBadge');
-            if (footerBadge && footerBadge.textContent !== latestTag) {
-                footerBadge.textContent = latestTag;
-            }
-            const changelogMeta = document.querySelector('.changelog-meta');
-            if (changelogMeta) {
-                changelogMeta.innerHTML = `<i class="fa-solid fa-clock-rotate-left"></i> 최신 릴리즈 ${latestTag} 기준`;
-            }
+        const changelogMeta = document.querySelector('.changelog-meta');
+        if (changelogMeta) {
+            changelogMeta.innerHTML = `<i class="fa-solid fa-clock-rotate-left"></i> 최신 릴리즈 ${APP_VERSION} 기준`;
+        }
+        const firstCardTag = document.querySelector('.accordion-card:first-of-type .version-tag');
+        if (firstCardTag && firstCardTag.textContent.trim() !== APP_VERSION) {
+            firstCardTag.textContent = APP_VERSION;
         }
     }
 
