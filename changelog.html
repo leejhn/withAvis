@@ -70,7 +70,7 @@
                                 <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
                                 <div class="version-title">
                                     <span class="version-tag">v9.1.10</span>
-                                    <span class="version-summary">사내 ATLAS 연동 안정성 강화 & 중첩 iframe 출처 하이라이팅 파이프라인 탑재</span>
+                                    <span class="version-summary">대화 세션 안정성 강화 & 중첩 iframe 출처 하이라이팅 파이프라인 탑재</span>
                                 </div>
                             </div>
                             <div class="accordion-header-right">
@@ -81,23 +81,31 @@
                         <div class="accordion-content">
                             <div class="accordion-body-inner">
                                 <div class="release-intro">
-                                    사내 AI 모델(ATLAS)과의 안정적인 통신을 위해 대화 세션 자동 발급 및 다중 안전장치를 구축하고, 그룹웨어·웹메일 등 복잡한 중첩 프레임 환경에서도 AI 요약 답변의 원문 위치를 정확히 추적·하이라이트하는 탐색 엔진을 고도화했습니다.
+                                    대화 세션의 안정적인 통신을 위해 대화 세션 자동 발급 및 다중 안전장치를 구축하고, 그룹웨어·웹메일 등 복잡한 중첩 프레임 환경에서도 AI 요약
+                                    답변의 원문 위치를 정확히 추적·하이라이트하는 탐색 엔진을 고도화했습니다.
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label fix"><i class="fa-solid fa-shield-halved"></i> 사내 ATLAS 연동 안정성 & 대화 세션 자동 복구</div>
+                                    <div class="group-label fix"><i class="fa-solid fa-shield-halved"></i> 대화 세션 안정성 &
+                                        대화 세션 자동 복구</div>
                                     <ul class="change-list">
-                                        <li><strong>세션 ID 부재 시 즉시 자동 생성</strong>: 모델 전환이나 초기화 시 발생할 수 있는 세션 ID 누락을 프론트엔드와 백그라운드 양방향에서 감지하여 자동으로 새 세션을 발급, 대화 단절 원천 차단</li>
-                                        <li><strong>프로토콜 상태 동기화 정밀화</strong>: 모델 셀렉트 변경 시 세션 준비 상태 플래그를 실제 세션 보유 여부와 엄격히 일치시켜 오동작 방지</li>
+                                        <li><strong>세션 ID 부재 시 즉시 자동 생성</strong>: 모델 전환이나 초기화 시 발생할 수 있는 세션 ID 누락을
+                                            프론트엔드와 백그라운드 양방향에서 감지하여 자동으로 새 세션을 발급, 대화 단절 원천 차단</li>
+                                        <li><strong>프로토콜 상태 동기화 정밀화</strong>: 모델 셀렉트 변경 시 세션 준비 상태 플래그를 실제 세션 보유 여부와 엄격히
+                                            일치시켜 오동작 방지</li>
                                     </ul>
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label feat"><i class="fa-solid fa-highlighter"></i> 중첩(Nested) 및 다중 iframe 원문 하이라이팅 지원</div>
+                                    <div class="group-label feat"><i class="fa-solid fa-highlighter"></i> 중첩(Nested) 및
+                                        다중 iframe 원문 하이라이팅 지원</div>
                                     <ul class="change-list">
-                                        <li><strong>재귀적 Deep 프레임 탐색</strong>: 2단계 이상 깊게 중첩된 복합 프레임 내부까지 재귀적으로 파고들어 원문 블록 요소를 정밀하게 추적</li>
-                                        <li><strong>프레임 체인 좌표 누적 보정</strong>: 모든 조상 프레임의 뷰포트 오프셋을 누적 계산하여 오버레이 위치를 정확히 일치시키고 부드러운 단계적 스크롤 이동 지원</li>
-                                        <li><strong>프레임 간 안전 브로드캐스팅</strong>: 다중 프레임 환경에서도 각 프레임이 자기 내부 요소를 감지하여 최적의 오버레이를 렌더링하도록 통신 파이프라인 탑재</li>
+                                        <li><strong>재귀적 Deep 프레임 탐색</strong>: 2단계 이상 깊게 중첩된 복합 프레임 내부까지 재귀적으로 파고들어 원문 블록
+                                            요소를 정밀하게 추적</li>
+                                        <li><strong>프레임 체인 좌표 누적 보정</strong>: 모든 조상 프레임의 뷰포트 오프셋을 누적 계산하여 오버레이 위치를 정확히
+                                            일치시키고 부드러운 단계적 스크롤 이동 지원</li>
+                                        <li><strong>프레임 간 안전 브로드캐스팅</strong>: 다중 프레임 환경에서도 각 프레임이 자기 내부 요소를 감지하여 최적의
+                                            오버레이를 렌더링하도록 통신 파이프라인 탑재</li>
                                     </ul>
                                 </div>
                             </div>
@@ -111,7 +119,8 @@
                                 <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
                                 <div class="version-title">
                                     <span class="version-tag">v9.1.9</span>
-                                    <span class="version-summary">마크다운 데이터 테이블(Table) 반응형 레이아웃 뷰어 & 사이드바 패널 지능형 최대화</span>
+                                    <span class="version-summary">마크다운 데이터 테이블(Table) 반응형 레이아웃 뷰어 & 사이드바 패널 지능형
+                                        최대화</span>
                                 </div>
                             </div>
                             <div class="accordion-header-right">
@@ -122,22 +131,30 @@
                         <div class="accordion-content">
                             <div class="accordion-body-inner">
                                 <div class="release-intro">
-                                    AI 응답 내 대용량 데이터 표(Table) 출력 시 좁은 화면에서도 가로 잘림 없이 열람할 수 있는 반응형 스크롤 래퍼를 적용하고, 위젯 최대화(Maximize) 시 화면 여백에 맞춰 자연스럽게 창을 확장하도록 사이드바 레이아웃 엔진을 개선했습니다.
+                                    AI 응답 내 대용량 데이터 표(Table) 출력 시 좁은 화면에서도 가로 잘림 없이 열람할 수 있는 반응형 스크롤 래퍼를 적용하고, 위젯
+                                    최대화(Maximize) 시 화면 여백에 맞춰 자연스럽게 창을 확장하도록 사이드바 레이아웃 엔진을 개선했습니다.
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label feat"><i class="fa-solid fa-table"></i> 마크다운 표 가로 스크롤 및 반응형 레이아웃 래퍼 탑재</div>
+                                    <div class="group-label feat"><i class="fa-solid fa-table"></i> 마크다운 표 가로 스크롤 및 반응형
+                                        레이아웃 래퍼 탑재</div>
                                     <ul class="change-list">
-                                        <li><strong>대용량 데이터 표 가로 스크롤</strong>: 열(Column)이 많은 복잡한 표 출력 시 패널 밖으로 글자가 삐져나가거나 잘리는 현상을 방지하는 독립 터치/마우스 가로 스크롤 래퍼 적용</li>
-                                        <li><strong>표 가독성 및 정렬 최적화</strong>: 헤더 고정 느낌의 구분선과 교차 배경 스타일을 적용하여 수치 비교 및 행 단위 식별성 강화</li>
+                                        <li><strong>대용량 데이터 표 가로 스크롤</strong>: 열(Column)이 많은 복잡한 표 출력 시 패널 밖으로 글자가
+                                            삐져나가거나 잘리는 현상을 방지하는 독립 터치/마우스 가로 스크롤 래퍼 적용</li>
+                                        <li><strong>표 가독성 및 정렬 최적화</strong>: 헤더 고정 느낌의 구분선과 교차 배경 스타일을 적용하여 수치 비교 및 행 단위
+                                            식별성 강화</li>
                                     </ul>
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label fix"><i class="fa-solid fa-up-right-and-down-left-from-center"></i> 사이드 패널 화면 동적 최대화(Maximize) 알고리즘 개선</div>
+                                    <div class="group-label fix"><i
+                                            class="fa-solid fa-up-right-and-down-left-from-center"></i> 사이드 패널 화면 동적
+                                        최대화(Maximize) 알고리즘 개선</div>
                                     <ul class="change-list">
-                                        <li><strong>뷰포트 여백 기반 지능형 확장</strong>: 현재 위젯이 위치한 화면의 잔여 공간을 실시간 감지하여 좌/우 최적의 방향으로 패널을 확장</li>
-                                        <li><strong>레이아웃 전환 시 렌더링 유지력 보강</strong>: 크기 전환 시 내부 대화 스크롤과 서식 깨짐 없이 매끄러운 뷰포트 전환 지원</li>
+                                        <li><strong>뷰포트 여백 기반 지능형 확장</strong>: 현재 위젯이 위치한 화면의 잔여 공간을 실시간 감지하여 좌/우 최적의
+                                            방향으로 패널을 확장</li>
+                                        <li><strong>레이아웃 전환 시 렌더링 유지력 보강</strong>: 크기 전환 시 내부 대화 스크롤과 서식 깨짐 없이 매끄러운 뷰포트
+                                            전환 지원</li>
                                     </ul>
                                 </div>
                             </div>
@@ -162,30 +179,41 @@
                         <div class="accordion-content">
                             <div class="accordion-body-inner">
                                 <div class="release-intro">
-                                    YouTube 영상 시청 중 요약 요청 시 주변 추천 동영상 목록 등 부수적 노이즈를 완전히 배제하고 현재 재생 중인 단일 영상의 핵심 콘텐츠에만 집중하도록 분석 파이프라인을 전면 개편했습니다. 브라우저 메인 컨텍스트 연동과 스크립트 패널 다중 감지를 통해 실제 발화 자막 수집력을 대폭 끌어올렸으며, 설명란의 개인 홍보·스폰서 문구에 매몰되지 않고 영상 본연의 주제를 정확히 분석하도록 요약 지능을 강화했습니다.
+                                    YouTube 영상 시청 중 요약 요청 시 주변 추천 동영상 목록 등 부수적 노이즈를 완전히 배제하고 현재 재생 중인 단일 영상의 핵심 콘텐츠에만
+                                    집중하도록 분석 파이프라인을 전면 개편했습니다. 브라우저 메인 컨텍스트 연동과 스크립트 패널 다중 감지를 통해 실제 발화 자막 수집력을 대폭
+                                    끌어올렸으며, 설명란의 개인 홍보·스폰서 문구에 매몰되지 않고 영상 본연의 주제를 정확히 분석하도록 요약 지능을 강화했습니다.
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label feat"><i class="fa-solid fa-video"></i> YouTube 영상 집중 분석 & 추천 목록 노이즈 원천 차단</div>
+                                    <div class="group-label feat"><i class="fa-solid fa-video"></i> YouTube 영상 집중 분석 &
+                                        추천 목록 노이즈 원천 차단</div>
                                     <ul class="change-list">
-                                        <li><strong>현재 재생 단일 영상 타깃팅</strong>: 동영상 페이지 내 수십~수백 개의 사이드바 추천 동영상 목록을 사전 필터링하여, 현재 시청 중인 단일 영상의 정보만 정밀하게 추출</li>
-                                        <li><strong>타임라인 및 챕터 구조화</strong>: 영상의 실제 전개 흐름을 보여주는 타임스탬프와 챕터 구성을 체계적으로 수집하여 요약의 구조적 완성도 향상</li>
+                                        <li><strong>현재 재생 단일 영상 타깃팅</strong>: 동영상 페이지 내 수십~수백 개의 사이드바 추천 동영상 목록을 사전
+                                            필터링하여, 현재 시청 중인 단일 영상의 정보만 정밀하게 추출</li>
+                                        <li><strong>타임라인 및 챕터 구조화</strong>: 영상의 실제 전개 흐름을 보여주는 타임스탬프와 챕터 구성을 체계적으로 수집하여
+                                            요약의 구조적 완성도 향상</li>
                                     </ul>
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label feat"><i class="fa-solid fa-closed-captioning"></i> 다중 계층 자막(Transcript) 추출 파이프라인 구축</div>
+                                    <div class="group-label feat"><i class="fa-solid fa-closed-captioning"></i> 다중 계층
+                                        자막(Transcript) 추출 파이프라인 구축</div>
                                     <ul class="change-list">
-                                        <li><strong>실시간 플레이어 자막 브릿지</strong>: 동적 페이지 전환(SPA) 환경에서도 최신 영상의 공식/자동 생성 자막 트랙을 안정적으로 획득하는 브라우저 연동 파이프라인 탑재</li>
-                                        <li><strong>스크립트 패널 및 트랙 다중 감지</strong>: 웹페이지 내 스크립트 패널 자동 탐색과 HTML5 미디어 트랙 다중 파싱을 결합하여 실제 음성 발화 텍스트 수집 성공률 극대화</li>
+                                        <li><strong>실시간 플레이어 자막 브릿지</strong>: 동적 페이지 전환(SPA) 환경에서도 최신 영상의 공식/자동 생성 자막
+                                            트랙을 안정적으로 획득하는 브라우저 연동 파이프라인 탑재</li>
+                                        <li><strong>스크립트 패널 및 트랙 다중 감지</strong>: 웹페이지 내 스크립트 패널 자동 탐색과 HTML5 미디어 트랙 다중
+                                            파싱을 결합하여 실제 음성 발화 텍스트 수집 성공률 극대화</li>
                                     </ul>
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label fix"><i class="fa-solid fa-filter-circle-xmark"></i> 설명란 홍보 문구 필터링 및 요약 왜곡 방지</div>
+                                    <div class="group-label fix"><i class="fa-solid fa-filter-circle-xmark"></i> 설명란 홍보
+                                        문구 필터링 및 요약 왜곡 방지</div>
                                     <ul class="change-list">
-                                        <li><strong>스폰서 및 개인 홍보 노이즈 격리</strong>: 유튜버의 개인 사업, 강의, 외부 커뮤니티 가입 유도 등 영상 본문과 무관한 설명란 상단 홍보 문구에 AI가 현혹되는 현상 전면 차단</li>
-                                        <li><strong>영상 본래 주제 중심 심층 분석</strong>: 영상 제목과 실제 화면 콘텐츠, 챕터를 최우선 기준으로 분석하며, 자막이 없는 경우에도 지능형 웹 검색을 병행하여 다루는 기술/도구의 실체를 정확히 요약</li>
+                                        <li><strong>스폰서 및 개인 홍보 노이즈 격리</strong>: 유튜버의 개인 사업, 강의, 외부 커뮤니티 가입 유도 등 영상 본문과
+                                            무관한 설명란 상단 홍보 문구에 AI가 현혹되는 현상 전면 차단</li>
+                                        <li><strong>영상 본래 주제 중심 심층 분석</strong>: 영상 제목과 실제 화면 콘텐츠, 챕터를 최우선 기준으로 분석하며, 자막이
+                                            없는 경우에도 지능형 웹 검색을 병행하여 다루는 기술/도구의 실체를 정확히 요약</li>
                                     </ul>
                                 </div>
                             </div>
@@ -210,30 +238,41 @@
                         <div class="accordion-content">
                             <div class="accordion-body-inner">
                                 <div class="release-intro">
-                                    설정한 모든 AI Provider 및 커스텀 모델 구성을 안전하게 파일로 백업하고 복원할 수 있는 환경설정 내보내기/가져오기 기능을 새롭게 탑재했습니다. 아울러 시간의 흐름과 단계별 프로세스 질문에 대한 지능형 다이어그램(Mermaid) 시각화 엔진을 강화하고, 우클릭 제한 해제와 광고 차단 기능의 실시간 반응성을 한층 끌어올렸습니다.
+                                    설정한 모든 AI Provider 및 커스텀 모델 구성을 안전하게 파일로 백업하고 복원할 수 있는 환경설정 내보내기/가져오기 기능을 새롭게
+                                    탑재했습니다. 아울러 시간의 흐름과 단계별 프로세스 질문에 대한 지능형 다이어그램(Mermaid) 시각화 엔진을 강화하고, 우클릭 제한 해제와 광고
+                                    차단 기능의 실시간 반응성을 한층 끌어올렸습니다.
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label feat"><i class="fa-solid fa-file-export"></i> 환경설정 백업 및 간편 이관 (Export & Import)</div>
+                                    <div class="group-label feat"><i class="fa-solid fa-file-export"></i> 환경설정 백업 및 간편
+                                        이관 (Export & Import)</div>
                                     <ul class="change-list">
-                                        <li><strong>원클릭 설정 백업 및 복원</strong>: 등록된 모든 Provider, 커스텀 엔드포인트 및 모델 구성을 안전한 JSON 파일로 내보내고 불러올 수 있어 기기 변경 시에도 손쉬운 마이그레이션 가능</li>
-                                        <li><strong>민감 정보 보호 및 무결성 검증</strong>: 백업 파일 생성 시 API 키 마스킹 여부를 선택할 수 있으며, 가져오기 시 파일 스키마 유효성을 사전에 검증하여 설정 오류 원천 차단</li>
+                                        <li><strong>원클릭 설정 백업 및 복원</strong>: 등록된 모든 Provider, 커스텀 엔드포인트 및 모델 구성을 안전한
+                                            JSON 파일로 내보내고 불러올 수 있어 기기 변경 시에도 손쉬운 마이그레이션 가능</li>
+                                        <li><strong>민감 정보 보호 및 무결성 검증</strong>: 백업 파일 생성 시 API 키 마스킹 여부를 선택할 수 있으며, 가져오기
+                                            시 파일 스키마 유효성을 사전에 검증하여 설정 오류 원천 차단</li>
                                     </ul>
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label feat"><i class="fa-solid fa-diagram-project"></i> 프로세스 및 타임라인 다이어그램 시각화 엔진 강화</div>
+                                    <div class="group-label feat"><i class="fa-solid fa-diagram-project"></i> 프로세스 및
+                                        타임라인 다이어그램 시각화 엔진 강화</div>
                                     <ul class="change-list">
-                                        <li><strong>시간적 맥락 및 순서형 질의 시각화</strong>: 역사·변천사, 단계별 처리 절차, 시스템 라이프사이클 질의 시 다이어그램(Mermaid)을 능동적으로 생성하여 직관적인 구조 전달</li>
-                                        <li><strong>다이어그램 렌더링 안정성 확보</strong>: 마크다운 격리 및 노드 문법 표준화 규칙을 강화하여 다이어그램 파싱 실패 및 렌더링 깨짐 현상 예방</li>
+                                        <li><strong>시간적 맥락 및 순서형 질의 시각화</strong>: 역사·변천사, 단계별 처리 절차, 시스템 라이프사이클 질의 시
+                                            다이어그램(Mermaid)을 능동적으로 생성하여 직관적인 구조 전달</li>
+                                        <li><strong>다이어그램 렌더링 안정성 확보</strong>: 마크다운 격리 및 노드 문법 표준화 규칙을 강화하여 다이어그램 파싱 실패
+                                            및 렌더링 깨짐 현상 예방</li>
                                     </ul>
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label fix"><i class="fa-solid fa-shield-halved"></i> 브라우징 편의 기능 및 실시간 동기화 개선</div>
+                                    <div class="group-label fix"><i class="fa-solid fa-shield-halved"></i> 브라우징 편의 기능 및
+                                        실시간 동기화 개선</div>
                                     <ul class="change-list">
-                                        <li><strong>우클릭 제한 해제 상태 실시간 동기화</strong>: 팝업 메뉴의 스위치와 현재 열려 있는 활성 탭의 실제 해제 상태 간 실시간 양방향 동기화 구현</li>
-                                        <li><strong>광고 차단 필터링 정밀도 향상</strong>: 웹페이지 내 복잡한 동적 광고 요소 감지 및 삭제 알고리즘을 보강하여 쾌적한 열람 환경 지원</li>
+                                        <li><strong>우클릭 제한 해제 상태 실시간 동기화</strong>: 팝업 메뉴의 스위치와 현재 열려 있는 활성 탭의 실제 해제 상태 간
+                                            실시간 양방향 동기화 구현</li>
+                                        <li><strong>광고 차단 필터링 정밀도 향상</strong>: 웹페이지 내 복잡한 동적 광고 요소 감지 및 삭제 알고리즘을 보강하여
+                                            쾌적한 열람 환경 지원</li>
                                     </ul>
                                 </div>
                             </div>
@@ -258,31 +297,43 @@
                         <div class="accordion-content">
                             <div class="accordion-body-inner">
                                 <div class="release-intro">
-                                    브라우저 전체 탭에서 동작하는 풀스크린 환경설정 센터(WithAvis Settings)를 새롭게 구축하여, 다양한 AI Provider와 커스텀 모델(Ollama, LM Studio 등)의 추가·삭제·순서 관리, 실시간 연결 테스트 및 모델 자동 동기화를 손쉽게 제어할 수 있도록 개편했습니다. 아울러 팝업을 초슬림 퀵 제어 센터로 정돈하고 웹페이지 챗봇과의 실시간 스토리지 동기화 파이프라인을 완성했습니다.
+                                    브라우저 전체 탭에서 동작하는 풀스크린 환경설정 센터(WithAvis Settings)를 새롭게 구축하여, 다양한 AI Provider와 커스텀
+                                    모델(Ollama, LM Studio 등)의 추가·삭제·순서 관리, 실시간 연결 테스트 및 모델 자동 동기화를 손쉽게 제어할 수 있도록 개편했습니다.
+                                    아울러 팝업을 초슬림 퀵 제어 센터로 정돈하고 웹페이지 챗봇과의 실시간 스토리지 동기화 파이프라인을 완성했습니다.
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label feat"><i class="fa-solid fa-sparkles"></i> 전용 환경설정 센터(WithAvis Settings) 신설</div>
+                                    <div class="group-label feat"><i class="fa-solid fa-sparkles"></i> 전용 환경설정
+                                        센터(WithAvis Settings) 신설</div>
                                     <ul class="change-list">
-                                        <li><strong>다양한 AI Provider 통합 관리</strong>: Google Gemini, OpenCode Zen, Anthropic Claude, Cerebras는 물론 사용자 정의 커스텀 Provider(Ollama, LM Studio, 사내 게이트웨이 등)를 손쉽게 추가·삭제하고 드래그 앤 드롭으로 순서를 정렬하는 전용 관리 화면 제공</li>
-                                        <li><strong>실시간 연결 테스트 & 모델 목록 자동 로드</strong>: 엔드포인트 헬스체크 및 API 키 유효성을 즉시 검증하는 핑(Ping) 테스트와, 서버에서 지원하는 최신 모델 목록을 원클릭으로 조회하여 동기화하는 자동화 기능 구현</li>
+                                        <li><strong>다양한 AI Provider 통합 관리</strong>: Google Gemini, OpenCode Zen,
+                                            Anthropic Claude, Cerebras는 물론 사용자 정의 커스텀 Provider(Ollama, LM Studio, 사내
+                                            게이트웨이 등)를 손쉽게 추가·삭제하고 드래그 앤 드롭으로 순서를 정렬하는 전용 관리 화면 제공</li>
+                                        <li><strong>실시간 연결 테스트 & 모델 목록 자동 로드</strong>: 엔드포인트 헬스체크 및 API 키 유효성을 즉시 검증하는
+                                            핑(Ping) 테스트와, 서버에서 지원하는 최신 모델 목록을 원클릭으로 조회하여 동기화하는 자동화 기능 구현</li>
                                         <li><strong>세부 모델 커스텀 관리</strong>: 각 Provider별 모델 추가, 수정, 삭제 및 기본 모델 지정 지원</li>
                                     </ul>
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label feat"><i class="fa-solid fa-sliders"></i> 팝업(Quick Menu) 초슬림 개편 & 무중단 실시간 동기화</div>
+                                    <div class="group-label feat"><i class="fa-solid fa-sliders"></i> 팝업(Quick Menu) 초슬림
+                                        개편 & 무중단 실시간 동기화</div>
                                     <ul class="change-list">
-                                        <li><strong>핵심 기능 중심의 미니멀 팝업</strong>: 번잡했던 중복 폼을 전면 정리하고, 주요 기능 토글 4종(WithAvis 기능 활성화, 대화 내용 유지, 광고 제거, 우클릭 제한 해제)과 환경설정 바로가기 버튼으로 깔끔하게 경량화</li>
-                                        <li><strong>웹페이지 새로고침 없는 실시간 반영</strong>: 환경설정에서 변경한 Provider 및 모델 구성이 웹페이지 내 활성화된 챗봇 위젯의 드롭다운 목록에 즉각 반영되는 무중단 스토리지 감지 파이프라인 구축</li>
+                                        <li><strong>핵심 기능 중심의 미니멀 팝업</strong>: 번잡했던 중복 폼을 전면 정리하고, 주요 기능 토글 4종(WithAvis
+                                            기능 활성화, 대화 내용 유지, 광고 제거, 우클릭 제한 해제)과 환경설정 바로가기 버튼으로 깔끔하게 경량화</li>
+                                        <li><strong>웹페이지 새로고침 없는 실시간 반영</strong>: 환경설정에서 변경한 Provider 및 모델 구성이 웹페이지 내
+                                            활성화된 챗봇 위젯의 드롭다운 목록에 즉각 반영되는 무중단 스토리지 감지 파이프라인 구축</li>
                                     </ul>
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label perf"><i class="fa-solid fa-shield-check"></i> 인증 및 네트워크 보안 파이프라인 강화</div>
+                                    <div class="group-label perf"><i class="fa-solid fa-shield-check"></i> 인증 및 네트워크 보안
+                                        파이프라인 강화</div>
                                     <ul class="change-list">
-                                        <li><strong>안전한 복원 및 키 보존</strong>: 기본 설정 복원 시 등록된 API Key는 안전하게 유지하면서 초기 권장 구성으로 깔끔하게 복구</li>
-                                        <li><strong>다중 프로토콜 스트리밍 통신 최적화</strong>: Anthropic Claude, OpenCode Zen 등 다중 프로토콜에 대한 브라우저 직접 스트리밍 호출 최적화 및 안정성 강화</li>
+                                        <li><strong>안전한 복원 및 키 보존</strong>: 기본 설정 복원 시 등록된 API Key는 안전하게 유지하면서 초기 권장
+                                            구성으로 깔끔하게 복구</li>
+                                        <li><strong>다중 프로토콜 스트리밍 통신 최적화</strong>: Anthropic Claude, OpenCode Zen 등 다중
+                                            프로토콜에 대한 브라우저 직접 스트리밍 호출 최적화 및 안정성 강화</li>
                                     </ul>
                                 </div>
                             </div>
@@ -307,21 +358,27 @@
                         <div class="accordion-content">
                             <div class="accordion-body-inner">
                                 <div class="release-intro">
-                                    형식적인 라벨을 걷어내고 상단 핵심 리드 카드와 심층 개조식 팩트 구조로 웹페이지 요약 품질을 대폭 강화하였으며, 대사가 없는 영상도 맥락을 정밀 파악하는 쇼츠 메타 분석 파이프라인을 도입했습니다.
+                                    형식적인 라벨을 걷어내고 상단 핵심 리드 카드와 심층 개조식 팩트 구조로 웹페이지 요약 품질을 대폭 강화하였으며, 대사가 없는 영상도 맥락을 정밀
+                                    파악하는 쇼츠 메타 분석 파이프라인을 도입했습니다.
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label feat"><i class="fa-solid fa-sparkles"></i> 웹페이지 요약 구조 및 팩트 밀도 고도화</div>
+                                    <div class="group-label feat"><i class="fa-solid fa-sparkles"></i> 웹페이지 요약 구조 및 팩트
+                                        밀도 고도화</div>
                                     <ul class="change-list">
-                                        <li><strong>상단 하이라이트 리드 카드 도입</strong>: 인위적인 제목 라벨 없이 전체 핵심 결론을 상단 인용구 카드로 명쾌하게 우선 제시하여 즉각적인 이해도 향상</li>
-                                        <li><strong>문맥 중심 심층 개조식 서술</strong>: 지나친 단편적 축약을 지양하고 본문의 핵심 수치·통계·기술 특징·전개 과정을 문맥 소제목과 함께 풍부한 개조체로 정리</li>
+                                        <li><strong>상단 하이라이트 리드 카드 도입</strong>: 인위적인 제목 라벨 없이 전체 핵심 결론을 상단 인용구 카드로 명쾌하게
+                                            우선 제시하여 즉각적인 이해도 향상</li>
+                                        <li><strong>문맥 중심 심층 개조식 서술</strong>: 지나친 단편적 축약을 지양하고 본문의 핵심 수치·통계·기술 특징·전개 과정을
+                                            문맥 소제목과 함께 풍부한 개조체로 정리</li>
                                     </ul>
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label feat"><i class="fa-solid fa-play"></i> YouTube Shorts 영상 메타데이터 심층 연동</div>
+                                    <div class="group-label feat"><i class="fa-solid fa-play"></i> YouTube Shorts 영상
+                                        메타데이터 심층 연동</div>
                                     <ul class="change-list">
-                                        <li><strong>무자막/배경음악 쇼츠 맥락 분석</strong>: 자막이 없는 영상도 제목, 채널명, 상세 설명, 주요 시청자 반응 데이터를 종합 분석하여 영상의 핵심 주제와 내용을 정확히 요약</li>
+                                        <li><strong>무자막/배경음악 쇼츠 맥락 분석</strong>: 자막이 없는 영상도 제목, 채널명, 상세 설명, 주요 시청자 반응
+                                            데이터를 종합 분석하여 영상의 핵심 주제와 내용을 정확히 요약</li>
                                     </ul>
                                 </div>
                             </div>
@@ -346,23 +403,31 @@
                         <div class="accordion-content">
                             <div class="accordion-body-inner">
                                 <div class="release-intro">
-                                    브라우저 보안 정책(User Gesture)에 의한 음성 낭독 차단 문제를 원천 해결하고, 복잡한 답변을 청취용 2~3문장 핵심 요약으로 압축 전달하도록 TTS 파이프라인을 전면 개선했습니다.
+                                    브라우저 보안 정책(User Gesture)에 의한 음성 낭독 차단 문제를 원천 해결하고, 복잡한 답변을 청취용 2~3문장 핵심 요약으로 압축
+                                    전달하도록 TTS 파이프라인을 전면 개선했습니다.
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label fix"><i class="fa-solid fa-wrench"></i> 음성 낭독(TTS) 엔진 안정화</div>
+                                    <div class="group-label fix"><i class="fa-solid fa-wrench"></i> 음성 낭독(TTS) 엔진 안정화
+                                    </div>
                                     <ul class="change-list">
-                                        <li><strong>Chrome User Gesture 보존 전략 적용</strong>: 읽기 버튼 클릭 시 원본 텍스트로 즉시 음성 출력을 개시하여 비동기 API 대기 중 발생하는 제스처 만료 차단 방지</li>
-                                        <li><strong>비디오 사이트 TTS 트리거 보존</strong>: YouTube, Netflix 등 성능 보호 예외 도메인에서도 우클릭 해제만 스킵하고 TTS 물리 트리거는 정상 배치되도록 개선</li>
-                                        <li><strong>음성 입력 자동 낭독 레이턴시 제거</strong>: 음성 질문 완료 후 즉시 낭독 스트림으로 연결되는 다이렉트 패스 구성</li>
+                                        <li><strong>Chrome User Gesture 보존 전략 적용</strong>: 읽기 버튼 클릭 시 원본 텍스트로 즉시 음성 출력을
+                                            개시하여 비동기 API 대기 중 발생하는 제스처 만료 차단 방지</li>
+                                        <li><strong>비디오 사이트 TTS 트리거 보존</strong>: YouTube, Netflix 등 성능 보호 예외 도메인에서도 우클릭
+                                            해제만 스킵하고 TTS 물리 트리거는 정상 배치되도록 개선</li>
+                                        <li><strong>음성 입력 자동 낭독 레이턴시 제거</strong>: 음성 질문 완료 후 즉시 낭독 스트림으로 연결되는 다이렉트 패스 구성
+                                        </li>
                                     </ul>
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label feat"><i class="fa-solid fa-sparkles"></i> 낭독 전용 스토리텔링 스킬 정제</div>
+                                    <div class="group-label feat"><i class="fa-solid fa-sparkles"></i> 낭독 전용 스토리텔링 스킬 정제
+                                    </div>
                                     <ul class="change-list">
-                                        <li><strong>2~3문장 핵심 낭독 압축</strong>: 불필요한 서두·배경 설명과 나열식 표현을 배제하고 결론과 핵심 근거 위주로 청취 최적화</li>
-                                        <li><strong>마크다운/메타 태그 필터링</strong>: 코드 블록, HTML, 다이어그램, 인용 출처 기호를 음성 낭독에서 자동 정제</li>
+                                        <li><strong>2~3문장 핵심 낭독 압축</strong>: 불필요한 서두·배경 설명과 나열식 표현을 배제하고 결론과 핵심 근거 위주로
+                                            청취 최적화</li>
+                                        <li><strong>마크다운/메타 태그 필터링</strong>: 코드 블록, HTML, 다이어그램, 인용 출처 기호를 음성 낭독에서 자동 정제
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -391,15 +456,19 @@
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label feat"><i class="fa-solid fa-cubes"></i> 스킬 라우터 & 플러그인 모듈화</div>
+                                    <div class="group-label feat"><i class="fa-solid fa-cubes"></i> 스킬 라우터 & 플러그인 모듈화
+                                    </div>
                                     <ul class="change-list">
-                                        <li><strong>지능형 스킬 라우터 엔진</strong>: 웹 탐색, 페이지 분석, 다이어그램 생성, 캘린더 등록, 음성 요약 인텐트를 키워드 및 대화 패턴으로 판별하여 최적 프롬프트 자동 조립</li>
-                                        <li><strong>기능별 독립 플러그인 체계</strong>: 기본 대화 가이드, 페이지 크롤링 분석, 실시간 웹 검색, 차트 시각화, 일정 등록, 낭독 스토리텔링 전용 모듈 분리</li>
+                                        <li><strong>지능형 스킬 라우터 엔진</strong>: 웹 탐색, 페이지 분석, 다이어그램 생성, 캘린더 등록, 음성 요약 인텐트를
+                                            키워드 및 대화 패턴으로 판별하여 최적 프롬프트 자동 조립</li>
+                                        <li><strong>기능별 독립 플러그인 체계</strong>: 기본 대화 가이드, 페이지 크롤링 분석, 실시간 웹 검색, 차트 시각화, 일정
+                                            등록, 낭독 스토리텔링 전용 모듈 분리</li>
                                     </ul>
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label perf"><i class="fa-solid fa-gauge-high"></i> 프롬프트 토큰 효율 및 응답 품질 향상</div>
+                                    <div class="group-label perf"><i class="fa-solid fa-gauge-high"></i> 프롬프트 토큰 효율 및 응답
+                                        품질 향상</div>
                                     <ul class="change-list">
                                         <li>질문 맥락에 무관한 불필요한 규칙 주입을 방지하여 응답 생성 레이턴시 단축 및 컨텍스트 낭비 최소화</li>
                                         <li>마크다운 정형 테이블 출력 가이드 및 헤더 구분선 검증 로직 내재화</li>
@@ -433,9 +502,12 @@
                                 <div class="change-group">
                                     <div class="group-label fix"><i class="fa-solid fa-wrench"></i> 렌더링 엔진 결함 해결</div>
                                     <ul class="change-list">
-                                        <li><strong>Shadow DOM 임시 렌더링 샌드박스</strong>: 렌더링 컨테이너 초기화 예외를 방지하기 위한 독립 샌드박스 기반 차트 렌더링 파이프라인 구축</li>
-                                        <li><strong>Mac 단축키 충돌 방지</strong>: 브라우저 강제 종료(Cmd+Q) 오타 위험을 방지하기 위해 기본 단축키를 <code>Alt + J</code>로 통합</li>
-                                        <li><strong>웹사이트 릴리즈 자동 배포 파이프라인</strong>: 버전 릴리즈 시 공식 웹사이트 및 가이드 페이지 자동 동기화 배포 체계 연동</li>
+                                        <li><strong>Shadow DOM 임시 렌더링 샌드박스</strong>: 렌더링 컨테이너 초기화 예외를 방지하기 위한 독립 샌드박스 기반
+                                            차트 렌더링 파이프라인 구축</li>
+                                        <li><strong>Mac 단축키 충돌 방지</strong>: 브라우저 강제 종료(Cmd+Q) 오타 위험을 방지하기 위해 기본 단축키를
+                                            <code>Alt + J</code>로 통합</li>
+                                        <li><strong>웹사이트 릴리즈 자동 배포 파이프라인</strong>: 버전 릴리즈 시 공식 웹사이트 및 가이드 페이지 자동 동기화 배포
+                                            체계 연동</li>
                                     </ul>
                                 </div>
                             </div>
@@ -460,14 +532,16 @@
                         <div class="accordion-content">
                             <div class="accordion-body-inner">
                                 <div class="release-intro">
-                                    YouTube 시청 중 즉시 전체 스크립트를 추출하여 핵심 3줄 요약 및 타임라인 분석을 제공하고, 추천 영상을 위젯 내에서 바로 재생할 수 있도록 확장했습니다.
+                                    YouTube 시청 중 즉시 전체 스크립트를 추출하여 핵심 3줄 요약 및 타임라인 분석을 제공하고, 추천 영상을 위젯 내에서 바로 재생할 수 있도록
+                                    확장했습니다.
                                 </div>
 
                                 <div class="change-group">
                                     <div class="group-label feat"><i class="fa-solid fa-video"></i> 멀티미디어 분석 지원</div>
                                     <ul class="change-list">
                                         <li><strong>다국어 자막 크롤링</strong>: 수동 생성 자막 및 자동 번역 자막 파싱 알고리즘 탑재</li>
-                                        <li><strong>인라인 플레이어 임베드</strong>: AI 답변 내 YouTube 링크가 감지될 경우 위젯 내부 iframe으로 시청 가능한 인터랙티브 뷰어 제공</li>
+                                        <li><strong>인라인 플레이어 임베드</strong>: AI 답변 내 YouTube 링크가 감지될 경우 위젯 내부 iframe으로 시청
+                                            가능한 인터랙티브 뷰어 제공</li>
                                     </ul>
                                 </div>
                             </div>
@@ -492,14 +566,18 @@
                         <div class="accordion-content">
                             <div class="accordion-body-inner">
                                 <div class="release-intro">
-                                    중계 서버 없이 브라우저에서 최신 LLM(Gemini 2.5/3.0, Claude 3.7, Cerebras)으로 직접 SSE 스트리밍 통신을 수행하는 완전한 프라이버시 보호 구조를 완성했습니다.
+                                    중계 서버 없이 브라우저에서 최신 LLM(Gemini 2.5/3.0, Claude 3.7, Cerebras)으로 직접 SSE 스트리밍 통신을 수행하는
+                                    완전한 프라이버시 보호 구조를 완성했습니다.
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label feat"><i class="fa-solid fa-shield-halved"></i> 보안 및 초고속 추론 지원</div>
+                                    <div class="group-label feat"><i class="fa-solid fa-shield-halved"></i> 보안 및 초고속 추론
+                                        지원</div>
                                     <ul class="change-list">
-                                        <li><strong>Zero-Trust 개인정보 보호</strong>: 사용자의 API Key 및 대화 데이터가 외부 중간 서버를 거치지 않고 오직 로컬 스토리지에만 보관</li>
-                                        <li><strong>Cerebras Ultra-Fast LLM 탑재</strong>: 초당 수백 토큰의 즉각적인 응답 생성으로 대기 시간 극소화</li>
+                                        <li><strong>Zero-Trust 개인정보 보호</strong>: 사용자의 API Key 및 대화 데이터가 외부 중간 서버를 거치지 않고
+                                            오직 로컬 스토리지에만 보관</li>
+                                        <li><strong>Cerebras Ultra-Fast LLM 탑재</strong>: 초당 수백 토큰의 즉각적인 응답 생성으로 대기 시간
+                                            극소화</li>
                                         <li><strong>우클릭/드래그 방지 온디맨드 해제</strong>: 웹사이트 성능에 부하를 주지 않는 스마트 캡처 리스너 아키텍처</li>
                                     </ul>
                                 </div>
@@ -525,13 +603,16 @@
                         <div class="accordion-content">
                             <div class="accordion-body-inner">
                                 <div class="release-intro">
-                                    챗봇 인터페이스에 은은한 오로라 파스텔 그라데이션 모션을 적용하여 장시간 열람 시 눈의 피로를 덜고, 초고속 클라우드 AI 엔진을 다이렉트로 결합하여 즉답 성능을 대폭 끌어올렸습니다.
+                                    챗봇 인터페이스에 은은한 오로라 파스텔 그라데이션 모션을 적용하여 장시간 열람 시 눈의 피로를 덜고, 초고속 클라우드 AI 엔진을 다이렉트로 결합하여
+                                    즉답 성능을 대폭 끌어올렸습니다.
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label feat"><i class="fa-solid fa-wand-magic-sparkles"></i> 다이내믹 오로라 비주얼 인터페이스</div>
+                                    <div class="group-label feat"><i class="fa-solid fa-wand-magic-sparkles"></i> 다이내믹
+                                        오로라 비주얼 인터페이스</div>
                                     <ul class="change-list">
-                                        <li><strong>소프트 그라데이션 모션</strong>: 인위적인 원색을 배제하고 시각적 편안함을 주는 파스텔 톤 오로라 애니메이션을 위젯 배경에 구현</li>
+                                        <li><strong>소프트 그라데이션 모션</strong>: 인위적인 원색을 배제하고 시각적 편안함을 주는 파스텔 톤 오로라 애니메이션을 위젯
+                                            배경에 구현</li>
                                         <li><strong>콤팩트 입력 영역 레이아웃</strong>: 텍스트 입력창과 툴바 여백을 재정돈하여 화면 몰입도 극대화</li>
                                     </ul>
                                 </div>
@@ -539,7 +620,8 @@
                                 <div class="change-group">
                                     <div class="group-label feat"><i class="fa-solid fa-bolt"></i> 고속 추론 AI 라인업 개편</div>
                                     <ul class="change-list">
-                                        <li><strong>초저지연 LLM 스트리밍 지원</strong>: 웹페이지 분석 및 질의응답 시 지연 시간을 최소화하는 고속 추론 모델군 탑재</li>
+                                        <li><strong>초저지연 LLM 스트리밍 지원</strong>: 웹페이지 분석 및 질의응답 시 지연 시간을 최소화하는 고속 추론 모델군
+                                            탑재</li>
                                         <li><strong>Gemini 차세대 모델 매핑</strong>: 구글 최신 Gemini 모델과의 실시간 통신 인터페이스 정비</li>
                                     </ul>
                                 </div>
@@ -571,7 +653,8 @@
                                 <div class="change-group">
                                     <div class="group-label feat"><i class="fa-solid fa-image"></i> 원클릭 이미지 지능형 검색</div>
                                     <ul class="change-list">
-                                        <li><strong>구글 비주얼 검색 다이렉트 연동</strong>: 웹페이지 내 임의의 이미지에서 마우스 우클릭 시 한국어 최적화 검색 탭을 즉시 오픈</li>
+                                        <li><strong>구글 비주얼 검색 다이렉트 연동</strong>: 웹페이지 내 임의의 이미지에서 마우스 우클릭 시 한국어 최적화 검색 탭을
+                                            즉시 오픈</li>
                                         <li><strong>이미지 메타데이터 분석 지원</strong>: 챗봇 대화 창구로 이미지 주소 및 맥락을 전달하는 기반 구축</li>
                                     </ul>
                                 </div>
@@ -597,19 +680,24 @@
                         <div class="accordion-content">
                             <div class="accordion-body-inner">
                                 <div class="release-intro">
-                                    키보드 타이핑 없이 음성으로 웹페이지를 탐색하고 질문할 수 있도록 실시간 음성 인식(STT)과 답변 낭독(TTS)이 결합된 핸즈프리 보이스 인터랙션을 최초 탑재했습니다.
+                                    키보드 타이핑 없이 음성으로 웹페이지를 탐색하고 질문할 수 있도록 실시간 음성 인식(STT)과 답변 낭독(TTS)이 결합된 핸즈프리 보이스 인터랙션을
+                                    최초 탑재했습니다.
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label feat"><i class="fa-solid fa-microphone"></i> 실시간 음성 인식(STT) 파이프라인</div>
+                                    <div class="group-label feat"><i class="fa-solid fa-microphone"></i> 실시간 음성 인식(STT)
+                                        파이프라인</div>
                                     <ul class="change-list">
-                                        <li><strong>백그라운드 음성 캡처 브릿지</strong>: 안전한 마이크 권한 획득 및 중간(Interim) 텍스트를 실시간으로 자막 렌더링하는 스트리밍 구조 완성</li>
-                                        <li><strong>노이즈 분리 및 자동 전송</strong>: 발화 완료 시 질문 본문을 챗봇 입력창으로 자동 전송하는 지능형 타이밍 감지</li>
+                                        <li><strong>백그라운드 음성 캡처 브릿지</strong>: 안전한 마이크 권한 획득 및 중간(Interim) 텍스트를 실시간으로 자막
+                                            렌더링하는 스트리밍 구조 완성</li>
+                                        <li><strong>노이즈 분리 및 자동 전송</strong>: 발화 완료 시 질문 본문을 챗봇 입력창으로 자동 전송하는 지능형 타이밍 감지
+                                        </li>
                                     </ul>
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label feat"><i class="fa-solid fa-volume-high"></i> 자연스러운 음성 답변 낭독(TTS)</div>
+                                    <div class="group-label feat"><i class="fa-solid fa-volume-high"></i> 자연스러운 음성 답변
+                                        낭독(TTS)</div>
                                     <ul class="change-list">
                                         <li><strong>AI 응답 즉시 낭독</strong>: 웹페이지 텍스트 요약 결과를 음성으로 전달하는 오디오 출력 파이프라인 구축</li>
                                     </ul>
@@ -636,22 +724,29 @@
                         <div class="accordion-content">
                             <div class="accordion-body-inner">
                                 <div class="release-intro">
-                                    모든 웹페이지에서 나만의 AI 어시스턴트와 대화하며 페이지 본문을 실시간으로 요약·분석할 수 있는 WithAvis(구 Instant AI Chat Widget)의 최초 공식 버전입니다.
+                                    모든 웹페이지에서 나만의 AI 어시스턴트와 대화하며 페이지 본문을 실시간으로 요약·분석할 수 있는 WithAvis(구 Instant AI Chat
+                                    Widget)의 최초 공식 버전입니다.
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label feat"><i class="fa-solid fa-sparkles"></i> 인라인 지능형 웹 위젯</div>
+                                    <div class="group-label feat"><i class="fa-solid fa-sparkles"></i> 인라인 지능형 웹 위젯
+                                    </div>
                                     <ul class="change-list">
-                                        <li><strong>웹페이지 심층 크롤링 & 요약</strong>: 활성 탭의 본문 텍스트와 문맥을 스마트하게 수집하여 AI 질의응답의 바탕으로 제공</li>
-                                        <li><strong>마크다운 및 Mermaid 다이어그램 지원</strong>: 표, 리스트, 흐름도 등 시각화 차트를 위젯 내부에서 미려하게 렌더링</li>
+                                        <li><strong>웹페이지 심층 크롤링 & 요약</strong>: 활성 탭의 본문 텍스트와 문맥을 스마트하게 수집하여 AI 질의응답의
+                                            바탕으로 제공</li>
+                                        <li><strong>마크다운 및 Mermaid 다이어그램 지원</strong>: 표, 리스트, 흐름도 등 시각화 차트를 위젯 내부에서 미려하게
+                                            렌더링</li>
                                     </ul>
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label feat"><i class="fa-solid fa-unlock"></i> 스마트 브라우징 편의 기능</div>
+                                    <div class="group-label feat"><i class="fa-solid fa-unlock"></i> 스마트 브라우징 편의 기능
+                                    </div>
                                     <ul class="change-list">
-                                        <li><strong>우클릭·드래그 복사 제한 원클릭 해제</strong>: 웹사이트 레이아웃에 간섭 없이 불필요한 마우스 제한을 지능적으로 무력화</li>
-                                        <li><strong>Shadow DOM 캡슐화 UI</strong>: 방문 사이트의 기존 CSS 스타일과 완전히 격리된 독립형 플로팅 위젯</li>
+                                        <li><strong>우클릭·드래그 복사 제한 원클릭 해제</strong>: 웹사이트 레이아웃에 간섭 없이 불필요한 마우스 제한을 지능적으로
+                                            무력화</li>
+                                        <li><strong>Shadow DOM 캡슐화 UI</strong>: 방문 사이트의 기존 CSS 스타일과 완전히 격리된 독립형 플로팅 위젯
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
