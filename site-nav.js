@@ -79,7 +79,7 @@
                 <div class="logo">
                     <span class="logo-icon"><img src="assets/icon48.png" alt="WithAvis Logo" class="brand-logo-img"></span>
                     <span class="logo-text">WithAvis</span>
-                    <span class="version-badge footer-version-badge" id="appVersionBadge">v9.1.9</span>
+                    <span class="version-badge footer-version-badge" id="appVersionBadge">v9.1.10</span>
                 </div>
                 <p>© 2026 WithAvis Project. All rights reserved.</p>
             </div>
@@ -129,6 +129,10 @@
             const footerBadge = document.getElementById('appVersionBadge');
             if (footerBadge && footerBadge.textContent !== latestTag) {
                 footerBadge.textContent = latestTag;
+            }
+            const changelogMeta = document.querySelector('.changelog-meta');
+            if (changelogMeta) {
+                changelogMeta.innerHTML = `<i class="fa-solid fa-clock-rotate-left"></i> 최신 릴리즈 ${latestTag} 기준`;
             }
         }
     }
