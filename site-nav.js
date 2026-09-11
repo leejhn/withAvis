@@ -7,7 +7,7 @@
     'use strict';
 
     // ── 단일 버전 정의 (Single Source of Truth) ──
-    const APP_VERSION = 'v9.1.10';
+    const APP_VERSION = 'v9.1.12';
 
     // ── 테마 즉시 복원 (FOUC 방지) ──
     const savedTheme = localStorage.getItem('withavis-theme');
@@ -82,7 +82,7 @@
                 <div class="logo">
                     <span class="logo-icon"><img src="assets/icon48.png" alt="WithAvis Logo" class="brand-logo-img"></span>
                     <span class="logo-text">WithAvis</span>
-                    <span class="version-badge footer-version-badge" id="appVersionBadge">${APP_VERSION}</span>
+                    <span class="version-badge footer-version-badge" id="appVersionBadge">v9.1.12</span>
                 </div>
                 <p>© 2026 WithAvis Project. All rights reserved.</p>
             </div>
