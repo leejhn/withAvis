@@ -9,6 +9,21 @@
     // ── 단일 버전 정의 (Single Source of Truth) ──
     const APP_VERSION = 'v9.1.12';
 
+    // ── Google Analytics (gtag.js) 자동 초기화 ──
+    const GA_MEASUREMENT_ID = 'G-PGM46FRKZF';
+    if (!document.querySelector(`script[src*="${GA_MEASUREMENT_ID}"]`)) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { window.dataLayer.push(arguments); }
+        window.gtag = window.gtag || gtag;
+        window.gtag('js', new Date());
+        window.gtag('config', GA_MEASUREMENT_ID);
+
+        const gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+        document.head.appendChild(gaScript);
+    }
+
     // ── 테마 즉시 복원 (FOUC 방지) ──
     const savedTheme = localStorage.getItem('withavis-theme');
     if (savedTheme) {
