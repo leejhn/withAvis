@@ -7,7 +7,7 @@
     'use strict';
 
     // ── 단일 버전 정의 (Single Source of Truth) ──
-    const APP_VERSION = 'v9.1.12';
+    const APP_VERSION = 'v9.1.13';
 
     // ── Google Analytics (gtag.js) 자동 초기화 ──
     const GA_MEASUREMENT_ID = 'G-PGM46FRKZF';
@@ -97,7 +97,7 @@
                 <div class="logo">
                     <span class="logo-icon"><img src="assets/icon48.png" alt="WithAvis Logo" class="brand-logo-img"></span>
                     <span class="logo-text">WithAvis</span>
-                    <span class="version-badge footer-version-badge" id="appVersionBadge">v9.1.12</span>
+                    <span class="version-badge footer-version-badge" id="appVersionBadge">vv9.1.13</span>
                 </div>
                 <p>© 2026 WithAvis Project. All rights reserved.</p>
             </div>
