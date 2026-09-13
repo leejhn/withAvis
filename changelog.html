@@ -70,12 +70,52 @@
                                 <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
                                 <div class="version-title">
                                     <span class="version-tag">v9.1.13</span>
+                                    <span class="version-summary">엄격한 CSP 보안 사이트 호환성 강화 & AI 응답 대기 비주얼 인터랙션 개편</span>
+                                </div>
+                            </div>
+                            <div class="accordion-header-right">
+                                <span class="date-badge">2026.09.13</span>
+                                <span class="status-pill latest">Latest</span>
+                            </div>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body-inner">
+                                <div class="release-intro">
+                                    BBC, Stripe 등 엄격한 콘텐츠 보안 정책(CSP)이 적용된 사이트에서 발생하던 확장 프로그램 스타일 차단 오류를 컨텍스트 분리를 통해 원천 해결하고, AI 모델이 응답을 생성하는 동안 실시간 연산 상태를 생동감 있게 전달하는 배경 오로라 인터랙션을 개편했습니다.
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label fix"><i class="fa-solid fa-shield-halved"></i> 콘텐츠 보안 정책(CSP) 호환성 & 브라우저 확장 안정성</div>
+                                    <ul class="change-list">
+                                        <li><strong>엄격한 웹페이지 CSP(style-src 'self') 위반 차단 오류 원천 해결</strong>: BBC, Stripe, GitHub 등 외부 인라인 스타일 실행을 전면 제한하는 보안 강화 사이트 접속 시, 웹페이지 메인 실행 환경(Main World)에서 우클릭/드래그 해제 스타일을 주입하는 과정에서 발생하던 CSP 위반 차단 에러를 완전히 해소</li>
+                                        <li><strong>스타일 주입 파이프라인의 격리 컨텍스트(Isolated World) 완전 이전</strong>: 웹페이지 자체 보안 정책의 제약을 받지 않는 확장 프로그램 격리 컨텍스트로 스타일 주입 책임을 이전하고, 메인 실행 환경은 이벤트 하이재킹 차단만 전담하도록 실행 계층을 분리하여 모든 보안 사이트에서 무오류 동작 보장</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-wand-magic-sparkles"></i> AI 응답 대기(Thinking) 비주얼 인터랙션 개편</div>
+                                    <ul class="change-list">
+                                        <li><strong>유기적 형태 변형(Liquid Morphing) 및 역동적 군집 유영</strong>: 정형화된 고정 구체를 탈피하여 유체처럼 호흡하는 5색 오로라 블롭이 중심으로 모여들고 교차하는 템포 애니메이션을 적용, AI의 실시간 연산 및 응답 생성 상태를 직관적으로 표현</li>
+                                        <li><strong>저채도 실키 뮤트 톤 & 블러 최적화</strong>: 자극적인 원색 번짐을 억제하고 차분한 파스텔 샴페인·바이올렛 톤과 24px 블러를 조합하여 가독성과 고급스러운 글래스모피즘 룩 완성</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Version v9.1.12 -->
+                    <article class="accordion-card">
+                        <div class="accordion-header">
+                            <div class="accordion-header-left">
+                                <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                                <div class="version-title">
+                                    <span class="version-tag">v9.1.12</span>
                                     <span class="version-summary">AI 응답 대기 인터랙션 고도화 & 차분한 저채도 파스텔 비주얼 시스템 도입</span>
                                 </div>
                             </div>
                             <div class="accordion-header-right">
                                 <span class="date-badge">2026.09.11</span>
-                                <span class="status-pill latest">Latest</span>
+                                <span class="status-pill stable">Stable</span>
                             </div>
                         </div>
                         <div class="accordion-content">
