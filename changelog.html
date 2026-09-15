@@ -70,27 +70,43 @@
                                 <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
                                 <div class="version-title">
                                     <span class="version-tag">v9.1.16</span>
-                                    <span class="version-summary">원형 물방울 돋보기(Liquid Water Glass) 토글 버튼 & 인터페이스 고도화</span>
+                                    <span class="version-summary">팝업 디자인 전면 개편 & 첨부파일 선제 분석 스킬 & 마크다운 렌더링 고도화</span>
                                 </div>
                             </div>
                             <div class="accordion-header-right">
-                                <span class="date-badge">2026.09.14</span>
+                                <span class="date-badge">2026.09.15</span>
                                 <span class="status-pill latest">Latest</span>
                             </div>
                         </div>
                         <div class="accordion-content">
                             <div class="accordion-body-inner">
                                 <div class="release-intro">
-                                    인위적인 테두리 선을 걷어낸 맑은 원형 물방울 유리(Liquid Water Glass) 렌즈 디자인을 적용하여, 배경 화면과 부드럽게 어우러지면서도 아이콘이 돋보기처럼 확대되어 보이는 광학적 깊이감과 자연스러운 탄성 인터랙션을 구현했습니다.
+                                    팝업(Quick Menu)을 세련된 글래스 모피즘 기반으로 전면 재설계하고, 첨부 파일(이미지·문서)이 포함된 질문 시 웹페이지 본문보다 첨부물을 최우선으로 분석하는 전용 스킬을 신설했습니다. 아울러 AI 응답의 문단 구분과 테이블 렌더링 품질을 한층 끌어올렸습니다.
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label feat"><i class="fa-solid fa-wand-magic-sparkles"></i> 원형 물방울 돋보기(Liquid Water Glass) 인터페이스</div>
+                                    <div class="group-label feat"><i class="fa-solid fa-sparkles"></i> 팝업(Quick Menu) 디자인 전면 개편</div>
                                     <ul class="change-list">
-                                        <li><strong>완전 원형 투명 물방울 렌즈 전환</strong>: 테두리 선 0개의 54px 원형 물방울 디자인으로 전환하고, 맑은 액체 굴절과 자연스러운 바닥 그림자만으로 세련된 3D 입체 볼륨감 형성</li>
-                                        <li><strong>광학 돋보기 굴절 효과</strong>: 렌즈 표면 굴절을 통해 내부 아이콘이 물방울 바닥면에서 확대되어 보이는 돋보기 광학 효과 구현</li>
-                                        <li><strong>스펙큘러 돔 글로스 & 림 라이트 최적화</strong>: 상단 구형 돔 하이라이트의 소프트 블러와 외곽 젤 림 라이트를 정밀 조율하여 맑고 청량한 크리스탈 질감 완성</li>
-                                        <li><strong>인터랙티브 돋보기 탄성 반응</strong>: 마우스 호버 시 돋보기 확대율이 자연스럽게 증가하며 유연한 탄성 피드백을 제공하는 모션 최적화</li>
+                                        <li><strong>글래스 모피즘 기반 재설계</strong>: 기존 팝업 레이아웃을 걷어내고 반투명 블러·부드러운 그림자·정제된 타이포그래피로 구성한 프리미엄 글래스 스타일 팝업으로 전면 교체</li>
+                                        <li><strong>물방울 돋보기(Liquid Water Glass) 토글 버튼</strong>: 테두리 없는 원형 투명 물방울 렌즈에 광학 굴절·돔 글로스·림 라이트를 정밀 조율한 3D 입체 토글 버튼 적용</li>
+                                        <li><strong>인터랙티브 탄성 피드백</strong>: 마우스 호버 시 확대율이 자연스럽게 증가하며 유연한 탄성 모션으로 반응하는 인터랙션 최적화</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-sparkles"></i> 첨부 파일 선제 분석 스킬</div>
+                                    <ul class="change-list">
+                                        <li><strong>첨부 파일 최우선 처리 엔진 신설</strong>: 이미지·PDF·문서 등을 첨부하여 질문하면 웹페이지 본문보다 첨부물의 내용 분석 및 질문 해결을 1순위로 선제 처리</li>
+                                        <li><strong>지능형 스킬 라우터 연동</strong>: 첨부 파일 유무에 따라 페이지 분석·웹 검색 스킬을 동적으로 조합하는 분기 로직을 라우터에 통합하여 최적의 응답 품질 확보</li>
+                                        <li><strong>시각 정보 정밀 판독</strong>: 첨부 이미지 속 텍스트(OCR)·표·다이어그램·UI 상태 등을 꼼꼼히 판독하여 질문에 직접 답변</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label fix"><i class="fa-solid fa-wrench"></i> 마크다운 렌더링 품질 개선</div>
+                                    <ul class="change-list">
+                                        <li><strong>문단·개행 처리 정확도 향상</strong>: AI 응답 내 줄바꿈과 문단 경계를 보다 정확히 구분하여 가독성 높은 본문 렌더링 구현</li>
+                                        <li><strong>데이터 테이블 렌더링 안정화</strong>: 테이블 태그 파싱 로직을 보강하여 잘림·깨짐 없이 안정적으로 표시되도록 개선</li>
                                     </ul>
                                 </div>
                             </div>
