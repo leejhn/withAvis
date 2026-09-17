@@ -70,12 +70,52 @@
                                 <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
                                 <div class="version-title">
                                     <span class="version-tag">v9.1.17</span>
+                                    <span class="version-summary">Mermaid 다이어그램 렌더링 엔진 안정화 & 다양한 웹 환경 호환성 강화</span>
+                                </div>
+                            </div>
+                            <div class="accordion-header-right">
+                                <span class="date-badge">2026.09.17</span>
+                                <span class="status-pill latest">Latest</span>
+                            </div>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body-inner">
+                                <div class="release-intro">
+                                    사내 포털, 뉴스 등 다양한 웹사이트 환경에서 다이어그램이 정상 렌더링되지 않던 호환성 이슈를 해결하고, 차트 렌더링 엔진의 레이아웃 계산 및 구문 파싱 안정성을 대폭 강화했습니다.
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label fix"><i class="fa-solid fa-wrench"></i> 다이어그램 렌더링 엔진 안정성 강화</div>
+                                    <ul class="change-list">
+                                        <li><strong>무한 재귀 호출 오류 원천 해결</strong>: 웹페이지 내 요소 탐색 과정에서 발생하던 재귀 호출 결함을 제거하여, 일반 포털 및 뉴스 사이트 접속 시 콘솔 스택 오버플로 에러 없이 차트가 즉시 정상 표시되도록 안정화</li>
+                                        <li><strong>다이어그램 그래픽 축소 및 빈 화면 현상 개선</strong>: 유연한 레이아웃(Flexbox) 컨테이너 내에서 벡터 그래픽 크기가 0으로 수축하여 차트가 빈 박스로 보이던 표시 오류를 완벽히 차단하고 100% 최적 폭으로 확장 렌더링되도록 보정</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-sparkles"></i> 복합 웹 환경 호환성 및 구문 해석 고도화</div>
+                                    <ul class="change-list">
+                                        <li><strong>프레임셋(Frameset) 및 다중 프레임 사이트 완벽 지원</strong>: 최상위 본문(Body) 구조가 비표준인 사내 인트라넷 및 포털 환경에서도 렌더링 마운트 위치를 지능적으로 자동 분기하여 끊김 없는 시각화 지원</li>
+                                        <li><strong>AI 생성 다이어그램 코드 자동 교정 강화</strong>: AI 모델이 줄바꿈 없이 한 줄로 코드를 출력하거나 복합 관계식을 연속 생성하는 경우에도 표준 순서도 규격으로 자동 분리 및 보정하여 파싱 실패 방지</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Version v9.1.16 -->
+                    <article class="accordion-card">
+                        <div class="accordion-header">
+                            <div class="accordion-header-left">
+                                <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                                <div class="version-title">
+                                    <span class="version-tag">v9.1.16</span>
                                     <span class="version-summary">팝업 디자인 전면 개편 & 첨부파일 선제 분석 스킬 & 마크다운 렌더링 고도화</span>
                                 </div>
                             </div>
                             <div class="accordion-header-right">
                                 <span class="date-badge">2026.09.15</span>
-                                <span class="status-pill latest">Latest</span>
+                                <span class="status-pill stable">Stable</span>
                             </div>
                         </div>
                         <div class="accordion-content">
