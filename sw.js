@@ -1,13 +1,9 @@
 /**
- * WithAvis PWA Service Worker (sw.js)
- * 버전: v9.1.17
- * 정책:
- * - HTML 페이지(Navigate): Network-First (최신 컨텐츠 우선 + 오프라인 폴백)
- * - 정적 리소스(CSS, JS, 이미지, 아이콘): Stale-While-Revalidate (초고속 로딩 + 자동 백그라운드 갱신)
+ * sw.js — WithAvis PWA Service Worker
+ * 오프라인 캐싱, 백그라운드 동기화 및 고속 런타임 캐싱을 제공합니다.
  */
 
-const CACHE_VERSION = 'v9.1.17';
-const CACHE_NAME = `withavis-pwa-${CACHE_VERSION}`;
+const CACHE_NAME = 'withavis-pwa-v9.1.17';
 
 const PRECACHE_ASSETS = [
     './',
@@ -15,6 +11,7 @@ const PRECACHE_ASSETS = [
     './api-guide.html',
     './changelog.html',
     './privacy.html',
+    './styles.css?v=9.1.17',
     './styles.css',
     './script.js',
     './site-nav.js',
@@ -22,89 +19,87 @@ const PRECACHE_ASSETS = [
     './assets/icon16.png',
     './assets/icon48.png',
     './assets/icon128.png',
-    './assets/icon-192.png',
-    './assets/icon-512.png',
-    './assets/icon-512-maskable.png',
+    './assets/icon192.png',
+    './assets/icon512.png',
+    './assets/icon512-maskable.png',
+    './assets/apple-touch-icon.png',
     './assets/hero.png',
     './assets/gemini.png',
     './assets/claude.png',
     './assets/cerebras.png',
-    './assets/groq.png',
-    './assets/atlas.png',
     './assets/opencode.png',
-    './assets/openrouter.png'
+    './assets/openrouter.png',
+    './assets/groq.png',
+    './assets/atlas.png'
 ];
 
-// ── 설치 (Install): 핵심 리소스 사전 캐싱 ──
+// ── Install: 필수 정적 리소스 프리캐싱 ──
 self.addEventListener('install', (event) => {
-    self.skipWaiting();
     event.waitUntil(
-        caches.open(CACHE_NAME).then(async (cache) => {
-            // 개별 리소스 실패가 전체 캐시 실패로 이어지지 않도록 방어적 캐싱
-            const cachePromises = PRECACHE_ASSETS.map(async (url) => {
-                try {
-                    const response = await fetch(url, { cache: 'reload' });
-                    if (response.ok) {
-                        await cache.put(url, response);
+        caches.open(CACHE_NAME)
+            .then(async (cache) => {
+                // 개별 리소스 실패가 전체 설치를 차단하지 않도록 안전하게 캐싱
+                for (const asset of PRECACHE_ASSETS) {
+                    try {
+                        await cache.add(asset);
+                    } catch (err) {
+                        console.warn(`[PWA-SW] Precache failed for: ${asset}`, err);
                     }
-                } catch (err) {
-                    console.warn('[WithAvis SW] Precache failed for:', url, err);
                 }
-            });
-            return Promise.all(cachePromises);
-        })
+            })
+            .then(() => self.skipWaiting())
     );
 });
 
-// ── 활성화 (Activate): 구버전 캐시 정리 및 즉시 클라이언트 제어 ──
+// ── Activate: 구버전 캐시 정리 및 즉시 클라이언트 제어 ──
 self.addEventListener('activate', (event) => {
     event.waitUntil(
-        Promise.all([
-            self.clients.claim(),
-            caches.keys().then((cacheNames) => {
-                return Promise.all(
-                    cacheNames
-                        .filter((name) => name.startsWith('withavis-pwa-') && name !== CACHE_NAME)
-                        .map((name) => {
-                            console.debug('[WithAvis SW] Deleting outdated cache:', name);
-                            return caches.delete(name);
-                        })
-                );
-            })
-        ])
+        caches.keys().then((keys) => {
+            return Promise.all(
+                keys.map((key) => {
+                    if (key !== CACHE_NAME && key.startsWith('withavis-pwa-')) {
+                        console.log(`[PWA-SW] Deleting old cache: ${key}`);
+                        return caches.delete(key);
+                    }
+                })
+            );
+        }).then(() => self.clients.claim())
     );
 });
 
-// ── 요청 가로채기 (Fetch) ──
+// ── Fetch: 오프라인 캐시 및 Stale-While-Revalidate 전략 ──
 self.addEventListener('fetch', (event) => {
-    const { request } = event;
+    const request = event.request;
+    const url = new URL(request.url);
 
-    // HTTP/HTTPS 외 스키마(chrome-extension:// 등) 무시
-    if (!request.url.startsWith('http')) return;
+    // HTTP/HTTPS 외 스킴(예: chrome-extension, data) 무시
+    if (!url.protocol.startsWith('http')) return;
 
-    // Google Analytics 및 외부 추적 스크립트는 네트워크 전용
-    if (request.url.includes('google-analytics.com') || request.url.includes('googletagmanager.com')) {
-        return;
-    }
+    // POST, PUT 등 비-GET 요청 무시
+    if (request.method !== 'GET') return;
 
-    // 1. 네비게이션(HTML 문서) 요청: Network-First 전략
-    if (request.mode === 'navigate') {
+    // 1. HTML 페이지 네비게이션 요청: Network-First with Cache Fallback
+    if (request.mode === 'navigate' || request.headers.get('accept')?.includes('text/html')) {
         event.respondWith(
             fetch(request)
-                .then((networkResponse) => {
-                    if (networkResponse && networkResponse.ok) {
-                        const copy = networkResponse.clone();
+                .then((response) => {
+                    if (response.status === 200) {
+                        const copy = response.clone();
                         caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
                     }
-                    return networkResponse;
+                    return response;
                 })
                 .catch(async () => {
-                    // 오프라인 시 캐시된 페이지 반환
                     const cachedResponse = await caches.match(request);
                     if (cachedResponse) return cachedResponse;
-                    const fallbackIndex = await caches.match('./index.html');
-                    return fallbackIndex ?? new Response('Offline: WithAvis 페이지를 불러올 수 없습니다.', {
+
+                    // fallback to index.html
+                    const indexFallback = await caches.match('./index.html');
+                    if (indexFallback) return indexFallback;
+
+                    return new Response('오프라인 상태입니다. 네트워크 연결을 확인해주세요.', {
                         status: 503,
+                        statusText: 'Service Unavailable',
                         headers: { 'Content-Type': 'text/plain; charset=utf-8' }
                     });
                 })
@@ -112,38 +107,33 @@ self.addEventListener('fetch', (event) => {
         return;
     }
 
-    // 2. 정적 리소스(동일 Origin 에셋): Stale-While-Revalidate
-    const requestUrl = new URL(request.url);
-    if (requestUrl.origin === self.location.origin) {
-        event.respondWith(
-            caches.match(request).then((cachedResponse) => {
-                const fetchPromise = fetch(request)
-                    .then((networkResponse) => {
-                        if (networkResponse && networkResponse.ok) {
-                            const copy = networkResponse.clone();
-                            caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
-                        }
-                        return networkResponse;
-                    })
-                    .catch(() => cachedResponse);
-
-                return cachedResponse ?? fetchPromise;
-            })
-        );
-        return;
-    }
-
-    // 3. 외부 CDN(폰트, FontAwesome 등): Cache-First 전략
+    // 2. 정적 자산(CSS, JS, 이미지, 외부 폰트 등): Stale-While-Revalidate
     event.respondWith(
         caches.match(request).then((cachedResponse) => {
-            if (cachedResponse) return cachedResponse;
-            return fetch(request).then((networkResponse) => {
-                if (networkResponse && networkResponse.ok) {
-                    const copy = networkResponse.clone();
-                    caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
-                }
-                return networkResponse;
-            }).catch(() => new Response('', { status: 408 }));
+            const fetchPromise = fetch(request)
+                .then((networkResponse) => {
+                    if (networkResponse && networkResponse.status === 200) {
+                        const responseToCache = networkResponse.clone();
+                        caches.open(CACHE_NAME).then((cache) => {
+                            cache.put(request, responseToCache);
+                        });
+                    }
+                    return networkResponse;
+                })
+                .catch((err) => {
+                    // 네트워크 에러 시 무시 (이미 캐시가 있다면 그것을 사용)
+                    return null;
+                });
+
+            // 캐시가 있으면 즉시 반환하고 백그라운드에서 갱신, 없으면 네트워크 응답 대기
+            return cachedResponse || fetchPromise.then((res) => res || new Response(null, { status: 404 }));
         })
     );
+});
+
+// ── Message: 수동 업데이트 트리거 지원 ──
+self.addEventListener('message', (event) => {
+    if (event.data && event.data.type === 'SKIP_WAITING') {
+        self.skipWaiting();
+    }
 });

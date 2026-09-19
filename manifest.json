@@ -1,48 +1,105 @@
 {
-  "name": "WithAvis - 스마트 브라우저 AI 비서",
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "WithAvis - 브라우저 AI 비서",
   "short_name": "WithAvis",
-  "description": "웹페이지 요약, 유튜브 자막 분석, 다이어그램 시각화를 제공하는 WithAvis 공식 웹앱",
+  "description": "웹 서핑의 패러다임을 바꾸는 가장 똑똑한 브라우저 AI 비서 - 실시간 웹페이지 요약, 유튜브 자막 분석, 다이어그램 시각화 및 API 가이드",
+  "id": "/withAvis/",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "orientation": "portrait-primary",
-  "background_color": "#0B0F19",
-  "theme_color": "#0B0F19",
-  "categories": ["productivity", "utilities"],
-  "lang": "ko",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#0a0b0e",
+  "theme_color": "#6366f1",
+  "lang": "ko-KR",
+  "dir": "ltr",
+  "categories": ["utilities", "productivity"],
   "icons": [
     {
       "src": "assets/icon16.png",
       "sizes": "16x16",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "assets/icon48.png",
       "sizes": "48x48",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "assets/icon128.png",
       "sizes": "128x128",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "assets/icon-192.png",
+      "src": "assets/icon192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "assets/icon-512.png",
+      "src": "assets/icon512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "assets/icon-512-maskable.png",
+      "src": "assets/icon512-maskable.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "API Key 발급 가이드",
+      "short_name": "API 가이드",
+      "description": "무료/유료 AI Provider API 키 발급 가이드",
+      "url": "./api-guide.html",
+      "icons": [
+        {
+          "src": "assets/icon192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "업데이트 노트",
+      "short_name": "업데이트",
+      "description": "WithAvis 최신 버전 릴리즈 및 변경 기록",
+      "url": "./changelog.html",
+      "icons": [
+        {
+          "src": "assets/icon192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "개인정보처리방침",
+      "short_name": "개인정보보호",
+      "description": "Zero-Trust 100% 로컬 보안 정책",
+      "url": "./privacy.html",
+      "icons": [
+        {
+          "src": "assets/icon192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/hero.png",
+      "sizes": "1024x625",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "WithAvis AI Widget Preview"
     }
   ]
 }
