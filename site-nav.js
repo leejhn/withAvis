@@ -72,6 +72,9 @@
                     <i class="fa-solid fa-moon theme-icon-dark"></i>
                     <i class="fa-solid fa-sun theme-icon-light"></i>
                 </button>
+                <button type="button" class="pwa-install-btn" id="pwaInstallBtn" style="display: none;" aria-label="앱 설치">
+                    <i class="fa-solid fa-download"></i> 앱 설치
+                </button>
                 <a href="${WEBSTORE_URL}" target="_blank" class="nav-store-link">
                     <i class="fa-brands fa-chrome"></i> Chrome 웹스토어
                 </a>
@@ -152,12 +155,56 @@
         }
     }
 
+    // ── PWA & Service Worker Registration ──
+    let deferredPrompt = null;
+
+    function initPwa() {
+        // Service Worker 등록
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then((reg) => {
+                        console.debug('[WithAvis PWA] Service Worker 등록 완료:', reg?.scope);
+                    })
+                    .catch((err) => {
+                        console.warn('[WithAvis PWA] Service Worker 등록 실패:', err);
+                    });
+            });
+        }
+
+        // PWA 설치 프롬프트 이벤트 감지
+        const installBtn = document.getElementById('pwaInstallBtn');
+        if (!installBtn) return;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installBtn.style.display = 'inline-flex';
+        });
+
+        installBtn.addEventListener('click', async () => {
+            if (!deferredPrompt) return;
+            deferredPrompt.prompt();
+            const choice = await deferredPrompt.userChoice;
+            console.debug('[WithAvis PWA] 설치 선택 결과:', choice?.outcome);
+            deferredPrompt = null;
+            installBtn.style.display = 'none';
+        });
+
+        window.addEventListener('appinstalled', () => {
+            console.debug('[WithAvis PWA] 앱 설치 완료');
+            installBtn.style.display = 'none';
+            deferredPrompt = null;
+        });
+    }
+
     function init() {
         renderNavbar();
         renderFooter();
         syncDynamicVersion();
         bindThemeToggle();
         bindSmoothScroll();
+        initPwa();
     }
 
     // DOM 로드 후 렌더링
