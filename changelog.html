@@ -88,18 +88,18 @@
                                 <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
                                 <div class="version-title">
                                     <span class="version-tag">v9.1.19</span>
-                                    <span class="version-summary">우클릭 제한 해제 기능 온디맨드 전환 & 컨텍스트 메뉴 사용성 개선</span>
+                                    <span class="version-summary">우클릭 온디맨드 전환 & 마인드맵 렌더링 최적화 & 구조화된 정보 시각화 카드 지원</span>
                                 </div>
                             </div>
                             <div class="accordion-header-right">
-                                <span class="date-badge">2026.09.19</span>
+                                <span class="date-badge">2026.09.20</span>
                                 <span class="status-pill latest">Latest</span>
                             </div>
                         </div>
                         <div class="accordion-content">
                             <div class="accordion-body-inner">
                                 <div class="release-intro">
-                                    웹 서핑 시 무조건 작동하던 우클릭 방지 해제 기능을 기본 꺼짐(OFF) 상태로 전환하여 웹사이트 고유의 상호작용 간섭을 방지하고, 필요한 순간에만 즉시 켜고 끌 수 있도록 컨텍스트 메뉴 및 단축키 제어를 대폭 개선했습니다.
+                                    웹 서핑 시 사이트 고유 상호작용 간섭을 방지하도록 우클릭 해제 기능을 온디맨드(On-demand) 방식으로 전환하고, 마인드맵 다이어그램의 수직 중앙(Middle) 정렬과 노드 가독성을 정밀 보정했습니다. 아울러 단계별 절차·진척도 게이지·안내 알림(Callout) 등 구조화된 시각 정보 카드를 대폭 확장하여 답변의 직관성을 한층 강화했습니다.
                                 </div>
 
                                 <div class="change-group">
@@ -107,28 +107,39 @@
                                     <ul class="change-list">
                                         <li><strong>기본 동작 설정 개편 (기본값 OFF)</strong>: 페이지 접속 시 우클릭 차단 해제가 자동 적용되지 않도록 변경하여, 복잡한 웹 애플리케이션(코드 에디터, 지도, 표 등)과의 마우스 이벤트 충돌 방지</li>
                                         <li><strong>광고 제거 연동 격리</strong>: 광고 자동 제거 및 영역 숨김 기능 실행 시 우클릭 제한 해제가 의도치 않게 동시 가동되던 연동 로직을 분리하여 각 기능의 독립적 제어 보장</li>
+                                        <li><strong>컨텍스트 메뉴 및 단축키(Alt+U) 제어 지원</strong>: 마우스 우클릭 메뉴의 빠른 토글 항목과 전역 키보드 단축키(Alt+U)를 제공하여 필요한 순간에만 즉각적인 켜기/끄기 지원</li>
                                     </ul>
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label feat"><i class="fa-solid fa-compass"></i> 컨텍스트 메뉴 및 바로가기 사용성 강화</div>
+                                    <div class="group-label perf"><i class="fa-solid fa-gauge-high"></i> 다이어그램 및 마인드맵 시각화 최적화</div>
                                     <ul class="change-list">
-                                        <li><strong>우클릭 메뉴 빠른 토글</strong>: 마우스 우클릭 컨텍스트 메뉴 상단에 `🔓 우클릭 제한 해제` 항목을 직관적인 구분선과 함께 배치하여 원클릭 활성화 지원</li>
-                                        <li><strong>전역 단축키(Alt+U) 지원</strong>: 마우스 우클릭이 원천 봉쇄된 웹페이지에서도 키보드 단축키(Alt+U)로 즉시 제한 해제를 가동할 수 있도록 제어 수단 확장</li>
-                                        <li><strong>상태 전환 안내 알림(Toast) 제공</strong>: 메뉴나 단축키로 기능이 전환될 때 화면 우측 하단에 활성화/비활성화 상태를 시각적으로 즉시 안내</li>
+                                        <li><strong>마인드맵 수직 중앙 정렬(Middle Centering) 개선</strong>: 다이어그램 카드의 가용 높이를 여유 있게 확장하고 스크롤로 인한 상단 쏠림 및 하단 잘림을 제거하여, 마인드맵이 카드 영역 한가운데 온전히 배치되도록 레이아웃 정규화</li>
+                                        <li><strong>확대 모달 중심 노드(Root Node) 기반 스마트 센터링</strong>: 마인드맵 확대 시 노드 배치의 비대칭성으로 인해 상단 공백이 과도해 보이던 현상을 해결하기 위해, 중심 노드의 물리적 위치와 상하 시각적 균형(Optical Center)을 자동 계산하여 정중앙에 완벽 안착</li>
+                                        <li><strong>마인드맵 구문 자가 치유(Self-Correction) 엔진 강화</strong>: 들여쓰기 불규칙, 특수문자 표기 충돌 등을 렌더링 전에 자동 교정하고, 파싱이 불가능한 복합 구문은 계층형 순서도 다이어그램으로 유연하게 대체 변환 지원</li>
+                                        <li><strong>노드 스타일 및 텍스트 시인성 향상</strong>: 부드러운 글래스 테두리와 은은한 라벤더·인디고 톤 통일, 노드 텍스트의 수직·수평 정중앙 정렬을 통해 텍스트 치우침 현상 방지</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-sparkles"></i> 구조화된 정보 시각화 카드 및 안내 알림 지원</div>
+                                    <ul class="change-list">
+                                        <li><strong>단계별 절차(Step) 및 진척도 게이지(Gauge) 카드 지원</strong>: 순차적 가이드 전달을 위한 넘버링 스텝퍼와 달성률/점수 지표를 직관적으로 시각화하는 게이지 바 카드 추가</li>
+                                        <li><strong>핵심 지표 요약(Stat) 및 비교 분석(Compare) 카드 제공</strong>: 통계 수치 하이라이트와 2가지 대상을 나란히 비교하는 전용 시각화 레이아웃 지원</li>
+                                        <li><strong>맥락별 안내 알림(Callout) 박스 지원</strong>: 팁(Tip), 주의(Warning), 위험(Danger), 메모(Note), 성공(Success) 등 정보의 성격에 맞춘 전용 테두리 및 배경 디자인의 알림 블록 제공</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Version v9.1.17 -->
+                    <!-- Version v9.1.18 -->
                     <article class="accordion-card">
                         <div class="accordion-header">
                             <div class="accordion-header-left">
                                 <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
                                 <div class="version-title">
-                                    <span class="version-tag">v9.1.17</span>
+                                    <span class="version-tag">v9.1.18</span>
                                     <span class="version-summary">Mermaid 다이어그램 렌더링 엔진 안정화 & 다양한 웹 환경 호환성 강화</span>
                                 </div>
                             </div>
