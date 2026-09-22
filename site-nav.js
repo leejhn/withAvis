@@ -227,16 +227,39 @@
 
     // ── PWA 이벤트 바인딩 ──
     function initPwa() {
-        // 1. Service Worker 등록
+        // 1. Service Worker 등록 및 즉시 업데이트 감지
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw.js')
+                navigator.serviceWorker.register(`./sw.js?v=${APP_VERSION}`)
                     .then((reg) => {
                         console.log('[PWA] Service Worker registered with scope:', reg.scope);
+                        // 매 방문 시 최신 Service Worker 변경 사항 즉시 확인
+                        reg.update();
+
+                        reg.addEventListener('updatefound', () => {
+                            const newWorker = reg.installing;
+                            if (newWorker) {
+                                newWorker.addEventListener('statechange', () => {
+                                    if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                        // 새 버전 설치 시 대기 없이 즉시 활성화
+                                        newWorker.postMessage({ type: 'SKIP_WAITING' });
+                                    }
+                                });
+                            }
+                        });
                     })
                     .catch((err) => {
                         console.warn('[PWA] Service Worker registration failed:', err);
                     });
+            });
+
+            // 새 Service Worker 활성화 시 페이지 자동 새로고침으로 최신 콘텐츠 즉시 반영
+            let refreshing = false;
+            navigator.serviceWorker.addEventListener('controllerchange', () => {
+                if (!refreshing) {
+                    refreshing = true;
+                    window.location.reload();
+                }
             });
         }
 
