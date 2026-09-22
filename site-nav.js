@@ -50,6 +50,11 @@
     let deferredPrompt = null;
     const isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
     const isStandalone = window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
+    const isMobileDevice = () => {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+            (navigator.maxTouchPoints > 1 && window.matchMedia('(max-width: 1024px)').matches) ||
+            (window.matchMedia && window.matchMedia('(max-width: 768px)').matches);
+    };
 
     // ── Navbar ──
     function renderNavbar() {
@@ -292,8 +297,9 @@
                 navInstallBtn.classList.add('visible');
             }
 
+            // 하단 플로팅 배너는 모바일 상태에서 접근할 때만 노출
             const dismissed = sessionStorage.getItem('withavis-pwa-banner-dismissed');
-            if (!dismissed && banner) {
+            if (isMobileDevice() && !dismissed && banner) {
                 setTimeout(() => {
                     banner.style.display = 'flex';
                     banner.classList.add('animate-slide-up');
@@ -309,8 +315,8 @@
             showToast('🎉 WithAvis 앱이 성공적으로 설치되었습니다!');
         });
 
-        // 4. iOS 환경에서 배너 노출 (방문 후 2초 뒤)
-        if (isIos && !isStandalone) {
+        // 4. iOS 환경에서 배너 노출 (방문 후 2초 뒤, 모바일 기기 전용)
+        if (isIos && isMobileDevice() && !isStandalone) {
             const dismissed = sessionStorage.getItem('withavis-pwa-banner-dismissed');
             if (!dismissed && banner) {
                 setTimeout(() => {
