@@ -88,12 +88,61 @@
                                 <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
                                 <div class="version-title">
                                     <span class="version-tag">v9.1.21</span>
-                                    <span class="version-summary">Liquid Glass UI 개편 & 코드 블록 글꼴 최적화 & 시각 서식 정제</span>
+                                    <span class="version-summary">Jev 지능형 의도 라우터 탑재 & 하이브리드 무중단 Fallback & 멀티플랫폼 벡터 글꼴 최적화</span>
                                 </div>
                             </div>
                             <div class="accordion-header-right">
                                 <span class="date-badge">2026.09.22</span>
                                 <span class="status-pill latest">Latest</span>
+                            </div>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body-inner">
+                                <div class="release-intro">
+                                    TypeSafe AI의 System 1 모델인 Jev(제브)를 인텐트 라우팅 계층에 도입하여, 특정 키워드가 없더라도 사용자 질문의 실제 의도를 수십 밀리초(ms) 단위로 초고속 분류하는 차세대 지능형 라우팅 시스템을 구축했습니다. 환경설정(Options)에서 Jev API를 원클릭으로 연동하고 시뮬레이션할 수 있으며, API 키 미입력이나 네트워크 지연 시 기존 정규식 엔진으로 100% 무중단 자동 Fallback되어 서비스 연속성을 안전하게 보장합니다. 아울러 Mac, Mobile, PC 전반의 텍스트 깨짐을 개선한 고해상도 벡터 한글 글꼴 스택을 적용했습니다.
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-sparkles"></i> 지능형 인텐트 라우터 및 환경설정 연동</div>
+                                    <ul class="change-list">
+                                        <li><strong>TypeSafe AI Jev (System 1) 초고속 의도 라우터 도입</strong>: 텍스트 생성이 아닌 순수 의사결정(Decision) 전용 모델을 연동하여, 질문 문맥을 분석하고 다이어그램·캘린더·웹 검색 스킬을 수십 ms 내외로 즉시 판별하여 선제 주입</li>
+                                        <li><strong>환경설정(Options) 내 Jev 전용 관리 패널 신설</strong>: 상단 헤더에 'Jev 라우터' 탭을 추가하여 TypeSafe AI API Key 등록, 비밀번호 보기/숨김 토글, 저장 기능을 직관적으로 구성</li>
+                                        <li><strong>실시간 인텐트 분류 시뮬레이션 및 테스트 도구 제공</strong>: 환경설정 페이지에서 질문 문장을 직접 입력하고 [분류 테스트]를 실행하여, 연동 상태와 감지된 의도 태그(🎨 다이어그램, 📅 캘린더, 🔍 웹 검색 등) 및 서버 응답 속도를 시각적으로 즉시 확인 가능</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label fix"><i class="fa-solid fa-wrench"></i> 무중단 하이브리드 Fallback 및 오탐 방지</div>
+                                    <ul class="change-list">
+                                        <li><strong>100% 무중단 하이브리드 Fallback 아키텍처 보장</strong>: API 키가 없거나 비어있는 경우, 또는 네트워크 지연(600ms 타임아웃) 및 서비스 장애 발생 시 예외 없이 기존 내장 정규식 엔진으로 즉시 자동 전환되어 서비스 연속성 유지</li>
+                                        <li><strong>키워드 낚시(오탐) 차단 및 토큰 절감</strong>: "속도가 일정하지 않다"처럼 일상 대화에 특정 키워드가 포함되더라도 문맥을 파악하여 엉뚱한 캘린더 링크나 다이어그램 스킬 주입을 원천 차단</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label perf"><i class="fa-solid fa-gauge-high"></i> 타이포그래피 및 가독성 최적화</div>
+                                    <ul class="change-list">
+                                        <li><strong>Pretendard Variable 고해상도 벡터 한글 글꼴 스택 적용</strong>: Google Fonts 미지원으로 인해 Windows PC 등에서 발생하던 글꼴 깨짐 및 자간 찌그러짐 현상을 해결하고, Mac, iOS, Android, Windows 전반에서 선명한 가변 벡터 폰트 렌더링 지원</li>
+                                        <li><strong>환경설정 UI 인풋 레이아웃 정돈</strong>: 비밀번호 표시/숨김 아이콘이 인풋 박스 내부 우측에 단정하게 안착하도록 반응형 레이아웃 정밀 보정</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Version v9.1.20 -->
+                    <article class="accordion-card">
+                        <div class="accordion-header">
+                            <div class="accordion-header-left">
+                                <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                                <div class="version-title">
+                                    <span class="version-tag">v9.1.20</span>
+                                    <span class="version-summary">Liquid Glass UI 개편 & 코드 블록 글꼴 최적화 & 시각 서식 정제</span>
+                                </div>
+                            </div>
+                            <div class="accordion-header-right">
+                                <span class="date-badge">2026.09.22</span>
+                                <span class="status-pill stable">Stable</span>
                             </div>
                         </div>
                         <div class="accordion-content">
