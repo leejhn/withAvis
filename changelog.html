@@ -92,12 +92,52 @@
                                 <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
                                 <div class="version-title">
                                     <span class="version-tag">v9.1.22</span>
+                                    <span class="version-summary">응답 뷰포트 자동 스크롤 개선 & 요약 서머리·소제목 시각 위계 정규화 & 메시지 퀵 액션 상시 노출 & 인포그래픽 복원 안정화</span>
+                                </div>
+                            </div>
+                            <div class="accordion-header-right">
+                                <span class="date-badge">2026.09.23</span>
+                                <span class="status-pill latest">Latest</span>
+                            </div>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body-inner">
+                                <div class="release-intro">
+                                    긴 인용 서머리와 본문 소제목 간의 시각적 위계를 재정립하여 가독성을 개선하고, AI 응답 완료 시 바닥 자동 스크롤과 메시지 퀵 액션 도구의 접근성을 강화했습니다. 또한 대화 다시 불러오기 시 인포그래픽 카드의 데이터가 온전히 유지되도록 복원 파이프라인을 정밀 안정화했습니다.
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-sparkles"></i> 응답 뷰포트 인터랙션 및 조작 편의성 개선</div>
+                                    <ul class="change-list">
+                                        <li><strong>메시지 퀵 액션 도구(핀·복사·삭제·낭독) 상시 노출</strong>: 마우스 호버에 의존하지 않고 답변 카드 하단에 퀵 액션 버튼이 상시 정갈하게 표시되도록 전환하여 터치 환경 및 빠른 원클릭 제어 편의성 향상</li>
+                                        <li><strong>응답 스트리밍 자동 스크롤 임계값 최적화</strong>: 실시간 답변 생성 중 바닥 감지 임계값을 완화(200px)하고, 답변 생성이 완료되는 순간 하단 툴바가 가려지지 않도록 뷰포트 최하단까지 매끄럽게 자동 스크롤 보정</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label fix"><i class="fa-solid fa-wrench"></i> 렌더링 시각 위계 정규화 및 데이터 영속성 강화</div>
+                                    <ul class="change-list">
+                                        <li><strong>요약 인용 상자 내 소제목 분리 렌더링</strong>: 페이지 요약 분석 시 본문의 주요 내용 및 핵심 팩트 등의 소제목이 상단 인용(Quote) 상자 내부에 파묻히는 현상을 해결하여, 인용 상자 하단의 독립적인 섹션 헤딩으로 정갈하게 분리 출력</li>
+                                        <li><strong>인포그래픽 시각화 카드 대화 히스토리 복원 정상화</strong>: 브라우저 새로고침이나 대화 목록 재로딩 시 본문 텍스트의 특수 태그 정제 과정에서 인포그래픽 카드 데이터 구조가 손상되던 현상을 원천 차단하여, 이전 대화의 시각화 카드가 언제나 온전히 복원되도록 개선</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Version v9.1.21 -->
+                    <article class="accordion-card">
+                        <div class="accordion-header">
+                            <div class="accordion-header-left">
+                                <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                                <div class="version-title">
+                                    <span class="version-tag">v9.1.21</span>
                                     <span class="version-summary">Jev 지능형 의도 라우터 탑재 & 하이브리드 무중단 Fallback & 멀티플랫폼 벡터 글꼴 최적화</span>
                                 </div>
                             </div>
                             <div class="accordion-header-right">
                                 <span class="date-badge">2026.09.22</span>
-                                <span class="status-pill latest">Latest</span>
+                                <span class="status-pill stable">Stable</span>
                             </div>
                         </div>
                         <div class="accordion-content">
