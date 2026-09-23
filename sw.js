@@ -3,7 +3,7 @@
  * 오프라인 캐싱, 백그라운드 동기화 및 고속 런타임 캐싱을 제공합니다.
  */
 
-const CACHE_NAME = 'withavis-pwa-v9.1.21';
+const CACHE_NAME = 'withavis-pwa-v9.1.22';
 
 const PRECACHE_ASSETS = [
     './',
@@ -11,10 +11,10 @@ const PRECACHE_ASSETS = [
     './api-guide.html',
     './changelog.html',
     './privacy.html',
-    './styles.css?v=9.1.21',
+    './styles.css?v=9.1.22',
     './styles.css',
     './script.js',
-    './site-nav.js?v=9.1.21',
+    './site-nav.js?v=9.1.22',
     './site-nav.js',
     './manifest.json',
     './assets/icon16.png',
