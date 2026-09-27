@@ -28,16 +28,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Favicon & PWA Icons -->
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/icon16.png?v=9.1.22">
-    <link rel="icon" type="image/png" sizes="48x48" href="./assets/icon48.png?v=9.1.22">
-    <link rel="icon" type="image/png" sizes="192x192" href="./assets/icon192.png?v=9.1.22">
-    <link rel="icon" type="image/png" sizes="512x512" href="./assets/icon512.png?v=9.1.22">
-    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png?v=9.1.22">
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png?v=9.1.22">
-    <link rel="apple-touch-icon" sizes="152x152" href="./assets/apple-touch-icon.png?v=9.1.22">
-    <link rel="apple-touch-icon" sizes="120x120" href="./assets/apple-touch-icon.png?v=9.1.22">
-    <link rel="apple-touch-icon-precomposed" href="./assets/apple-touch-icon.png?v=9.1.22">
-    <link rel="manifest" href="./manifest.json?v=9.1.22">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/icon16.png?v=9.1.23">
+    <link rel="icon" type="image/png" sizes="48x48" href="./assets/icon48.png?v=9.1.23">
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/icon192.png?v=9.1.23">
+    <link rel="icon" type="image/png" sizes="512x512" href="./assets/icon512.png?v=9.1.23">
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png?v=9.1.23">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png?v=9.1.23">
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/apple-touch-icon.png?v=9.1.23">
+    <link rel="apple-touch-icon" sizes="120x120" href="./assets/apple-touch-icon.png?v=9.1.23">
+    <link rel="apple-touch-icon-precomposed" href="./assets/apple-touch-icon.png?v=9.1.23">
+    <link rel="manifest" href="./manifest.json?v=9.1.23">
     <meta name="theme-color" content="#0a0c10" media="(prefers-color-scheme: dark)">
     <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)">
     <meta name="mobile-web-app-capable" content="yes">
@@ -46,10 +46,10 @@
     <meta name="apple-mobile-web-app-title" content="WithAvis">
     <meta name="application-name" content="WithAvis">
     <meta name="msapplication-TileColor" content="#0a0b0e">
-    <meta name="msapplication-TileImage" content="./assets/icon192.png?v=9.1.22">
+    <meta name="msapplication-TileImage" content="./assets/icon192.png?v=9.1.23">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=9.1.22">
+    <link rel="stylesheet" href="styles.css?v=9.1.23">
 
 </head>
 
@@ -91,7 +91,7 @@
                     <button type="button" class="maker-tab-btn" data-maker="cerebras">
                         <img src="assets/cerebras.png" alt="Cerebras" class="tab-logo">
                         <span class="tab-name">Cerebras</span>
-                        <span class="tab-badge speed">초고속 Llama</span>
+                        <span class="tab-badge speed">초고속 추론</span>
                     </button>
                     <button type="button" class="maker-tab-btn" data-maker="claude">
                         <img src="assets/claude.png" alt="Claude" class="tab-logo">
@@ -172,14 +172,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Gemini 2.5 Flash</strong> (기본 권장)</td>
-                                    <td><span class="model-tag">gemini-2.5-flash</span></td>
-                                    <td>압도적인 속도와 뛰어난 문맥 이해도 (웹 요약, 번역, 일반 질문 최적)</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Gemini 2.5 Pro</strong></td>
-                                    <td><span class="model-tag">gemini-2.5-pro</span></td>
-                                    <td>복잡한 다이어그램 생성, 긴 논문/PDF 심층 분석용</td>
+                                    <td><strong>Gemini Flash-Lite</strong> (기본 권장)</td>
+                                    <td><span class="model-tag">gemini-2.0-flash-lite</span></td>
+                                    <td>빠른 속도와 안정적인 버전 고정 (웹 요약, 번역, 일반 질문 최적)</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -253,14 +248,14 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Llama 3.3 70B</strong> (강력 추천)</td>
-                                    <td><span class="model-tag">llama-3.3-70b</span></td>
-                                    <td>GPT-4급 지능을 초당 수백 토큰 속도로 스트리밍</td>
+                                    <td><strong>Qwen 3.8 27B</strong> (권장)</td>
+                                    <td><span class="model-tag">qwen-3.8-27b</span></td>
+                                    <td>멀티모달 에이전트 코딩·도구 호출에 최적화된 최신 모델</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Llama 3.1 8B</strong></td>
-                                    <td><span class="model-tag">llama3.1-8b</span></td>
-                                    <td>초경량 초고속 모델 (단순 질의 및 실시간 음성 응답에 적합)</td>
+                                    <td><strong>GPT OSS 120B</strong></td>
+                                    <td><span class="model-tag">gpt-oss-120b</span></td>
+                                    <td>120B 파라미터 대형 모델, 심층 분석 및 복잡한 추론에 적합</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -334,14 +329,14 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><strong>Claude 3.7 Sonnet</strong></td>
-                                    <td><span class="model-tag">claude-3-7-sonnet-20250219</span></td>
-                                    <td>하이브리드 추론 엔진 탑재 최신 플래그십 (코드 분석, 정밀 요약)</td>
+                                    <td><strong>Claude Sonnet 4.5</strong> (권장)</td>
+                                    <td><span class="model-tag">claude-sonnet-4-5-20250929</span></td>
+                                    <td>코딩·에이전트 워크플로우에 최적화된 최신 플래그십</td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Claude 3.5 Haiku</strong></td>
-                                    <td><span class="model-tag">claude-3-5-haiku-20241022</span></td>
-                                    <td>경제적인 비용과 빠른 응답 속도</td>
+                                    <td><strong>Claude Opus 4.1</strong></td>
+                                    <td><span class="model-tag">claude-opus-4-1-20250805</span></td>
+                                    <td>복잡한 추론·심층 분석에 특화된 고성능 모델</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -464,7 +459,7 @@
         });
     </script>
     <!-- Shared Navigation -->
-    <script src="site-nav.js?v=9.1.22"></script>
+    <script src="site-nav.js?v=9.1.23"></script>
 </body>
 
 </html>
