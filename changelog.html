@@ -92,7 +92,7 @@
                                 <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
                                 <div class="version-title">
                                     <span class="version-tag">v9.1.23</span>
-                                    <span class="version-summary">응답 뷰포트 자동 스크롤 개선 & 요약 서머리·소제목 시각 위계 정규화 & 메시지 퀵 액션 상시 노출 & 인포그래픽 복원 안정화</span>
+                                    <span class="version-summary">AI 모델 현행화 & 출처 표시 시스템 고도화 & Jev 인텐트 라우터 고도화 & 마크다운 렌더링 개선 & 프롬프트 스킬 정밀화 & UI/UX 개선 & Gemini 스트리밍 안정화</span>
                                 </div>
                             </div>
                             <div class="accordion-header-right">
@@ -103,22 +103,84 @@
                         <div class="accordion-content">
                             <div class="accordion-body-inner">
                                 <div class="release-intro">
-                                    긴 인용 서머리와 본문 소제목 간의 시각적 위계를 재정립하여 가독성을 개선하고, AI 응답 완료 시 바닥 자동 스크롤과 메시지 퀵 액션 도구의 접근성을 강화했습니다. 또한 대화 다시 불러오기 시 인포그래픽 카드의 데이터가 온전히 유지되도록 복원 파이프라인을 정밀 안정화했습니다.
+                                    Claude Sonnet 4.5 / Opus 4.1 / Sonnet 4 최신 모델 적용, Cerebras Qwen 3.8 27B / GPT OSS 120B 반영, Gemini Flash-Lite 고정 등을 포함한 AI 모델 라인업을 전면 현행화했습니다. 출처 유형 판별 알고리즘을 어휘 오버랩 방식에서 페이지 내용 실질적 연관성·외부 검색 실행 여부·복합 구조 감지 기반 다층 판별로 전면 재설계하여 출처 표시 정확도를 대폭 향상시켰습니다.
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label feat"><i class="fa-solid fa-sparkles"></i> 응답 뷰포트 인터랙션 및 조작 편의성 개선</div>
+                                    <div class="group-label feat"><i class="fa-solid fa-microchip"></i> AI 모델 현행화 (Model Update)</div>
                                     <ul class="change-list">
-                                        <li><strong>메시지 퀵 액션 도구(핀·복사·삭제·낭독) 상시 노출</strong>: 마우스 호버에 의존하지 않고 답변 카드 하단에 퀵 액션 버튼이 상시 정갈하게 표시되도록 전환하여 터치 환경 및 빠른 원클릭 제어 편의성 향상</li>
-                                        <li><strong>응답 스트리밍 자동 스크롤 임계값 최적화</strong>: 실시간 답변 생성 중 바닥 감지 임계값을 완화(200px)하고, 답변 생성이 완료되는 순간 하단 툴바가 가려지지 않도록 뷰포트 최하단까지 매끄럽게 자동 스크롤 보정</li>
+                                        <li><strong>Claude 모델 최신화</strong>: Claude 3.7 Sonnet / 3.5 Haiku → Claude Sonnet 4.5 (claude-sonnet-4-5-20250929) / Opus 4.1 (claude-opus-4-1-20250805) / Sonnet 4</li>
+                                        <li><strong>Cerebras 모델 최신화</strong>: deprecated Llama 3.3 70B / 3.1 8B → Qwen 3.8 27B (qwen-3.8-27b) / GPT OSS 120B (gpt-oss-120b)</li>
+                                        <li><strong>Gemini 권장 모델 변경</strong>: Gemini 2.5 Flash / Pro → Gemini Flash-Lite (gemini-2.0-flash-lite) 고정</li>
+                                        <li><strong>Cerebras 탭 뱃지 변경</strong>: "초고속 Llama" → "초고속 추론"으로 수정</li>
+                                        <li><strong>모든 fallback 기본값 동기화</strong>: constants.js, options.js, background.js, controller.js, main.js 통일</li>
                                     </ul>
                                 </div>
 
                                 <div class="change-group">
-                                    <div class="group-label fix"><i class="fa-solid fa-wrench"></i> 렌더링 시각 위계 정규화 및 데이터 영속성 강화</div>
+                                    <div class="group-label feat"><i class="fa-solid fa-link"></i> 출처 표시 시스템 고도화 (Source Grounding)</div>
                                     <ul class="change-list">
-                                        <li><strong>요약 인용 상자 내 소제목 분리 렌더링</strong>: 페이지 요약 분석 시 본문의 주요 내용 및 핵심 팩트 등의 소제목이 상단 인용(Quote) 상자 내부에 파묻히는 현상을 해결하여, 인용 상자 하단의 독립적인 섹션 헤딩으로 정갈하게 분리 출력</li>
-                                        <li><strong>인포그래픽 시각화 카드 대화 히스토리 복원 정상화</strong>: 브라우저 새로고침이나 대화 목록 재로딩 시 본문 텍스트의 특수 태그 정제 과정에서 인포그래픽 카드 데이터 구조가 손상되던 현상을 원천 차단하여, 이전 대화의 시각화 카드가 언제나 온전히 복원되도록 개선</li>
+                                        <li><strong>출처 유형 판별 알고리즘 전면 재설계</strong>: 단순 어휘 오버랩 방식 → 페이지 내용 실질적 연관성 + 외부 검색 실행 여부 + 복합 구조 감지 기반 다층 판별</li>
+                                        <li><strong>Gemini Grounding 메타데이터 외부 출처 URL 추출 파이프라인 신설</strong>: webSearchQueries, groundingChunks, searchEntryPoint에서 외부 출처 URL 추출 및 정제</li>
+                                        <li><strong>출처 뱃지 커스텀 툴팁 UI 추가</strong>: 내부페이지/내·외부/웹검색 뱃지에 호버 시 참고 URL 목록 표시</li>
+                                        <li><strong>Claude/Cerebras 스트리밍 JEV 메타 전달 누락 수정</strong>: jevApplied, jevMeta 전달 보정</li>
+                                        <li><strong>포트 라이프사이클 정리</strong>: 콘텐츠 측에서만 포트를 닫도록 변경하여 메시지 전달과 onDisconnect 경합 해소</li>
+                                        <li><strong>onDisconnect 시 _last_bg_debug 상세 에러 메시지 복원</strong></li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-brain"></i> Jev 인텐트 라우터 고도화</div>
+                                    <ul class="change-list">
+                                        <li><strong>classifyWithJev에 현재 웹페이지 컨텍스트(pageContext) 전달</strong>: 페이지에 없는 내용/외부 조사 필요 여부를 Jev가 동적 판단</li>
+                                        <li><strong>타임아웃 600ms → 700ms 상향</strong>, 응답 시간(durationMs) 및 인텐트 설명(intentDesc) 반환 추가</li>
+                                        <li><strong>TTS 인텐트 키워드 분류 제거</strong> (hasTtsIntent → 항상 false)</li>
+                                        <li><strong>검색/캘린더 키워드에 영어 토큰 추가</strong> (다국어 호환)</li>
+                                        <li><strong>옵션 페이지 Jev 라우터 패널 UI 개편</strong>: TypeSafe AI 로고 헤더, System 1 / TypeSafe AI 뱃지, 콘솔 바로가기 버튼 추가</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label fix"><i class="fa-solid fa-file-lines"></i> 마크다운 렌더링 개선</div>
+                                    <ul class="change-list">
+                                        <li><strong>인용구(Blockquote) 내부 소제목 갇힘 구출 방어선 전면 신설</strong>: 구조적 헤딩(마크다운 헤딩 마커, 전체 볼드, 괄호 라벨, 빈 줄 뒤 단독 짧은 라인) 감지 → 인용구 밖 독립 ### 헤딩으로 자동 분리</li>
+                                        <li><strong>언어 독립적 순수 구조 판별</strong> (하드코딩 단어 사전 제거)</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label fix"><i class="fa-solid fa-wand-magic-sparkles"></i> 프롬프트 스킬 정밀화</div>
+                                    <ul class="change-list">
+                                        <li><strong>소제목 인용구 갇힘 절대 금지 규칙 명시</strong>: 소제목은 반드시 인용구 밖 아래에 빈 줄 후 독립 작성</li>
+                                        <li><strong>불릿 항목 줄바꿈 규칙 강화</strong>: 소제목 직후 빈 줄 없이 불릿을 같은 줄에 이어 쓰는 것 금지</li>
+                                        <li><strong>요약 리드 인용구를 단 1개의 서술형 단락(2~3줄)으로 제한</strong></li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-palette"></i> UI/UX 개선</div>
+                                    <ul class="change-list">
+                                        <li><strong>메시지 퀵 액션(핀·복사·삭제·낭독) 상시 노출로 전환</strong> (hover 의존 제거)</li>
+                                        <li><strong>응답 메시지 영역에 position: relative 추가</strong> (소스 툴팁 앵커)</li>
+                                        <li><strong>Jev 적용 뱃지(.acw-msg-jev) 스타일 추가</strong></li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label fix"><i class="fa-solid fa-bolt"></i> Gemini 스트리밍 안정화</div>
+                                    <ul class="change-list">
+                                        <li><strong>모델 404 Not Found 시 gemini-2.5-flash로 자동 폴백 재시도 추가</strong></li>
+                                        <li><strong>기존 v1alpha → v1beta 자동 폴백 로직 제거</strong></li>
+                                        <li><strong>Gemini 웹 검색 조건 개선</strong>: JEV 키가 있는 경우 페이지 컨텍스트 유의미 여부 및 외부 검색 의도를 종합 판단하여 선택적 활성화</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-globe"></i> parkingSite 사이트 업데이트</div>
+                                    <ul class="change-list">
+                                        <li><strong>changelog.html</strong>: 릴리즈 카드 추가 및 모델 표기 최신화</li>
+                                        <li><strong>api-guide.html, index.html</strong>: 모델 테이블 최신화 및 Cerebras 뱃지 텍스트 변경</li>
+                                        <li><strong>캐시 버스팅 파라미터 갱신</strong> (v=9.1.23)</li>
                                     </ul>
                                 </div>
                             </div>
