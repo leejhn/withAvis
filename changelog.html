@@ -92,12 +92,79 @@
                                 <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
                                 <div class="version-title">
                                     <span class="version-tag">v9.28.0</span>
+                                    <span class="version-summary">지능형 검색 그라운딩 & 인포그래픽 카드 자동 구출 및 JSON 재설정 & 한국어 맞춤법 강화 & 스토리지 아키텍처 표준화</span>
+                                </div>
+                            </div>
+                            <div class="accordion-header-right">
+                                <span class="date-badge">2026.09.28</span>
+                                <span class="status-pill latest">Latest</span>
+                            </div>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body-inner">
+                                <div class="release-intro">
+                                    지능형 검색 그라운딩을 통해 웹페이지 내용과 외부 지식을 종합 교차 분석하는 하이브리드 엔진을 탑재하고, 비정형 인포그래픽 카드의 자동 구출 및 구문 재설정 파이프라인을 신설했습니다. 또한 한국어 자연어 띄어쓰기 엔진 강화, 동적 원문 하이라이트 애니메이션, 레거시 스토리지 키의 표준화 및 무중단 자동 마이그레이션을 완료했습니다.
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-globe"></i> 지능형 하이브리드 검색 그라운딩 & 교차 분석 (Grounding & Search)</div>
+                                    <ul class="change-list">
+                                        <li><strong>본문·외부 지식 교차 분석</strong>: 본문에 없는 외부 대상(타 지역, 타사, 외부 사실 등)과의 비교 질문 시, 본문 데이터와 실시간 Google Search를 유기적으로 병합 분석하여 누락 없는 종합 답변 도출</li>
+                                        <li><strong>순수 쿼리 초고속 검색 분기</strong>: 웹페이지와 무관한 외부 질문 시 불필요한 본문 컨텍스트를 과감히 배제하여 2~3초 내 빠른 검색 답변 제공</li>
+                                        <li><strong>6초 Fast-Fail & Fallback 안전망</strong>: 검색 그라운딩 지연 시 6초 내 순수 텍스트 모드로 신속 전환하여 응답 정체 차단</li>
+                                        <li><strong>15초 스트림 정체 방어선</strong>: SSE 스트리밍 정체 감지 시 15초 내 자동 안전 종료 및 안내 제공</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-chart-pie"></i> 시각화 인포그래픽 카드 자동 구출 & JSON 재설정 (Infographic)</div>
+                                    <ul class="change-list">
+                                        <li><strong>고아(Orphan) 인포그래픽 카드 자동 구출</strong>: AI 모델이 코드 마커를 누락하고 본문이나 인용구에 날것(JSON)으로 출력한 시각화 카드(절차 Step, 진척도 Gauge, 비교 Compare, 통계 Stat, 타임라인)를 상태 머신으로 지능 판별하여 비주얼 카드로 자동 복원</li>
+                                        <li><strong>비정형 JSON 구문 재설정</strong>: AI 특유의 키/콜론 탈락 등 비정형 JSON 패턴을 실시간 정규화하여 렌더링 실패율 최소화</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-pen-nib"></i> 한국어 자연어 맞춤법 및 띄어쓰기 엔진 강화 (NLP & Spacing)</div>
+                                    <ul class="change-list">
+                                        <li><strong>의존명사 문맥 띄어쓰기</strong>: '뿐', '데', '바', '지' 등 문맥에 따라 자주 붙여 쓰이는 의존명사의 띄어쓰기 정밀 교정</li>
+                                        <li><strong>관형사형 어미 공백 보정</strong>: '라는', '다는' 직후 명사 결합 시 공백 누락 자동 정규화</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-wand-magic-sparkles"></i> 인터랙티브 UI/UX 및 원문 하이라이트 (Interactive UI)</div>
+                                    <ul class="change-list">
+                                        <li><strong>동적 오로라 원문 하이라이트</strong>: 원문 인용 시 4.5초 무지개 색상 회전(Hue-Rotate)과 글래스 림 라이트 애니메이션으로 시각적 피드백 및 집중도 극대화</li>
+                                        <li><strong>출처 뱃지 노출 기준 정밀화</strong>: 유효한 외부 참조 링크가 1개 이상 존재할 때만 '본문 외 별첨' 뱃지를 표시하도록 정제하여 UI 노이즈 최소화</li>
+                                        <li><strong>액션 칩 즉각 반응성</strong>: 스트리밍 지연 상태에서도 칩 클릭 즉시 전송 버튼을 초기화하여 끊김 없는 대화 흐름 보장</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label perf"><i class="fa-solid fa-database"></i> 스토리지 아키텍처 전면 표준화 및 무중단 마이그레이션 (Storage Architecture)</div>
+                                    <ul class="change-list">
+                                        <li><strong>환경설정 키 전면 표준화</strong>: 레거시 30여 개 스토리지 키 체계를 표준화된 명칭 체계로 일괄 개편</li>
+                                        <li><strong>무중단 자동 마이그레이션</strong>: 기존 사용자의 API 키, 커스텀 AI 모델, UI 배치 값의 유실 없이 신규 규격으로 즉시 자동 이전</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Version v9.1.24 -->
+                    <article class="accordion-card">
+                        <div class="accordion-header">
+                            <div class="accordion-header-left">
+                                <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                                <div class="version-title">
+                                    <span class="version-tag">v9.1.24</span>
                                     <span class="version-summary">AI 모델 현행화 & 출처 표시 시스템 고도화 & Jev 인텐트 라우터 고도화 & 마크다운 렌더링 개선 & 프롬프트 스킬 정밀화 & UI/UX 개선 & Gemini 스트리밍 안정화</span>
                                 </div>
                             </div>
                             <div class="accordion-header-right">
                                 <span class="date-badge">2026.09.23</span>
-                                <span class="status-pill latest">Latest</span>
+                                <span class="status-pill stable">Stable</span>
                             </div>
                         </div>
                         <div class="accordion-content">
