@@ -178,7 +178,7 @@
                                     <ul class="change-list">
                                         <li><strong>Claude 모델 최신화</strong>: Claude 3.7 Sonnet / 3.5 Haiku → Claude Sonnet 4.5 (claude-sonnet-4-5-20250929) / Opus 4.1 (claude-opus-4-1-20250805) / Sonnet 4</li>
                                         <li><strong>Cerebras 모델 최신화</strong>: deprecated Llama 3.3 70B / 3.1 8B → Qwen 3.8 27B (qwen-3.8-27b) / GPT OSS 120B (gpt-oss-120b)</li>
-                                        <li><strong>Gemini 권장 모델 변경</strong>: Gemini 2.5 Flash / Pro → Gemini Flash-Lite (gemini-2.0-flash-lite) 고정</li>
+                                        <li><strong>Gemini 모델 최신화</strong>: Gemini Flash Lite (gemini-flash-lite-latest) 기본 모델 고정</li>
                                         <li><strong>Cerebras 탭 뱃지 변경</strong>: "초고속 Llama" → "초고속 추론"으로 수정</li>
                                         <li><strong>모든 fallback 기본값 동기화</strong>: constants.js, options.js, background.js, controller.js, main.js 통일</li>
                                     </ul>
@@ -236,7 +236,7 @@
                                 <div class="change-group">
                                     <div class="group-label fix"><i class="fa-solid fa-bolt"></i> Gemini 스트리밍 안정화</div>
                                     <ul class="change-list">
-                                        <li><strong>모델 404 Not Found 시 gemini-2.5-flash로 자동 폴백 재시도 추가</strong></li>
+                                        <li><strong>모델 404 Not Found 시 gemini-flash-lite-latest로 자동 폴백 재시도 추가</strong></li>
                                         <li><strong>기존 v1alpha → v1beta 자동 폴백 로직 제거</strong></li>
                                         <li><strong>Gemini 웹 검색 조건 개선</strong>: JEV 키가 있는 경우 페이지 컨텍스트 유의미 여부 및 외부 검색 의도를 종합 판단하여 선택적 활성화</li>
                                     </ul>
