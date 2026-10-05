@@ -58,14 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
             prompt: '🎙️ "WithAvis의 주요 보안 특징이 무엇인지 음성으로 알려줘."',
             response: `🎙️ <strong>STT 음성 인식 완료 ➔ TTS 음성 답변 생성 중</strong><br><br>
             "WithAvis는 Zero-Trust 보안 모델을 기반으로 설계되었습니다. 사용자의 모든 API 인증 키와 대화 기록은 외부 서버로 전송되지 않으며, 사용자 기기 로컬 스토리지에만 저장됩니다." 🔊`
-        },
-        adcleaner: {
-            model: 'Gemini 3.5 Flash Lite',
-            icon: 'assets/gemini.png',
-            prompt: '이 페이지의 지저분한 배너 광고를 깔끔하게 제거해줘.',
-            response: `🧹 <strong>Ad Cleaner 작동 완료!</strong><br><br>
-            • 상단 플로팅 배너 2개 및 측면 스폰서 광고 4개 필터링 완료.<br>
-            • 웹페이지 본문 가독성 <strong>+45% 향상</strong> 및 DOM 로딩 속도 최적화 완료.`
         }
     };
 
