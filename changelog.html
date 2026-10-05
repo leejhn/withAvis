@@ -229,6 +229,159 @@
                         </div>
                     </article>
 
+                    <!-- Version v9.28.2 (Stable) -->
+                    <article class="accordion-card">
+                        <div class="accordion-header">
+                            <div class="accordion-header-left">
+                                <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                                <div class="version-title">
+                                    <span class="version-tag">v9.28.2</span>
+                                    <span class="version-summary">좌측 대화 히스토리 사이드 패널 & 뷰포트 이탈 방지 & 마크다운 표 렌더러 안정화 & 지능형 검색 그라운딩 & 스토리지 표준화</span>
+                                </div>
+                            </div>
+                            <div class="accordion-header-right">
+                                <span class="date-badge">2026.09.30</span>
+                                <span class="status-pill stable">Stable</span>
+                            </div>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body-inner">
+                                <div class="release-intro">
+                                    이전 대화 흐름을 한눈에 탐색하고 손쉽게 이어갈 수 있는 대화 세션 히스토리 사이드 패널이 새롭게 도입되었습니다. 아울러 브라우저 축소나 해상도 변경 시 챗봇 아이콘이 화면 밖으로 사라지던 현상을 원천 차단하고, 복합 마크다운 표 렌더링 및 코드 블록 서식 예외를 바로잡아 전반적인 사용 안정성을 대폭 강화했습니다. 또한 지능형 하이브리드 검색 그라운딩과 인포그래픽 카드 자동 구출, 스토리지 아키텍처 표준화가 함께 적용되었습니다.
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-clock-rotate-left"></i> 대화 세션 히스토리 사이드 패널 (Chat History)</div>
+                                    <ul class="change-list">
+                                        <li><strong>세션별 이전 대화 목록 탐색</strong>: 챗봇 좌측 사이드바를 통해 과거 진행된 대화 목록을 한눈에 확인하고, 원하는 시점의 대화를 즉시 불러와 끊김 없이 이어갈 수 있습니다.</li>
+                                        <li><strong>작업 흐름 연속성 보장</strong>: 새 대화 시작 및 세션별 메시지 기록이 로컬 저장소에 안전하게 유지되어 페이지를 이동하거나 새로고침해도 이전 기록이 보존됩니다.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label fix"><i class="fa-solid fa-shield-halved"></i> 뷰포트 안착 및 렌더러 안정성 강화 (Stability & Bug Fixes)</div>
+                                    <ul class="change-list">
+                                        <li><strong>플로팅 런처 아이콘 뷰포트 이탈 방지</strong>: 브라우저 창 크기를 줄이거나 화면 배율(Zoom)을 조절할 때, 챗봇 아이콘이 화면 밖으로 밀려나지 않도록 현재 브라우저 뷰포트 내 안전 영역(12px 여백)으로 자동 안착 및 동기화 처리했습니다.</li>
+                                        <li><strong>창 포커스 복귀 및 토글 시 위치 자동 검증</strong>: 탭 활성화나 패널 여닫기 시에도 화면 내 노출 좌표를 즉각 점검하여 아이콘 실종 현상을 원천 차단했습니다.</li>
+                                        <li><strong>복합 마크다운 표(Table) 렌더러 안정화</strong>: 표 내부 줄바꿈, 특수 기호, 복합 구분선이 포함된 답변 렌더링 시 레이아웃이 깨지거나 비정상 표시되던 파싱 오류를 보완했습니다.</li>
+                                        <li><strong>프로그래밍 코드 블록 파싱 예외 처리</strong>: 특정 언어 문법 기호가 포함된 코드 블록 출력 시 하이라이팅이 중간에 끊기거나 서식이 뭉개지지 않도록 정규화 파서를 보강했습니다.</li>
+                                        <li><strong>뷰포트 리사이즈 렌더링 최적화</strong>: 브라우저 크기 변경 감지 시 프레임 스케줄러를 적용하여 불필요한 레이아웃 재계산을 줄이고 반응형 전환을 매끄럽게 개선했습니다.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-globe"></i> 지능형 하이브리드 검색 그라운딩 & 교차 분석 (Grounding & Search)</div>
+                                    <ul class="change-list">
+                                        <li><strong>본문·외부 지식 교차 분석</strong>: 본문에 없는 외부 대상(타 지역, 타사, 외부 사실 등)과의 비교 질문 시, 본문 데이터와 실시간 Google Search를 유기적으로 병합 분석하여 누락 없는 종합 답변 도출</li>
+                                        <li><strong>순수 쿼리 초고속 검색 분기</strong>: 웹페이지와 무관한 외부 질문 시 불필요한 본문 컨텍스트를 과감히 배제하여 2~3초 내 빠른 검색 답변 제공</li>
+                                        <li><strong>6초 Fast-Fail & Fallback 안전망</strong>: 검색 그라운딩 지연 시 6초 내 순수 텍스트 모드로 신속 전환하여 응답 정체 차단</li>
+                                        <li><strong>15초 스트림 정체 방어선</strong>: SSE 스트리밍 정체 감지 시 15초 내 자동 안전 종료 및 안내 제공</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-chart-pie"></i> 시각화 인포그래픽 카드 자동 구출 & JSON 재설정 (Infographic)</div>
+                                    <ul class="change-list">
+                                        <li><strong>고아(Orphan) 인포그래픽 카드 자동 구출</strong>: AI 모델이 코드 마커를 누락하고 본문이나 인용구에 날것(JSON)으로 출력한 시각화 카드(절차 Step, 진척도 Gauge, 비교 Compare, 통계 Stat, 타임라인)를 상태 머신으로 지능 판별하여 비주얼 카드로 자동 복원</li>
+                                        <li><strong>비정형 JSON 구문 재설정</strong>: AI 특유의 키/콜론 탈락 등 비정형 JSON 패턴을 실시간 정규화하여 렌더링 실패율 최소화</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-pen-nib"></i> 한국어 자연어 맞춤법 및 띄어쓰기 엔진 강화 (NLP & Spacing)</div>
+                                    <ul class="change-list">
+                                        <li><strong>의존명사 문맥 띄어쓰기</strong>: '뿐', '데', '바', '지' 등 문맥에 따라 자주 붙여 쓰이는 의존명사의 띄어쓰기 정밀 교정</li>
+                                        <li><strong>관형사형 어미 공백 보정</strong>: '라는', '다는' 직후 명사 결합 시 공백 누락 자동 정규화</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-wand-magic-sparkles"></i> 인터랙티브 UI/UX 및 원문 하이라이트 (Interactive UI)</div>
+                                    <ul class="change-list">
+                                        <li><strong>동적 오로라 원문 하이라이트</strong>: 원문 인용 시 4.5초 무지개 색상 회전(Hue-Rotate)과 글래스 림 라이트 애니메이션으로 시각적 피드백 및 집중도 극대화</li>
+                                        <li><strong>출처 뱃지 노출 기준 정밀화</strong>: 유효한 외부 참조 링크가 1개 이상 존재할 때만 '본문 외 별첨' 뱃지를 표시하도록 정제하여 UI 노이즈 최소화</li>
+                                        <li><strong>액션 칩 즉각 반응성</strong>: 스트리밍 지연 상태에서도 칩 클릭 즉시 전송 버튼을 초기화하여 끊김 없는 대화 흐름 보장</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label perf"><i class="fa-solid fa-database"></i> 스토리지 아키텍처 전면 표준화 및 무중단 마이그레이션 (Storage Architecture)</div>
+                                    <ul class="change-list">
+                                        <li><strong>환경설정 키 전면 표준화</strong>: 레거시 30여 개 스토리지 키 체계를 표준화된 명칭 체계로 일괄 개편</li>
+                                        <li><strong>무중단 자동 마이그레이션</strong>: 기존 사용자의 API 키, 커스텀 AI 모델, UI 배치 값의 유실 없이 신규 규격으로 즉시 자동 이전</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Version v9.28.1 (Stable) -->
+                    <article class="accordion-card">
+                        <div class="accordion-header">
+                            <div class="accordion-header-left">
+                                <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                                <div class="version-title">
+                                    <span class="version-tag">v9.28.1</span>
+                                    <span class="version-summary">지능형 검색 그라운딩 & 인포그래픽 카드 자동 구출 및 JSON 재설정 & 한국어 맞춤법 강화 & 스토리지 아키텍처 표준화</span>
+                                </div>
+                            </div>
+                            <div class="accordion-header-right">
+                                <span class="date-badge">2026.09.28</span>
+                                <span class="status-pill stable">Stable</span>
+                            </div>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body-inner">
+                                <div class="release-intro">
+                                    지능형 검색 그라운딩을 통해 웹페이지 내용과 외부 지식을 종합 교차 분석하는 하이브리드 엔진을 탑재하고, 비정형 인포그래픽 카드의 자동 구출 및 구문 재설정 파이프라인을 신설했습니다. 또한 한국어 자연어 띄어쓰기 엔진 강화, 동적 원문 하이라이트 애니메이션, 레거시 스토리지 키의 표준화 및 무중단 자동 마이그레이션을 완료했습니다.
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-globe"></i> 지능형 하이브리드 검색 그라운딩 & 교차 분석 (Grounding & Search)</div>
+                                    <ul class="change-list">
+                                        <li><strong>본문·외부 지식 교차 분석</strong>: 본문에 없는 외부 대상(타 지역, 타사, 외부 사실 등)과의 비교 질문 시, 본문 데이터와 실시간 Google Search를 유기적으로 병합 분석하여 누락 없는 종합 답변 도출</li>
+                                        <li><strong>순수 쿼리 초고속 검색 분기</strong>: 웹페이지와 무관한 외부 질문 시 불필요한 본문 컨텍스트를 과감히 배제하여 2~3초 내 빠른 검색 답변 제공</li>
+                                        <li><strong>6초 Fast-Fail & Fallback 안전망</strong>: 검색 그라운딩 지연 시 6초 내 순수 텍스트 모드로 신속 전환하여 응답 정체 차단</li>
+                                        <li><strong>15초 스트림 정체 방어선</strong>: SSE 스트리밍 정체 감지 시 15초 내 자동 안전 종료 및 안내 제공</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-chart-pie"></i> 시각화 인포그래픽 카드 자동 구출 & JSON 재설정 (Infographic)</div>
+                                    <ul class="change-list">
+                                        <li><strong>고아(Orphan) 인포그래픽 카드 자동 구출</strong>: AI 모델이 코드 마커를 누락하고 본문이나 인용구에 날것(JSON)으로 출력한 시각화 카드(절차 Step, 진척도 Gauge, 비교 Compare, 통계 Stat, 타임라인)를 상태 머신으로 지능 판별하여 비주얼 카드로 자동 복원</li>
+                                        <li><strong>비정형 JSON 구문 재설정</strong>: AI 특유의 키/콜론 탈락 등 비정형 JSON 패턴을 실시간 정규화하여 렌더링 실패율 최소화</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-pen-nib"></i> 한국어 자연어 맞춤법 및 띄어쓰기 엔진 강화 (NLP & Spacing)</div>
+                                    <ul class="change-list">
+                                        <li><strong>의존명사 문맥 띄어쓰기</strong>: '뿐', '데', '바', '지' 등 문맥에 따라 자주 붙여 쓰이는 의존명사의 띄어쓰기 정밀 교정</li>
+                                        <li><strong>관형사형 어미 공백 보정</strong>: '라는', '다는' 직후 명사 결합 시 공백 누락 자동 정규화</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-wand-magic-sparkles"></i> 인터랙티브 UI/UX 및 원문 하이라이트 (Interactive UI)</div>
+                                    <ul class="change-list">
+                                        <li><strong>동적 오로라 원문 하이라이트</strong>: 원문 인용 시 4.5초 무지개 색상 회전(Hue-Rotate)과 글래스 림 라이트 애니메이션으로 시각적 피드백 및 집중도 극대화</li>
+                                        <li><strong>출처 뱃지 노출 기준 정밀화</strong>: 유효한 외부 참조 링크가 1개 이상 존재할 때만 '본문 외 별첨' 뱃지를 표시하도록 정제하여 UI 노이즈 최소화</li>
+                                        <li><strong>액션 칩 즉각 반응성</strong>: 스트리밍 지연 상태에서도 칩 클릭 즉시 전송 버튼을 초기화하여 끊김 없는 대화 흐름 보장</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label perf"><i class="fa-solid fa-database"></i> 스토리지 아키텍처 전면 표준화 및 무중단 마이그레이션 (Storage Architecture)</div>
+                                    <ul class="change-list">
+                                        <li><strong>환경설정 키 전면 표준화</strong>: 레거시 30여 개 스토리지 키 체계를 표준화된 명칭 체계로 일괄 개편</li>
+                                        <li><strong>무중단 자동 마이그레이션</strong>: 기존 사용자의 API 키, 커스텀 AI 모델, UI 배치 값의 유실 없이 신규 규격으로 즉시 자동 이전</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
                     <!-- Version v9.1.23 -->
                     <article class="accordion-card">
                         <div class="accordion-header">
