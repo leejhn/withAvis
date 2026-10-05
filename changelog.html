@@ -92,12 +92,70 @@
                                 <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
                                 <div class="version-title">
                                     <span class="version-tag">v9.28.4</span>
+                                    <span class="version-summary">영어 학습 및 시사 상식 브리핑 & 샌드박스 안전 인앱 모달 & 마크다운 마커 정제 & 액션 칩 개선</span>
+                                </div>
+                            </div>
+                            <div class="accordion-header-right">
+                                <span class="date-badge">2026.10.05</span>
+                                <span class="status-pill latest">Latest</span>
+                            </div>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body-inner">
+                                <div class="release-intro">
+                                    영문 기사 요약 시 핵심 어휘와 번역 툴팁을 제공하는 영어 학습 지원 및 시사 상식 브리핑 기능이 추가되었습니다. 아울러 샌드박스 환경에서도 안전하게 동작하는 내장 확인 모달을 도입하고 마크다운 구문 클린업 및 후속 질문 파싱 로직을 정밀화했습니다.
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-graduation-cap"></i> 영어 학습 및 시사 상식 브리핑 (Learning & Briefing)</div>
+                                    <ul class="change-list">
+                                        <li><strong>영어 원문 자동 감지 및 맞춤 학습 지원</strong>: 영문 기사 요약 시 핵심 어휘와 의미를 정리한 마크다운 학습 표를 본문 하단에 자동 생성합니다.</li>
+                                        <li><strong>어휘 예문 툴팁 번역 제공</strong>: 표 내 예문에 마우스를 올리면 한국어 번역이 즉각 표시되는 인터랙티브 인라인 툴팁을 지원합니다.</li>
+                                        <li><strong>시사 상식 및 배경지식 브리핑</strong>: 일반 웹페이지 요약 시 본문 외 알아두면 유용한 배경 상식을 개조식 불릿으로 압축 제공합니다.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-shield-halved"></i> 샌드박스 안전 인앱 확인 모달 (In-App Modal)</div>
+                                    <ul class="change-list">
+                                        <li><strong>샌드박스 환경 브라우저 차단 대응</strong>: iframe 및 보안 격리 환경에서 브라우저 기본 확인창이 차단되는 문제를 원천 해결한 위젯 내장 모달을 탑재했습니다.</li>
+                                        <li><strong>대화 기록 초기화 안전성 강화</strong>: 대화 삭제 시 내장 확인 모달과 키보드(Esc) 제어를 통해 직관적이고 안전한 확인 절차를 제공합니다.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label fix"><i class="fa-solid fa-wand-magic-sparkles"></i> 마크다운 렌더러 정제 및 표시 품질 개선 (Markdown Refinement)</div>
+                                    <ul class="change-list">
+                                        <li><strong>마커 오출력(Stray 기호) 자동 클린업</strong>: 문장 끝이나 단락 사이에 비정상적으로 출력된 단독 인용 부호('>') 등 불필요한 기호를 렌더링 전 자동으로 정제합니다.</li>
+                                        <li><strong>내용 없는 공백 마커 행 제거</strong>: 텍스트 없이 마커만 남은 빈 줄(헤더, 불릿 기호 등)을 감지하여 삭제함으로써 응답 가독성을 향상했습니다.</li>
+                                        <li><strong>리드 요약 인용구 렌더링 정상화</strong>: 상단 핵심 요약 리드문 종료 후 인용구를 즉시 닫도록 안내를 개선하여 하위 소제목이 인용구에 갇히는 현상을 방지했습니다.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-lightbulb"></i> 인터랙티브 후속 액션 칩 개선 (Interactive Action Chips)</div>
+                                    <ul class="change-list">
+                                        <li><strong>다중 후속 질문 안전 분리</strong>: 한 줄에 기호로 연달아 이어진 복수 질문을 지능적으로 감지하여 개별 클릭형 액션 칩으로 분할 생성합니다.</li>
+                                        <li><strong>심화 탐구 중심 질문 추천</strong>: 단순 단답형 퀴즈를 배제하고 기사 내용의 맥락과 배경을 심층 탐구할 수 있는 방향으로 후속 질문 품질을 강화했습니다.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Version v9.28.3 (Stable) -->
+                    <article class="accordion-card">
+                        <div class="accordion-header">
+                            <div class="accordion-header-left">
+                                <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                                <div class="version-title">
+                                    <span class="version-tag">v9.28.3</span>
                                     <span class="version-summary">좌측 대화 히스토리 사이드 패널 & 뷰포트 이탈 방지 & 마크다운 표 렌더러 안정화 & 지능형 검색 그라운딩 & 스토리지 표준화</span>
                                 </div>
                             </div>
                             <div class="accordion-header-right">
                                 <span class="date-badge">2026.09.30</span>
-                                <span class="status-pill latest">Latest</span>
+                                <span class="status-pill stable">Stable</span>
                             </div>
                         </div>
                         <div class="accordion-content">
