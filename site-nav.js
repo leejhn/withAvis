@@ -109,7 +109,7 @@
                 <div class="logo">
                     <span class="logo-icon"><img src="assets/icon48.png" alt="WithAvis Logo" class="brand-logo-img"></span>
                     <span class="logo-text">WithAvis</span>
-                    <span class="version-badge footer-version-badge" id="appVersionBadge">vv9.28.7</span>
+                    <span class="version-badge footer-version-badge" id="appVersionBadge">v9.28.7</span>
                 </div>
                 <p>© 2026 WithAvis Project. All rights reserved.</p>
             </div>
@@ -381,15 +381,13 @@
         });
     }
 
-    // ── 런타임 최신 버전 일치 (site-nav.js의 APP_VERSION을 페이지 요소에 단방향 전파) ──
+    // ── 런타임 최신 버전 일치 (site-nav.js의 APP_VERSION을 푸터 뱃지에만 단방향 전파) ──
+    // 주의: changelog 첫 카드(.version-tag)는 히스토리이므로 절대 덮어쓰지 않음.
+    // 신규 버전은 publish-changelog 스킬로 수동 Prepend (자동 판올림 금지).
     function syncDynamicVersion() {
         const changelogMeta = document.querySelector('.changelog-meta');
         if (changelogMeta) {
             changelogMeta.innerHTML = `<i class="fa-solid fa-clock-rotate-left"></i> 최신 릴리즈 ${APP_VERSION} 기준`;
-        }
-        const firstCardTag = document.querySelector('.accordion-card:first-of-type .version-tag');
-        if (firstCardTag && firstCardTag.textContent.trim() !== APP_VERSION) {
-            firstCardTag.textContent = APP_VERSION;
         }
     }
 
