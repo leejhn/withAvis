@@ -85,8 +85,56 @@
                 <!-- Accordion List -->
                 <div class="accordion-list" id="changelogList">
 
-                    <!-- Version v9.28.11 (Latest) -->
+                    <!-- Version v9.28.15 (Latest) -->
                     <article class="accordion-card open">
+                        <div class="accordion-header">
+                            <div class="accordion-header-left">
+                                <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                                <div class="version-title">
+                                    <span class="version-tag">v9.28.15</span>
+                                    <span class="version-summary">최대화 패널 좌/우 드래그 도킹 전환 & 활성 AI 모델 전용 아이콘 동기화 & 레이아웃 루프 방지 및 안정화</span>
+                                </div>
+                            </div>
+                            <div class="accordion-header-right">
+                                <span class="date-badge">2026.10.21</span>
+                                <span class="status-pill latest">Latest</span>
+                            </div>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body-inner">
+                                <div class="release-intro">
+                                    최대화 상태에서 상단 헤더를 드래그하여 화면 좌우 도킹 위치를 손쉽게 전환할 수 있는 직관적인 스냅 제스처를 도입하고, 현재 선택된 AI 모델의 전용 아이콘과 명칭이 플로팅 버튼 및 헤더에 실시간 반영되도록 동기화 체계를 강화했습니다. 또한 내부 레이아웃 핑퐁 루프 차단과 기본 응답 언어 최적화를 통해 전반적인 사용 안정성을 향상시켰습니다.
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-up-right-and-down-left-from-center"></i> 윈도우 인터랙션 및 도킹 레이아웃 (Docking & Layout)</div>
+                                    <ul class="change-list">
+                                        <li><strong>최대화 패널 좌/우 드래그 도킹 전환</strong>: 패널이 화면 한쪽에 최대화(도킹)된 상태에서 상단 헤더를 반대편으로 드래그하면, 파란색 테두리와 글로우 효과의 스냅 가이드와 함께 즉시 좌측 또는 우측으로 도킹 위치를 전환할 수 있습니다.</li>
+                                        <li><strong>헤더 제스처 오동작 방지 및 판별 정밀화</strong>: 드래그 이동 시 불필요한 드롭다운 메뉴 열림이나 더블클릭 최대화 토글이 오발생하지 않도록 클릭 억제 및 타겟 판별 로직을 최적화했습니다.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label feat"><i class="fa-solid fa-brain"></i> AI 프로바이더 및 사용자 인터페이스 (AI Provider & UI)</div>
+                                    <ul class="change-list">
+                                        <li><strong>활성 AI 모델 실시간 아이콘 및 명칭 동기화</strong>: 플로팅 토글 버튼 및 상단 헤더에 현재 선택된 AI 모델(Gemini, Claude 등)의 전용 아이콘과 대표 명칭이 실시간으로 일치되어 표시됩니다.</li>
+                                        <li><strong>질문 언어 일치(Original Language) 기본 정책 강화</strong>: 웹페이지 언어와 상관없이 질문한 사용자의 언어로 자동 응답하도록 기본 설정을 정비하고 기존 설정을 안전하게 이전합니다.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label fix"><i class="fa-solid fa-wrench"></i> 안정성 및 성능 최적화 (Stability & Performance)</div>
+                                    <ul class="change-list">
+                                        <li><strong>반응형 레이아웃 핑퐁 루프 및 프레임 드롭 차단</strong>: 최대화 상태에서 레이아웃 조정과 창 리사이즈 이벤트 간의 상호 순환 호출을 원천 차단하여 불필요한 브라우저 부하 및 애니메이션 끊김 현상을 해결했습니다.</li>
+                                        <li><strong>대화 내역 생성 일시 보존</strong>: 이전 대화 히스토리 탐색 시 기존 생성 일시가 덮어씌워지지 않도록 타임스탬프 처리 안정성을 보강했습니다.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Version v9.28.11 -->
+                    <article class="accordion-card">
                         <div class="accordion-header">
                             <div class="accordion-header-left">
                                 <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
@@ -97,7 +145,7 @@
                             </div>
                             <div class="accordion-header-right">
                                 <span class="date-badge">2026.10.18</span>
-                                <span class="status-pill latest">Latest</span>
+                                <span class="status-pill stable">Stable</span>
                             </div>
                         </div>
                         <div class="accordion-content">
