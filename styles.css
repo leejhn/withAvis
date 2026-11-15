@@ -3678,6 +3678,12 @@ html[data-theme="black"] .btn-primary:hover {
     transform: translateY(-1px);
 }
 
+html:not([data-theme="black"]) .btn-primary *,
+html[data-theme="light"] .btn-primary *,
+html[data-theme="black"] .btn-primary * {
+    color: #ffffff !important;
+}
+
 /* Gradient Headings & Hero Elements (Light FOUC-safe + Black) */
 html:not([data-theme="black"]) .gradient-text,
 html[data-theme="light"] .gradient-text {

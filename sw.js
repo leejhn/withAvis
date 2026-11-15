@@ -83,7 +83,7 @@ self.addEventListener('fetch', (event) => {
     // 1. HTML 및 핵심 코드(JS, CSS, JSON): Network-First (최신 배포 즉시 반영)
     if (isHtml || isCodeAsset) {
         event.respondWith(
-            fetch(request)
+            fetch(request, { cache: 'no-cache' })
                 .then((networkResponse) => {
                     if (networkResponse && networkResponse.status === 200) {
                         const copy = networkResponse.clone();
