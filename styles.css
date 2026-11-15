@@ -1,6 +1,7 @@
 /* ═══════════════════════════════════════════════════════════════════
-   WithAvis Landing Page — Ultra-Transparent Liquid Glass (Linear / WWDC25 스타일)
+   WithAvis Landing Page — Ambient Glass Unified Theme
    ═══════════════════════════════════════════════════════════════════ */
+@import url("https://leejhn.github.io/theme.css");
 
 :root {
     /* ── Liquid Glass Dark 베이스 ── */
@@ -3516,5 +3517,352 @@ kbd {
     .pwa-install-btn {
         padding: 8px 10px;
         border-radius: 50%;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Ambient Glass Unified Theme Override (Synced with theme.css)
+   ═══════════════════════════════════════════════════════════════════ */
+
+html:not([data-theme="black"]),
+html[data-theme="light"],
+html[data-theme="black"] {
+    --bg-base: var(--color-bg-base);
+    --bg-surface: var(--color-surface-floating);
+    --bg-card: var(--color-surface);
+    --text-main: var(--color-text-primary);
+    --text-muted: var(--color-text-secondary);
+    --primary: var(--color-avis);
+    --primary-glow: var(--color-avis-soft);
+}
+
+html:not([data-theme="black"]) body,
+html[data-theme="light"] body,
+html[data-theme="black"] body {
+    background: var(--color-bg-gradient);
+    background-attachment: fixed;
+    color: var(--color-text-primary);
+    font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Floating Pill Navbar */
+html:not([data-theme="black"]) .navbar,
+html[data-theme="light"] .navbar,
+html[data-theme="black"] .navbar {
+    position: sticky;
+    top: var(--space-4);
+    width: calc(100% - var(--space-6));
+    max-width: 1140px;
+    margin: var(--space-4) auto 0;
+    border-radius: var(--radius-pill);
+    background: var(--color-surface-floating);
+    backdrop-filter: var(--blur-surface);
+    -webkit-backdrop-filter: var(--blur-surface);
+    border: 1px solid var(--color-border-glass);
+    box-shadow: var(--shadow-floating);
+    border-bottom: 1px solid var(--color-border-glass);
+}
+
+html:not([data-theme="black"]) .navbar .nav-container,
+html[data-theme="light"] .navbar .nav-container,
+html[data-theme="black"] .navbar .nav-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px 22px;
+    gap: 14px;
+}
+
+html:not([data-theme="black"]) .navbar .logo-text,
+html[data-theme="light"] .navbar .logo-text,
+html[data-theme="black"] .navbar .logo-text {
+    color: var(--color-text-primary);
+}
+
+html:not([data-theme="black"]) .navbar .nav-links,
+html[data-theme="light"] .navbar .nav-links,
+html[data-theme="black"] .navbar .nav-links {
+    gap: 20px;
+}
+
+html:not([data-theme="black"]) .navbar .nav-links a,
+html[data-theme="light"] .navbar .nav-links a,
+html[data-theme="black"] .navbar .nav-links a {
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+}
+
+html:not([data-theme="black"]) .navbar .nav-links a:hover,
+html:not([data-theme="black"]) .navbar .nav-links a.active,
+html[data-theme="light"] .navbar .nav-links a:hover,
+html[data-theme="light"] .navbar .nav-links a.active {
+    color: var(--color-avis);
+}
+
+html[data-theme="black"] .navbar .nav-links a:hover,
+html[data-theme="black"] .navbar .nav-links a.active {
+    color: #93c5fd;
+}
+
+html:not([data-theme="black"]) .navbar .nav-actions,
+html[data-theme="light"] .navbar .nav-actions,
+html[data-theme="black"] .navbar .nav-actions {
+    gap: 8px;
+}
+
+html:not([data-theme="black"]) .navbar .theme-toggle-btn,
+html[data-theme="light"] .navbar .theme-toggle-btn,
+html[data-theme="black"] .navbar .theme-toggle-btn,
+html:not([data-theme="black"]) .navbar .pwa-install-btn,
+html[data-theme="light"] .navbar .pwa-install-btn,
+html[data-theme="black"] .navbar .pwa-install-btn {
+    background: var(--color-surface-inset);
+    border: 1px solid var(--color-border-subtle);
+    color: var(--color-text-secondary);
+    border-radius: var(--radius-pill);
+    box-shadow: none;
+}
+
+html:not([data-theme="black"]) .navbar .theme-toggle-btn:hover,
+html[data-theme="light"] .navbar .theme-toggle-btn:hover,
+html[data-theme="black"] .navbar .theme-toggle-btn:hover,
+html:not([data-theme="black"]) .navbar .pwa-install-btn:hover,
+html[data-theme="light"] .navbar .pwa-install-btn:hover,
+html[data-theme="black"] .navbar .pwa-install-btn:hover {
+    background: var(--color-surface-hover);
+    border-color: var(--color-border-glass);
+    color: var(--color-text-primary);
+}
+
+/* Extension-matched Cobalt Blue Store Link & Primary CTA */
+html:not([data-theme="black"]) .navbar .nav-store-link,
+html[data-theme="light"] .navbar .nav-store-link {
+    background: var(--color-avis-soft);
+    border: 1px solid var(--color-avis-border);
+    color: var(--color-avis);
+    border-radius: var(--radius-pill);
+    white-space: nowrap;
+}
+
+html[data-theme="black"] .navbar .nav-store-link {
+    background: var(--color-avis-soft);
+    border: 1px solid var(--color-avis-border);
+    color: #93c5fd;
+    border-radius: var(--radius-pill);
+    white-space: nowrap;
+}
+
+html:not([data-theme="black"]) .navbar .nav-store-link:hover,
+html[data-theme="light"] .navbar .nav-store-link:hover,
+html[data-theme="black"] .navbar .nav-store-link:hover {
+    background: var(--color-avis);
+    border-color: transparent;
+    color: #ffffff;
+}
+
+html:not([data-theme="black"]) .btn-primary,
+html[data-theme="light"] .btn-primary,
+html[data-theme="black"] .btn-primary {
+    background: linear-gradient(135deg, var(--color-avis) 0%, #1d4ed8 100%);
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: var(--radius-control);
+    box-shadow: 0 4px 14px rgba(0, 71, 160, 0.28);
+    transition: transform var(--transition-quick), box-shadow var(--transition-quick), filter var(--transition-quick);
+}
+
+html:not([data-theme="black"]) .btn-primary:hover,
+html[data-theme="light"] .btn-primary:hover,
+html[data-theme="black"] .btn-primary:hover {
+    filter: brightness(1.06);
+    box-shadow: 0 6px 20px rgba(0, 71, 160, 0.36);
+    transform: translateY(-1px);
+}
+
+/* Gradient Headings & Hero Elements (Light FOUC-safe + Black) */
+html:not([data-theme="black"]) .gradient-text,
+html[data-theme="light"] .gradient-text {
+    background: linear-gradient(135deg, var(--color-avis) 0%, #2563eb 60%, #0284c7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+html[data-theme="black"] .gradient-text {
+    background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 55%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+html:not([data-theme="black"]) .hero-title,
+html[data-theme="light"] .hero-title,
+html[data-theme="black"] .hero-title,
+html:not([data-theme="black"]) .changelog-header h1,
+html[data-theme="black"] .changelog-header h1,
+html:not([data-theme="black"]) .privacy-header h1,
+html[data-theme="black"] .privacy-header h1,
+html:not([data-theme="black"]) .guide-header h1,
+html[data-theme="black"] .guide-header h1 {
+    color: var(--color-text-primary);
+}
+
+html:not([data-theme="black"]) .hero-description,
+html[data-theme="black"] .hero-description,
+html:not([data-theme="black"]) .changelog-header p,
+html[data-theme="black"] .changelog-header p,
+html:not([data-theme="black"]) .guide-header p,
+html[data-theme="black"] .guide-header p {
+    color: var(--color-text-secondary);
+}
+
+html:not([data-theme="black"]) .hero-pill,
+html[data-theme="black"] .hero-pill {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-glass);
+    color: var(--color-text-secondary);
+    box-shadow: var(--shadow-subtle);
+}
+
+html:not([data-theme="black"]) .hero-pill .pill-dot,
+html[data-theme="black"] .hero-pill .pill-dot {
+    background: var(--color-avis);
+}
+
+/* Unified Card & Panel Surfaces (Light FOUC-safe + Black) */
+html:not([data-theme="black"]) .glass-card,
+html:not([data-theme="black"]) .stat-card,
+html:not([data-theme="black"]) .feature-card,
+html:not([data-theme="black"]) .mockup-card,
+html:not([data-theme="black"]) .changelog-card,
+html:not([data-theme="black"]) .privacy-card,
+html:not([data-theme="black"]) .guide-card,
+html:not([data-theme="black"]) .accordion-card,
+html[data-theme="black"] .glass-card,
+html[data-theme="black"] .stat-card,
+html[data-theme="black"] .feature-card,
+html[data-theme="black"] .mockup-card,
+html[data-theme="black"] .changelog-card,
+html[data-theme="black"] .privacy-card,
+html[data-theme="black"] .guide-card,
+html[data-theme="black"] .accordion-card {
+    background: var(--color-surface);
+    backdrop-filter: var(--blur-surface);
+    -webkit-backdrop-filter: var(--blur-surface);
+    border: 1px solid var(--color-border-glass);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+}
+
+html:not([data-theme="black"]) .glass-card:hover,
+html:not([data-theme="black"]) .feature-card:hover,
+html:not([data-theme="black"]) .accordion-card:hover,
+html[data-theme="black"] .glass-card:hover,
+html[data-theme="black"] .feature-card:hover,
+html[data-theme="black"] .accordion-card:hover {
+    background: var(--color-surface-hover);
+    box-shadow: var(--shadow-floating);
+}
+
+html:not([data-theme="black"]) .stat-num,
+html[data-theme="black"] .stat-num,
+html:not([data-theme="black"]) .feature-card h3,
+html[data-theme="black"] .feature-card h3,
+html:not([data-theme="black"]) .version-title,
+html[data-theme="black"] .version-title {
+    color: var(--color-text-primary);
+}
+
+html:not([data-theme="black"]) .stat-label,
+html[data-theme="black"] .stat-label,
+html:not([data-theme="black"]) .feature-card p,
+html[data-theme="black"] .feature-card p,
+html:not([data-theme="black"]) .version-summary,
+html[data-theme="black"] .version-summary,
+html:not([data-theme="black"]) .release-intro,
+html[data-theme="black"] .release-intro {
+    color: var(--color-text-secondary);
+}
+
+html[data-theme="black"] .mockup-header,
+html[data-theme="black"] .lang-tab-btn,
+html[data-theme="black"] .btn-toggle-all,
+html[data-theme="black"] .btn-load-more,
+html[data-theme="black"] .date-badge,
+html[data-theme="black"] .privacy-alert-banner {
+    background: var(--color-surface-inset);
+    border-color: var(--color-border-subtle);
+    color: var(--color-text-secondary);
+}
+
+html[data-theme="black"] .lang-tab-btn.active,
+html[data-theme="black"] .lang-tab-btn:hover,
+html[data-theme="black"] .btn-toggle-all:hover,
+html[data-theme="black"] .btn-load-more:hover {
+    background: var(--color-surface-hover);
+    color: var(--color-text-primary);
+    border-color: var(--color-border-glass);
+}
+
+html[data-theme="black"] .pwa-floating-banner,
+html[data-theme="black"] .pwa-modal-card,
+html[data-theme="black"] .pwa-toast {
+    background: var(--color-surface-floating);
+    backdrop-filter: var(--blur-surface);
+    -webkit-backdrop-filter: var(--blur-surface);
+    border-color: var(--color-border-glass);
+    color: var(--color-text-primary);
+    box-shadow: var(--shadow-floating);
+}
+
+html[data-theme="black"] .pwa-modal-footer {
+    background: var(--color-surface-inset);
+    border-top-color: var(--color-divider);
+}
+
+html[data-theme="black"] .pwa-banner-install-btn {
+    background: var(--color-avis);
+    color: #ffffff;
+}
+
+/* Unified Footer */
+html:not([data-theme="black"]) .footer,
+html[data-theme="light"] .footer,
+html[data-theme="black"] .footer {
+    background: transparent;
+    border-top: 1px solid var(--color-divider);
+    color: var(--color-text-muted);
+}
+
+/* Responsive Navbar Pill -> Rounded Card */
+@media (max-width: 960px) {
+    html:not([data-theme="black"]) .navbar,
+    html[data-theme="light"] .navbar,
+    html[data-theme="black"] .navbar {
+        border-radius: var(--radius-card);
+    }
+
+    html:not([data-theme="black"]) .navbar .nav-container,
+    html[data-theme="light"] .navbar .nav-container,
+    html[data-theme="black"] .navbar .nav-container {
+        flex-wrap: wrap;
+        padding: 10px 16px;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    html:not([data-theme="black"]) .navbar,
+    html[data-theme="light"] .navbar,
+    html[data-theme="black"] .navbar {
+        width: calc(100% - var(--space-4));
+        top: var(--space-2);
+        margin-top: var(--space-2);
+        border-radius: var(--radius-card);
+    }
+
+    html:not([data-theme="black"]) .navbar .nav-actions,
+    html[data-theme="light"] .navbar .nav-actions,
+    html[data-theme="black"] .navbar .nav-actions {
+        flex-wrap: wrap;
     }
 }

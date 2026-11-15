@@ -23,11 +23,10 @@
         document.head.appendChild(gaScript);
     }
 
-    // ── 테마 즉시 복원 (FOUC 방지) ──
-    const savedTheme = localStorage.getItem('withavis-theme');
-    if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-    }
+    // ── 테마 즉시 복원 (FOUC 방지, Ambient Glass Light 기본) ──
+    const rawSavedTheme = localStorage.getItem('portal-theme') || localStorage.getItem('withavis-theme') || 'light';
+    const initialTheme = (rawSavedTheme === 'black' || rawSavedTheme === 'dark') ? 'black' : 'light';
+    document.documentElement.setAttribute('data-theme', initialTheme);
 
     const currentPage = location.pathname.split('/').pop() || 'index.html';
     const isIndex = currentPage === 'index.html' || currentPage === '' || currentPage === 'withAvis';
@@ -77,6 +76,9 @@
                 ${linksHtml}
             </nav>
             <div class="nav-actions">
+                <a href="https://leejhn.github.io/" class="hub-back-link">
+                    <i class="fa-solid fa-chevron-left"></i> 허브
+                </a>
                 <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="테마 전환">
                     <i class="fa-solid fa-moon theme-icon-dark"></i>
                     <i class="fa-solid fa-sun theme-icon-light"></i>
@@ -357,10 +359,12 @@
 
         btn.addEventListener('click', () => {
             const html = document.documentElement;
-            const isCurrentlyLight = html.getAttribute('data-theme') === 'light';
-            const newTheme = isCurrentlyLight ? 'dark' : 'light';
+            const current = html.getAttribute('data-theme');
+            const isCurrentlyBlack = current === 'black' || current === 'dark';
+            const newTheme = isCurrentlyBlack ? 'light' : 'black';
 
             html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('portal-theme', newTheme);
             localStorage.setItem('withavis-theme', newTheme);
         });
     }
