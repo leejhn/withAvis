@@ -76,20 +76,10 @@
                 ${linksHtml}
             </nav>
             <div class="nav-actions">
-                <a href="https://leejhn.github.io/" class="hub-back-link">
-                    <i class="fa-solid fa-chevron-left"></i> 허브
-                </a>
                 <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="테마 전환">
                     <i class="fa-solid fa-moon theme-icon-dark"></i>
                     <i class="fa-solid fa-sun theme-icon-light"></i>
                 </button>
-                <button type="button" class="pwa-install-btn" id="pwaInstallNavBtn" aria-label="웹앱 설치">
-                    <i class="fa-solid fa-cloud-arrow-down"></i>
-                    <span class="pwa-btn-text">앱 설치</span>
-                </button>
-                <a href="${WEBSTORE_URL}" target="_blank" class="nav-store-link">
-                    <i class="fa-brands fa-chrome"></i> Chrome 웹스토어
-                </a>
             </div>
         </div>
     </header>`;
