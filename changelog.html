@@ -28,16 +28,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Favicon & PWA Icons -->
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/icon16.png?v=9.29.1">
-    <link rel="icon" type="image/png" sizes="48x48" href="./assets/icon48.png?v=9.29.1">
-    <link rel="icon" type="image/png" sizes="192x192" href="./assets/icon192.png?v=9.29.1">
-    <link rel="icon" type="image/png" sizes="512x512" href="./assets/icon512.png?v=9.29.1">
-    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png?v=9.29.1">
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png?v=9.29.1">
-    <link rel="apple-touch-icon" sizes="152x152" href="./assets/apple-touch-icon.png?v=9.29.1">
-    <link rel="apple-touch-icon" sizes="120x120" href="./assets/apple-touch-icon.png?v=9.29.1">
-    <link rel="apple-touch-icon-precomposed" href="./assets/apple-touch-icon.png?v=9.29.1">
-    <link rel="manifest" href="./manifest.json?v=9.29.1">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/icon16.png?v=9.29.2">
+    <link rel="icon" type="image/png" sizes="48x48" href="./assets/icon48.png?v=9.29.2">
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/icon192.png?v=9.29.2">
+    <link rel="icon" type="image/png" sizes="512x512" href="./assets/icon512.png?v=9.29.2">
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png?v=9.29.2">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png?v=9.29.2">
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/apple-touch-icon.png?v=9.29.2">
+    <link rel="apple-touch-icon" sizes="120x120" href="./assets/apple-touch-icon.png?v=9.29.2">
+    <link rel="apple-touch-icon-precomposed" href="./assets/apple-touch-icon.png?v=9.29.2">
+    <link rel="manifest" href="./manifest.json?v=9.29.2">
     <meta name="theme-color" content="#0a0c10" media="(prefers-color-scheme: dark)">
     <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)">
     <meta name="mobile-web-app-capable" content="yes">
@@ -46,10 +46,10 @@
     <meta name="apple-mobile-web-app-title" content="WithAvis">
     <meta name="application-name" content="WithAvis">
     <meta name="msapplication-TileColor" content="#0a0b0e">
-    <meta name="msapplication-TileImage" content="./assets/icon192.png?v=9.29.1">
+    <meta name="msapplication-TileImage" content="./assets/icon192.png?v=9.29.2">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=9.29.1">
+    <link rel="stylesheet" href="styles.css?v=9.29.2">
 </head>
 
 <body>
@@ -72,7 +72,7 @@
                         <h1>업데이트 노트</h1>
                         <p>WithAvis 확장 프로그램의 지속적인 엔지니어링 개선 및 기능 업데이트 기록입니다.</p>
                         <!-- <div class="changelog-meta">
-                            <i class="fa-solid fa-clock-rotate-left"></i> 최신 릴리즈 v9.29.1 기준
+                            <i class="fa-solid fa-clock-rotate-left"></i> 최신 릴리즈 v9.29.2 기준
                         </div> -->
                     </div>
                     <div>
@@ -85,8 +85,53 @@
                 <!-- Accordion List -->
                 <div class="accordion-list" id="changelogList">
 
-                    <!-- Version v9.29.0 (Latest) -->
+                    <!-- Version v9.29.1 (Latest) -->
                     <article class="accordion-card open">
+                        <div class="accordion-header">
+                            <div class="accordion-header-left">
+                                <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                                <div class="version-title">
+                                    <span class="version-tag">v9.29.1</span>
+                                    <span class="version-summary">프롬프트 다이어트로 압도적 응답 속도 향상 &amp; 로컬 AI 모델 최적화 &amp; 답변 끊김 자동 복구 &amp; 출처 하이라이트 정밀도 개선</span>
+                                </div>
+                            </div>
+                            <div class="accordion-header-right">
+                                <span class="date-badge">2026.11.24</span>
+                                <span class="status-pill latest">Latest</span>
+                            </div>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body-inner">
+                                <div class="release-intro">
+                                    클라우드 및 로컬 환경 전반에서 AI의 첫 응답 도달 속도(TTFT)와 멀티턴 대화 효율을 획기적으로 끌어올린 성능·안정화 릴리즈입니다.
+                                    중복 지침을 과감히 덜어낸 초경량 프롬프트 설계와 본문 프리픽스 재사용 구조를 도입해 응답 체감 속도가 한층 쾌적해졌으며, 긴 답변의 중간 끊김 방지 및 원문 출처 하이라이트 정밀도를 함께 보완했습니다.
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label perf"><i class="fa-solid fa-gauge-high"></i> 초경량 프롬프트 설계 및 멀티턴 응답 가속</div>
+                                    <ul class="change-list">
+                                        <li><strong>시스템 지침 다이어트 및 중복 제거</strong>: 핵심 출력 규격과 학습·시각화 품질은 그대로 유지하면서 중복 안내 문구를 대폭 통합해 지침 크기를 기존 대비 85~90% 경량화했습니다.</li>
+                                        <li><strong>로컬 및 커스텀 AI 모델 최적화</strong>: EXAONE, Ollama, LM Studio 등 로컬·사설 모델 연결 시 경량 컨텍스트와 전용 타임아웃을 자동 적용해 초기 대기 지연 없이 안정적으로 답변을 생성합니다.</li>
+                                        <li><strong>멀티턴 KV 캐시 정렬 및 페이지 추출 캐싱</strong>: 동일 페이지에서 후속 질문 시 고정 본문 프리픽스와 원문 인덱싱 결과를 즉시 재사용해 연속 대화 응답이 크게 빨라졌습니다.</li>
+                                        <li><strong>사전 분류 Fast-Path 및 스트리밍 가속</strong>: 명확한 요약·번역·이어쓰기 요청 시 불필요한 사전 분류 대기를 건너뛰고, 고속 모델의 실시간 타이핑 및 마크다운 렌더링을 한층 매끄럽게 개선했습니다.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="change-group">
+                                    <div class="group-label fix"><i class="fa-solid fa-wrench"></i> 답변 완결성 보장 및 출처·레이아웃 안정화</div>
+                                    <ul class="change-list">
+                                        <li><strong>응답 중간 끊김 자동 이어쓰기 및 이어받기 지원</strong>: 토큰 한도나 스트림 지연으로 긴 답변이 끊길 경우 1회 자동 이어쓰기를 시도하며, 미완료 종료 시 원클릭 이어쓰기 안내 칩을 제공합니다.</li>
+                                        <li><strong>원문 출처 배지(💬) 정렬 및 하이라이트 유지</strong>: 인용구 아래로 출처 아이콘이 분리되거나 후속 질문 시 원문 위치가 어긋나던 현상을 교정해 정확한 원문 구간으로 이동합니다.</li>
+                                        <li><strong>카드 데이터 복원 및 본문 오인 절단 방지</strong>: 미완성 인포그래픽 JSON 노출을 깔끔한 텍스트 목록으로 자동 복원하고, 본문 중간 소제목이 후속 질문 영역으로 오인되어 내용이 잘리던 문제를 차단했습니다.</li>
+                                        <li><strong>한국어 조사 분리 매칭 및 본문 추출 보강</strong>: 한국어 조사 어근 분석과 동적 웹페이지 텍스트 추출 커버리지를 상향해 긴 문서에서도 질문과 관련된 근거 단락을 빠짐없이 반영합니다.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Version v9.29.0 -->
+                    <article class="accordion-card">
                         <div class="accordion-header">
                             <div class="accordion-header-left">
                                 <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
@@ -98,7 +143,7 @@
                             </div>
                             <div class="accordion-header-right">
                                 <span class="date-badge">2026.11.15</span>
-                                <span class="status-pill latest">Latest</span>
+                                <span class="status-pill stable">Stable</span>
                             </div>
                         </div>
                         <div class="accordion-content">
@@ -2121,7 +2166,7 @@
         });
     </script>
     <!-- Shared Navigation -->
-    <script src="site-nav.js?v=9.29.1"></script>
+    <script src="site-nav.js?v=9.29.2"></script>
 </body>
 
 </html>
